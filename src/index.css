@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  --background-color: #090C11;
+  --primary:#00ff00;
+  --text:#ffffff;
+  --neutralDark:#1c1f26;
+  --accent-1:#ff6f00;
+  --accent-2:#00c2ff;
+  --accent-3:#6a4c93;
+  --neutralLight:#e0e0e0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.body {
+  margin: 0%;
+  height: 100vh;
+  width: 100vw ;
+}
+#grid1{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding-left: 10%;
+  position: relative;
+  top: 5vh;
+}
+.grid-items1{
+  display: grid;
+  grid-template-columns: repeat(3, 0.25fr);
+  font-size: 2.4vh;
+  padding: 0.55vh;
+}
+.nav-items{
+  color: white;
+  transition: all 1900ms;
+}
+.nav-items:hover{
+  color: #00ff00;
+  animation:ease-in-out 400ms;
+  transform: scale(1.1);
+}
+#top{
+  height: 100vh;
+  background-color: var(--neutralDark);
+}
+#sec-1{
+  position:absolute;
+  top: 25vh;
+  left:5%;
+  display: flex;
+  flex-direction: row;
+}
+.intro{
+  padding-left:5% ;
+  padding-top: 5%;
+  padding-right: 5%;
+  font-family: 'Lexend';
+}
+#sec-1 img{
+  height: 33vh;
+  margin-top: 15vh;
+}
+.intro h1{
+  font-size: 8vh;
+}
+.intro p{
+  font-size: 3vh;
+}
+#btn1{
+  background-color:var(--background-color);
+  color: var(--text);
+  padding: 1vh 3vw;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+#btn2{
+  background-color: #00ff00;
+  color: #090C11;
+  padding: 1vh 3vw;
+  border-radius:5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.CTA{
+  font-weight: 700;
+  padding-top: 5%;
+}
+.name{
+  color: #00ff00;
+}
