@@ -1,8 +1,7 @@
 import React from 'react'
-import NavBar from './navBar'
 import { Link } from 'react-router'
 import { FaArrowRight } from 'react-icons/fa'
-import { MdHeight } from 'react-icons/md'
+import NavBar from './NavBar'
 
 function Top() {
   return (
@@ -17,7 +16,7 @@ function Top() {
           <p className='CTA'>Ready to elevate your digital experience?</p>
           <div className='flex gap-10 mt-5'>
             <Link to='/AboutMe' id='btn1' ><span>About Me </span><FaArrowRight color='white'/></Link>
-            <Link to='/Projects' id='btn2'>Projects <FaArrowRight color='black'/></Link>
+            <Link to='/Projects' id='btn2'>View My Work<FaArrowRight color='black'/></Link>
           </div>
         </div>  
         <img src='sifi wallpaper.png'></img>    

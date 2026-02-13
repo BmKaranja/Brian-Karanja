@@ -28,25 +28,31 @@
 }
 #grid1{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
   padding-left: 10%;
   position: relative;
   top: 5vh;
 }
 .grid-items1{
-  display: grid;
-  grid-template-columns: repeat(3, 0.25fr);
-  font-size: 2.4vh;
-  padding: 0.55vh;
+  display: flex;
+  flex-direction: row;
+  gap: 1;
 }
 .nav-items{
   color: white;
-  transition: all 1900ms;
+  transition: all 600ms;
+  padding: 0 15px;
+}
+.vline{
+  border-right: 1px solid grey;
+}
+.nav-items.active{
+  color: var(--primary);
 }
 .nav-items:hover{
   color: #00ff00;
   animation:ease-in-out 400ms;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 #top{
   height: 100vh;
@@ -99,4 +105,10 @@
 }
 .name{
   color: #00ff00;
+}
+.nv-1{
+  color: var(--text);
+}
+.nv-2{
+  color:grey;
 }
