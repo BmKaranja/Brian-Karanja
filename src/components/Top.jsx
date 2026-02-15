@@ -15,7 +15,7 @@ function Top() {
           <p style={{fontWeight:50}}>I'm a a frontend and mobile developer, based in Kenya, passionate about crafting branded, functional, and visually engaging experiences.  </p>
           <p className='CTA'>Ready to elevate your digital experience?</p>
           <div className='flex gap-10 mt-5'>
-            <Link to='/AboutMe' id='btn1' ><span>About Me </span><FaArrowRight color='white'/></Link>
+            <a href='#aboutme' id='btn1' ><span>About Me </span><FaArrowRight color='white'/></a>
             <Link to='/Projects' id='btn2'>View My Work<FaArrowRight color='black'/></Link>
           </div>
         </div>  

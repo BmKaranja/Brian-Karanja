@@ -5,9 +5,9 @@ import Top from './Top'
 
 function Home() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Top/>
-      <main>
+      <main id='aboutme'>
         <AboutMe/>
       </main>
       <Footer/>
