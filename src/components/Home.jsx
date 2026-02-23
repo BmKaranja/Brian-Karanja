@@ -10,7 +10,9 @@ function Home() {
       <main id='aboutme'>
         <AboutMe/>
       </main>
-      <Footer/>
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   )
 }

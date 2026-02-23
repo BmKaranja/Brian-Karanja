@@ -133,7 +133,7 @@
   flex-direction: column;
 }
 .me img{
-  height: 75vh;
+  height: 60vh;
   width: 40vw;
   box-shadow: 0 4px 8px 0px #888888;
   border-radius: 15px;
@@ -151,4 +151,23 @@ h4{
 }
 .skill span svg:hover{
   box-shadow: none;
+}
+.my-sum{
+  width: 50vw;
+  padding-left:5vw;
+}
+.my-sum h1{
+  font-size: 8vh;
+  font-weight: 700;
+}
+
+.my-sum p{
+  color: var(--tertiary);
+}
+.footer{
+  height: 8vh;
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: row;
+  gap: 50vw;
 }
