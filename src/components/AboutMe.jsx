@@ -1,9 +1,11 @@
 import React from 'react'
-import { FaCss3, FaDatabase, FaFigma, FaGit, FaHtml5, FaJs, FaPaintRoller, FaPalette, FaPlug, FaReact } from 'react-icons/fa'
+import { FaArrowRight, FaCss3, FaDatabase, FaFigma, FaGit, FaHtml5, FaJs, FaPaintRoller, FaPalette, FaPlug, FaReact } from 'react-icons/fa'
 import { FaFlutter, FaMessage, FaPadlet } from 'react-icons/fa6'
-import Footer from './Footer'
+import { Link } from 'react-router-dom'
+
 
 function AboutMe() {
+
   return (
     <div>
       <section className='me'>
@@ -100,6 +102,16 @@ function AboutMe() {
           <p>
             I’m a frontend engineer with strong skills not only in frameworks like Flutter, React, and TailwindCSS, but also in version control and collaboration using Git and GitHub. I’m comfortable managing branches, handling pull requests, and resolving merge conflicts, which allows me to maintain clean, organized codebases and contribute effectively in team environments. I use Git to track changes methodically, ensuring that every iteration is documented and reversible, while GitHub serves as my platform for collaboration, code reviews, and showcasing projects. Whether it’s setting up CI/CD workflows, managing issues, or writing clear commit messages, I treat Git and GitHub as essential tools for both productivity and professional presentation. This combination of frontend expertise and disciplined version control makes me adaptable, reliable, and ready to deliver polished solutions in collaborative projects.  
           </p>
+          <div className='flex gap-10 mt-5'>
+            <a target='_blank' href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' id='btn1' >
+              <span>See CV </span>
+             <FaArrowRight color='white'/>
+            </a>
+            <Link to='/Projects' id='btn2'>
+              Projects            
+              <FaArrowRight color='black'/>
+            </Link>
+          </div>
         </article>
       </section>
     </div>

@@ -17,7 +17,12 @@
   -moz-osx-font-smoothing: grayscale;
 
 }
-
+.color{
+  color: var(--primary);
+}
+.font{
+  font-family: 'Lexend', sans-serif;
+}
 .body {
   margin: 0%;
   height: 100vh;
@@ -27,7 +32,7 @@
 #grid1{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  padding-left: 10%;
+  padding-left: 8%;
   position: relative;
   top: 5vh;
 }
@@ -170,4 +175,24 @@ h4{
   display: flex;
   flex-direction: row;
   gap: 50vw;
+}
+.sec-intro{
+  width: 50%;
+  margin-left: 5vw;
+  margin-top: 10vh;
+}
+.sec-intro p{
+  color: var(--tertiary);
+}
+#cap{
+  padding: 5px;
+  color: white;
+  font-size: x-small;
+  width: fit-content;
+  border: 2px solid #00ff00;
+  border-radius: 20px;
+  transition: all 500ms;
+}
+#cap:hover{
+  box-shadow:1px 2px 10px #00ff00;
 }
