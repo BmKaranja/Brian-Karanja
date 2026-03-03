@@ -252,3 +252,52 @@ h4{
   color: var(--tertiary);
   margin-top: 2vh;
 }
+.prj-intro{
+  width: 60%;
+  margin-left: 5vw;
+  margin-top: 10vh;
+  overflow-x: auto;
+}
+.prj-intro p{
+  color: var(--tertiary);
+}
+.p-card{
+  background-color: var(--component-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+  width: 30%;
+}
+.projects{
+  display: flex;
+  flex-direction: row;
+  gap: 10;
+  justify-content: space-around;
+}
+.p-card p{
+  color: var(--tertiary);
+}
+.p-nav{
+  background-color: var(--neutralDark);
+  color: var(--text);
+  padding: 0.5vh 1vw;
+  font-size: small;
+  border-radius: 10px;
+}
+.p-nav.active{
+  color: var(--primary);
+}
+#p-nav{
+  background-color: var(--neutralDark);
+  color: var(--primary);
+  padding: 0.5vh 1vw;
+  font-size: small;
+  border-radius: 10px;
+}
+#p-nav1{
+  background-color: var(--neutralDark);
+  color: var(--text);
+  padding: 0.5vh 1vw;
+  font-size: small;
+  border-radius: 10px;
+}
