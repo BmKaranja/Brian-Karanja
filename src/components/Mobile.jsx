@@ -1,7 +1,6 @@
 import React from 'react'
 import Pcards from './Pcards'
 import PIntro from './PIntro'
-import Footer from './Footer'
 import { NavLink } from 'react-router-dom'
 
 function Mobile() {
@@ -16,7 +15,7 @@ function Mobile() {
         <section>
         <article className='projects'>
           <Pcards
-            image='me.png'
+            image={'me.jpg'}
             title='Project 1'
             description='desc'
             link='google.com'

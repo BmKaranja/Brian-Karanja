@@ -130,18 +130,24 @@
   margin-top: 10vh;
   display: flex;
   flex-direction: row;
-  gap: 5vw;
+  gap: 2vw;
   margin-left: 5vw;
+  flex-wrap: wrap;
 }
 .skills{
   display: flex;
   flex-direction: column;
 }
-.me img{
+.mypic{
   height: 60vh;
-  width: 40vw;
+  width: 40%;
   box-shadow: 0 4px 8px 0px #888888;
   border-radius: 15px;
+  background-image: url('me.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
 }
 h4{
   color: var(--tertiary);
@@ -175,6 +181,7 @@ h4{
   display: flex;
   flex-direction: row;
   gap: 50vw;
+  flex-wrap: wrap;
 }
 .sec-intro{
   width: 50%;
@@ -214,6 +221,7 @@ h4{
   margin-top: 5vh;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 #btn3{
   background-color:var(--background-color);
@@ -235,6 +243,7 @@ h4{
   align-items: center;
   gap: 5px;
   transition: all 600ms;
+  flex-wrap: wrap;
 }
 .cta{
   background-color: var(--neutralDark);
@@ -243,6 +252,7 @@ h4{
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 .cta h2{
   font-size: 6vh;
@@ -266,13 +276,20 @@ h4{
   display: flex;
   flex-direction: column;
   gap: 5;
+  border-radius: 10px;
   width: 30%;
 }
+.p-card:hover{
+  box-shadow:0.3px 1px 10px #00ff00;
+  transition: all 600ms;
+}
+
 .projects{
   display: flex;
   flex-direction: row;
   gap: 10;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .p-card p{
   color: var(--tertiary);
@@ -300,4 +317,12 @@ h4{
   padding: 0.5vh 1vw;
   font-size: small;
   border-radius: 10px;
+}
+.p-card img{
+  width: 100%;
+  height:50%;
+  border-radius: 10px 0;
+}
+a{
+  cursor: pointer;
 }

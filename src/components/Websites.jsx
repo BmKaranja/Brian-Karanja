@@ -1,8 +1,8 @@
 import React from 'react'
-import Pcards from './Pcards'
-import { NavLink } from 'react-router-dom'
-import PIntro from './PIntro'
 import Footer from './Footer'
+import Pcards from './Pcards'
+import PIntro from './PIntro'
+import { NavLink } from 'react-router-dom'
 
 function Websites() {
   return (
@@ -16,7 +16,7 @@ function Websites() {
         <section>
         <article className='projects'>
           <Pcards
-            image='me.png'
+            image={('sifi wall')}
             title='Project 1'
             description='desc'
             link='google.com'

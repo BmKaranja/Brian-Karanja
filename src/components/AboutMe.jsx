@@ -9,7 +9,8 @@ function AboutMe() {
   return (
     <div>
       <section className='me'>
-        <img src='me.jpg'alt='Brian K. Maina'></img>
+        <div className='w-160 mypic'>
+          </div>
         <article className='skills'>
           <h2 style={{color:'#00ff00'}}>EXPERTISE</h2>
           <hr className='w-120 text' style={{color:'#888888'}}></hr>

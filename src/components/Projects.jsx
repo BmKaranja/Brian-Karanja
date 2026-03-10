@@ -14,7 +14,7 @@ function Projects() {
         <NavLink to='/projects/websites' className='p-nav'>Websites</NavLink>
         <NavLink to='/projects/mobile' className='p-nav'>Mobile Apps</NavLink>
       </nav>
-        <section>
+      <section>
         <article className='projects'>
           <Pcards
             image='me.png'
@@ -62,5 +62,4 @@ function Projects() {
     </div>
   )
 }
-
 export default Projects
