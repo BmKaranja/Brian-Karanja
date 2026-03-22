@@ -326,3 +326,25 @@ h4{
 a{
   cursor: pointer;
 }
+.worklog-intro{
+  border-left: #00ff00 2px solid;
+}
+.project-divs{
+  height: 60vh;
+  width: 30vw;
+  background-color: var(--component-bg);
+  border-radius: 10px;
+  transition: all 600ms;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.project-imgs{
+  height: 30vh;
+  width: 100%;
+}
+
+.project-image {
+  height: 30vh;
+  border-radius: 10px 10px 0 0;
+}

@@ -10,26 +10,26 @@ function Projects() {
     <div className='flex flex-col gap-10 overflow-hidden'>
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
-        <NavLink to='/#'id='p-nav'>All Work</NavLink>
+        <NavLink to='/#' id='p-nav'>All Work</NavLink>
         <NavLink to='/projects/websites' className='p-nav'>Websites</NavLink>
         <NavLink to='/projects/mobile' className='p-nav'>Mobile Apps</NavLink>
       </nav>
       <section>
         <article className='projects'>
           <Pcards
-            image='me.png'
+            image='/me.jpg'
+            title='Project 1'
+            description='desc'
+            link='https://github.com/BmKaranja'
+          />
+          <Pcards
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
-            title='Project 1'
-            description='desc'
-            link='google.com'
-          />
-          <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
@@ -37,19 +37,19 @@ function Projects() {
         </article>
         <article className='projects mt-5'>
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'

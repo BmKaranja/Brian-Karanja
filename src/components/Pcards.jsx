@@ -2,15 +2,11 @@ import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
 function Pcards({ image, title, description, link }) {
-  console.log('image:', image); // Add this line to check the value of the image prop
-  if (!image || !title || !description || !link) {
-    console.error('All props are required in Pcards component');
-    return null;
-  }
+  
 
   return (
-    <div>
-      <img src={image} alt={title} />
+    <div className='project-divs'>
+      <div className="project-image" style={{ height: "30vh", backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}></div>
       <article>
         <h2>{title}</h2>
         <p>{description}</p>

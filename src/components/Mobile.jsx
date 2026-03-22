@@ -1,6 +1,7 @@
 import React from 'react'
 import Pcards from './Pcards'
 import PIntro from './PIntro'
+import Footer from './Footer'
 import { NavLink } from 'react-router-dom'
 
 function Mobile() {
@@ -8,26 +9,26 @@ function Mobile() {
     <div className='flex flex-col gap-10 overflow-hidden'>
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
-        <NavLink to='/projects'id='p-nav1'>All Work</NavLink>
+        <NavLink to='/projects' id='p-nav1'>All Work</NavLink>
         <NavLink to='/projects/websites' className='p-nav'>Websites</NavLink>
         <NavLink to='/projects/mobile' className='p-nav'>Mobile Apps</NavLink>
       </nav>
         <section>
         <article className='projects'>
           <Pcards
-            image={'me.jpg'}
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
@@ -35,19 +36,19 @@ function Mobile() {
         </article>
         <article className='projects mt-5'>
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
           />
           <Pcards
-            image='me.png'
+            image='/me.jpg'
             title='Project 1'
             description='desc'
             link='google.com'
