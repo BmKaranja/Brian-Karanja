@@ -22,7 +22,7 @@ function Services() {
             </p>
           </article>
         </section>
-        <section className='flex flex-row gap-10 mt-20 justify-center align-center' >
+        <section className='grid grid-cols-1 md:grid-cols-3 gap-10 mt-20 px-10' >
           <article className='mycards'>
             <div className='p-2 w-12'>
               <FaCode size={30} color='#00ff00'/>

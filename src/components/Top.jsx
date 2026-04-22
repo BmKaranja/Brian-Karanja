@@ -16,7 +16,7 @@ function Top() {
           <p className='CTA'>Ready to elevate your digital experience?</p>
           <div className='flex gap-10 mt-5'>
             <a href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' target='_blank' id='btn1' ><span>See CV </span><FaArrowRight color='white'/></a>
-            <Link to='/Projects' id='btn2'>View My Work<FaArrowRight color='black'/></Link>
+            <Link to='/projects' id='btn2'>View My Work<FaArrowRight color='black'/></Link>
           </div>
         </div>  
         <img src='sifi wallpaper.png'></img>    

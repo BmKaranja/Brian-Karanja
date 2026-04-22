@@ -9,7 +9,7 @@ function NavBar() {
       {/* Internal navigation */}
       <div className='grid-items1'>
           <NavLink to='/Services'className='nav-items nv-1'>Services</NavLink>
-          <NavLink to='/Projects'className='nav-items nv-1' style={{paddingLeft:'2vh'}}>Projects</NavLink>
+          <NavLink to='/projects'className='nav-items nv-1' style={{paddingLeft:'2vh'}}>Projects</NavLink>
           <NavLink to='/WorkLog'className='nav-items nv-1 vline' style={{paddingLeft:'2vh'}}>WorkLog</NavLink> 
           <a href='https://github.com/BmKaranja'className='nav-items nv-2' target='_blank' rel='noopener noreferrer'>GitHub</a>
           <a href='https://www.linkedin.com/in/b-karanja'className='nav-items nv-2' target='_blank' rel='noopener noreferrer'>LinkedIn</a>

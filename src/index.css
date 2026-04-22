@@ -304,6 +304,9 @@ h4{
 .p-nav.active{
   color: var(--primary);
 }
+#p-nav.active{
+  color: var(--primary);
+}
 #p-nav{
   background-color: var(--neutralDark);
   color: var(--primary);
@@ -347,4 +350,5 @@ a{
 .project-image {
   height: 30vh;
   border-radius: 10px 10px 0 0;
+  background-image: url('public/pexels-cesar-gaviria-232160-36571389.jpg');
 }
