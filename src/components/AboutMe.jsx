@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 function AboutMe() {
 
   return (
-    <div>
+    <div style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <section className='me'>
         <div className='w-160 mypic'>
           </div>

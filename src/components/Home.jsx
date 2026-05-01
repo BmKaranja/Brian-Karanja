@@ -5,7 +5,7 @@ import Top from './Top'
 
 function Home() {
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <Top/>
       <main id='aboutme'>
         <AboutMe/>

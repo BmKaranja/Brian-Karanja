@@ -6,7 +6,7 @@ import { FaArrowRight, FaCheck, FaCode, FaLinkedin, FaMobileAlt, FaPalette } fro
 
 function Services() {
   return (
-    <div className='flex flex-col gap-10 overflow-hidden'>
+    <div className='flex flex-col gap-10 overflow-hidden'style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <NavBar/>
       <div>
         <hr style={{width:'100vw'}} className='text-gray-600'></hr>

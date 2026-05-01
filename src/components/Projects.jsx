@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import projectdata from '../data/projectdata.json'
 function Projects() {
   return (
-    <div className='flex flex-col gap-10 overflow-hidden'>
+    <div className='flex flex-col gap-10 overflow-hidden' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
         <NavLink to='#' id='p-nav1' style={{color:'#00ff00'}}>All Work</NavLink>
