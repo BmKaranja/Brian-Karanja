@@ -1,8 +1,45 @@
-[{
-    "id":1,
-    "date":"2024-06-01",
-    "project":"project title",
-    "description":"description of the project",
-    "tags":["tag1", "tag2"],
-    "commit_link":"example.com/commit"
-}]
+[
+    {
+    "date":"2026-04 to 2026-05 ",
+    "project":"Wincer's cake house",
+    "description":"Wincer's Cake House is a charming bakery website that showcases a delightful array of cakes and pastries. With a warm and inviting design, it features an easy-to-navigate menu, online ordering system, and vibrant imagery to entice customers to indulge in their sweet offerings.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
+{
+    "date":"2026-03 to 2026-05 ",
+    "project":"My Portfolio website",
+    "description":"This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
+    "tags":["HTML", "CSS", "JavaScript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+{
+    "date":"2026-01 to 2025-04 ",
+    "project":"StayPay mobile app",
+    "description":"A sleek, high-contrast property management platform designed for the modern rental ecosystem. It bridges the gap between landlords and tenants.",
+    "tags":["Flutter", "Dart"],
+    "link":"https://github.com/BmKaranja/StayPay-1.git"
+},
+
+{
+    "date":"2025-10 to 2025-12 ",
+    "project":"HireNear",
+    "description":"HireNear is a job search platform designed to connect job seekers with local employment opportunities. It features a user-friendly interface, personalized job recommendations, and real-time updates on job listings in the user's vicinity.",
+    "tags":["React", "TailwindCss", "JavaScript", "API"],
+    "link":"https://github.com/BmKaranja/HireNear.git"
+},
+{
+    "date":"2025-09",
+    "project":"Tenga and Thrive website",
+    "description":"Tenga & Thrive is an e-commerce hub for intentional living, offering curated products across tech, fashion, and home designed with clarity, style, and purpose",
+    "tags":["HTML", "CSS", "JavaScript"],
+    "link":"https://github.com/BmKaranja/MY-SHOP.git"
+},
+    {
+    "date":"2025-01 to 2025-04 ",
+    "project":"OakWood Academy website",
+    "description":"Oakwood Academy is a fictional academic institution created as a project concept, featuring a welcoming digital platform for its 2025 academic year",
+    "tags":["HTML", "CSS"],
+    "link":"https://github.com/BmKaranja/Oakwood_web.git"
+}
+]
