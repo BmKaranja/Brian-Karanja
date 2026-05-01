@@ -1,5 +1,12 @@
 [
     {
+    "date":"2026-05-01",
+    "project":"Wincer's cake house",
+    "description":"Implemented timeline and grid cards for worklog by the help of useState() and added commits to logdata to be displayed in the timeline and grid cards",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
+    {
     "date":"2026-04 to 2026-05 ",
     "project":"Wincer's cake house",
     "description":"Wincer's Cake House is a charming bakery website that showcases a delightful array of cakes and pastries. With a warm and inviting design, it features an easy-to-navigate menu, online ordering system, and vibrant imagery to entice customers to indulge in their sweet offerings.",
