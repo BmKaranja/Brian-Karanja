@@ -4,14 +4,14 @@
     "project":"My Portfolio website",
     "description":"Redesigned Abou Me section to match the vibe of the rest of the website",
     "tags":["React", "TailwindCss", "Typescript"],
-    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
 },
     {
     "date":"2026-05-01",
     "project":"My Portfolio website",
     "description":"Implemented timeline and grid cards for worklog by the help of useState() and added commits to logdata to be displayed in the timeline and grid cards",
     "tags":["React", "TailwindCss", "Typescript"],
-    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
 },
     {
     "date":"2026-04 to 2026-05 ",
