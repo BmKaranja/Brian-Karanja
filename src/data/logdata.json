@@ -1,7 +1,14 @@
 [
+{
+    "date":"2026-05-02",
+    "project":"My Portfolio website",
+    "description":"Redesigned Abou Me section to match the vibe of the rest of the website",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
     {
     "date":"2026-05-01",
-    "project":"Wincer's cake house",
+    "project":"My Portfolio website",
     "description":"Implemented timeline and grid cards for worklog by the help of useState() and added commits to logdata to be displayed in the timeline and grid cards",
     "tags":["React", "TailwindCss", "Typescript"],
     "link":"https://github.com/BmKaranja/Wincer_Project.git"
@@ -17,7 +24,7 @@
     "date":"2026-03 to 2026-05 ",
     "project":"My Portfolio website",
     "description":"This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
-    "tags":["HTML", "CSS", "JavaScript"],
+    "tags":["React", "TailwindCss", "JavaScript"],
     "link":"https://github.com/BmKaranja/Brian-Karanja.git"
 },
 {

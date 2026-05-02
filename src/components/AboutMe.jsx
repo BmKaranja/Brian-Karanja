@@ -1,121 +1,326 @@
-import React from 'react'
-import { FaArrowRight, FaCss3, FaDatabase, FaFigma, FaGit, FaHtml5, FaJs, FaPaintRoller, FaPalette, FaPlug, FaReact } from 'react-icons/fa'
-import { FaFlutter, FaMessage, FaPadlet } from 'react-icons/fa6'
+import React, { useRef, useEffect, useState } from 'react'
+import {
+  FaCss3, FaDatabase, FaFigma, FaGit,
+  FaHtml5, FaJs, FaReact, FaArrowRight
+} from 'react-icons/fa'
+import { FaFlutter } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
+const skills = [
+  {
+    category: 'FRONTEND SYSTEMS',
+    items: [
+      { icon: <FaHtml5 />, label: 'HTML5' },
+      { icon: <FaCss3 />, label: 'CSS3' },
+      { icon: <FaJs />, label: 'JavaScript' },
+      { icon: <FaReact />, label: 'React' },
+      { icon: <FaFlutter />, label: 'Flutter' },
+    ],
+  },
+  {
+    category: 'TOOLING & DESIGN',
+    items: [
+      { icon: <FaFigma />, label: 'Figma' },
+      { icon: <FaGit />, label: 'Git' },
+      { icon: <FaDatabase />, label: 'SQL' },
+    ],
+  },
+]
+
+const stats = [
+  { value: '5+', label: 'Projects Shipped' },
+  { value: '2+', label: 'Years Building' },
+  { value: '8', label:'Technologies Mastered' },
+]
+
+function SkillChip({ icon, label }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        padding: '8px 16px',
+        background: hovered ? 'rgba(0,255,0,0.08)' : '#0e1117',
+        border: `1px solid ${hovered ? '#00ff00' : '#1e2228'}`,
+        borderRadius: '4px',
+        fontSize: '13px',
+        fontFamily: 'monospace',
+        color: hovered ? '#00ff00' : '#aaa',
+        transition: 'all 300ms',
+        cursor: 'default',
+        letterSpacing: '0.5px',
+      }}
+    >
+      <span style={{ fontSize: '16px', color: '#00ff00' }}>{icon}</span>
+      {label}
+    </span>
+  )
+}
 
 function AboutMe() {
+  const [visible, setVisible] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
+      { threshold: 0.1 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <div style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
-      <section className='me'>
-        <div className='w-160 mypic'>
+    <section
+      ref={ref}
+      style={{
+        padding: '10vh 5vw',
+        background: 'var(--background-color)',
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(40px)',
+        transition: 'opacity 700ms ease, transform 700ms ease',
+      }}
+    >
+      {/* Section header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '60px' }}>
+        <span style={{
+          fontFamily: 'monospace',
+          fontSize: '11px',
+          letterSpacing: '3px',
+          color: '#00ff00',
+          border: '1px solid #00ff00',
+          borderRadius: '20px',
+          padding: '4px 14px',
+        }}>
+          ABOUT.ME
+        </span>
+        <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, #1e2228, transparent)' }} />
+        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>v2.0</span>
+      </div>
+
+      {/* Main two-column layout */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
+        gap: '6vw',
+        alignItems: 'start',
+      }}>
+
+        {/* LEFT — profile photo + stats */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          {/* Photo frame */}
+          <div style={{ position: 'relative' }}>
+            <div style={{
+              position: 'absolute', inset: 0,
+              border: '1px solid #00ff00',
+              borderRadius: '4px',
+              transform: 'translate(10px, 10px)',
+              opacity: 0.25,
+            }} />
+            <div
+              style={{
+                height: '50vh',
+                minHeight: '320px',
+                background: `url('/me.jpg') center/cover no-repeat`,
+                borderRadius: '4px',
+                border: '1px solid #1e2228',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* green scan-line overlay */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(to bottom, transparent 80%, rgba(0,255,0,0.05) 100%)',
+                pointerEvents: 'none',
+              }} />
+              {/* bottom badge */}
+              <div style={{
+                position: 'absolute', bottom: '16px', left: '16px',
+                background: 'rgba(9,12,17,0.85)',
+                border: '1px solid #1e2228',
+                borderRadius: '4px',
+                padding: '8px 14px',
+                fontFamily: 'monospace',
+                fontSize: '11px',
+                color: '#00ff00',
+                letterSpacing: '1.5px',
+              }}>
+                BRIAN K. MAINA — KE
+              </div>
+            </div>
           </div>
-        <article className='skills'>
-          <h2 style={{color:'#00ff00'}}>EXPERTISE</h2>
-          <hr className='w-120 text' style={{color:'#888888'}}></hr>
-          <div className='mt-5'>
-            <h4>FRONTEND SYSTEMS</h4>
-            <section className='flex flex-wrap gap-5 mt-3'>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaHtml5 color='#00ff00' size={25}/>
-                  HTML
-                </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                <FaCss3 color='#00ff00' size={25}/>
-                CSS
-              </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                <FaJs color='#00ff00' size={25}/>
-                JS
-              </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                <FaReact color='#00ff00' size={25}/>
-                React
-              </span>
-              </span>
-            </section>
-            <section className='flex flex-wrap gap-5 mt-3 mb-5'>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                <FaFlutter color='#00ff00' size={25}/>
-                Flutter
-              </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                <FaPalette color='#00ff00' size={25}/>
-                Tailwind Css
-              </span>
-              </span>
-            </section>
-            <h4 >DESIGN & PRODUCTIVITY</h4>
-            <section className='flex flex-wrap gap-5 mt-3'>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaFigma color='#00ff00' size={25}/>
-                  Figma
-                </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaGit color='#00ff00' size={25}/>
-                  Git
-                </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaPlug color='#00ff00' size={25}/>
-                  API Integration
-                </span>
-              </span>
-            </section>
-            <h4 className='mt-3'>EXTRAS</h4>
-            <section className='flex flex-wrap gap-5 mt-3'>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaMessage color='#00ff00' size={25}/>
-                  Communication Skills
-                </span>
-              </span>
-              <span className='skill' style={{borderRadius:'10px'}}>
-                <span className='text-1xl flex flex-row p-3 gap-1' style={{borderRadius:'10px'}}>
-                  <FaDatabase color='#00ff00' size={25}/>
-                  SQL
-                </span>
-              </span>
-            </section>
+
+          {/* Stats row */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '1px',
+            background: '#1e2228',
+            border: '1px solid #1e2228',
+            borderRadius: '4px',
+            overflow: 'hidden',
+          }}>
+            {stats.map((s) => (
+              <div key={s.label} style={{
+                background: '#090C11',
+                padding: '20px 12px',
+                textAlign: 'center',
+              }}>
+                <p style={{
+                  fontFamily: 'monospace',
+                  fontSize: '26px',
+                  fontWeight: 700,
+                  color: '#00ff00',
+                  margin: 0,
+                  lineHeight: 1,
+                }}>{s.value}</p>
+                <p style={{
+                  fontSize: '10px',
+                  color: '#555',
+                  letterSpacing: '1px',
+                  marginTop: '6px',
+                  fontFamily: 'monospace',
+                }}>{s.label}</p>
+              </div>
+            ))}
           </div>
-        </article>
-      </section>
-      <section>
-        <article className='my-sum'>
-          <h1>
-            Crafting digital <span style={{color:'#00ff00'}}>experiences</span> with precision.
-          </h1>
-          <p>
-            I’m a frontend engineer with strong skills not only in frameworks like Flutter, React, and TailwindCSS, but also in version control and collaboration using Git and GitHub. I’m comfortable managing branches, handling pull requests, and resolving merge conflicts, which allows me to maintain clean, organized codebases and contribute effectively in team environments. I use Git to track changes methodically, ensuring that every iteration is documented and reversible, while GitHub serves as my platform for collaboration, code reviews, and showcasing projects. Whether it’s setting up CI/CD workflows, managing issues, or writing clear commit messages, I treat Git and GitHub as essential tools for both productivity and professional presentation. This combination of frontend expertise and disciplined version control makes me adaptable, reliable, and ready to deliver polished solutions in collaborative projects.  
+        </div>
+
+        {/* RIGHT — bio + skills + CTAs */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+
+          {/* Headline */}
+          <div>
+            <h1 style={{
+              fontFamily: "'Lexend', sans-serif",
+              fontSize: 'clamp(36px, 4vw, 58px)',
+              fontWeight: 700,
+              lineHeight: 1.05,
+              color: '#fff',
+              margin: 0,
+            }}>
+              Crafting digital<br />
+              <span style={{ color: '#00ff00' }}>experiences</span><br />
+              with precision.
+            </h1>
+          </div>
+
+          {/* Bio */}
+          <p style={{
+            fontSize: '15px',
+            lineHeight: 1.8,
+            color: '#888',
+            borderLeft: '3px solid #00ff00',
+            paddingLeft: '20px',
+            margin: 0,
+          }}>
+            Frontend engineer specializing in React, Flutter, and TailwindCSS. I treat
+            Git not just as version control but as a communication tool — clean commits,
+            structured branches, and collaborative workflows that keep teams aligned and
+            codebases maintainable.
           </p>
-          <div className='flex gap-10 mt-5'>
-            <a target='_blank' href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' id='btn1' >
-              <span>See CV </span>
-             <FaArrowRight color='white'/>
+
+          {/* Skill groups */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+            {skills.map((group) => (
+              <div key={group.category}>
+                <p style={{
+                  fontFamily: 'monospace',
+                  fontSize: '10px',
+                  letterSpacing: '2.5px',
+                  color: '#444',
+                  marginBottom: '12px',
+                }}>
+                  {group.category}
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {group.items.map((s) => (
+                    <SkillChip key={s.label} icon={s.icon} label={s.label} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA row */}
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', paddingTop: '8px' }}>
+            <a
+              href="https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                background: 'transparent',
+                border: '1px solid #333',
+                color: '#fff',
+                fontFamily: 'monospace',
+                fontSize: '13px',
+                letterSpacing: '1.5px',
+                borderRadius: '4px',
+                transition: 'all 400ms',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = '#00ff00'
+                e.currentTarget.style.color = '#00ff00'
+                e.currentTarget.style.boxShadow = '0 0 16px rgba(0,255,0,0.12)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = '#333'
+                e.currentTarget.style.color = '#fff'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
+              VIEW_CV <FaArrowRight size={12} />
             </a>
-            <Link to='/Projects' id='btn2'>
-              Projects            
-              <FaArrowRight color='black'/>
+            <Link
+              to="/Projects"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                background: '#00ff00',
+                border: '1px solid #00ff00',
+                color: '#090C11',
+                fontFamily: 'monospace',
+                fontSize: '13px',
+                fontWeight: 700,
+                letterSpacing: '1.5px',
+                borderRadius: '4px',
+                transition: 'all 400ms',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.color = '#00ff00'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#00ff00'
+                e.currentTarget.style.color = '#090C11'
+              }}
+            >
+              PROJECTS <FaArrowRight size={12} />
             </Link>
           </div>
-        </article>
-      </section>
-    </div>
+        </div>
+      </div>
+
+      {/* Mobile: stack columns */}
+      <style>{`
+        @media (max-width: 768px) {
+          .about-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
   )
 }
 
