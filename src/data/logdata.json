@@ -1,8 +1,15 @@
 [
+    {
+    "date":"2026-05-02",
+    "project":"UoEm Christian Union App",
+    "description":"Began a Christian Union App, that connects the UoEm christian community, allowing them to join Bible Study groups, access the service materials and more.",
+    "tags":["Flutter", "Dart"],
+    "link":"https://github.com/BmKaranja/CU-App.git"
+},
 {
     "date":"2026-05-02",
     "project":"My Portfolio website",
-    "description":"Redesigned Abou Me section to match the vibe of the rest of the website",
+    "description":"Redesigned About Me section to match the vibe of the rest of the website",
     "tags":["React", "TailwindCss", "Typescript"],
     "link":"https://github.com/BmKaranja/Brian-Karanja.git"
 },

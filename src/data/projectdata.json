@@ -1,5 +1,11 @@
 [
   {
+    "title": "UoEm Christian Union App",
+    "description":"Began a Christian Union App, that connects the UoEm christian community, allowing them to join Bible Study groups, access the service materials and more.",
+    "link": "https://github.com/BmKaranja/CU-App.git",
+    "category": "mobile"
+  },
+  {
     "title": "Tenga and Thrive",
     "description": "Tenga & Thrive is an e-commerce hub for intentional living, offering curated products across tech, fashion, and home designed with clarity, style, and purpose",
     "link": "https://tenga-and-thrive.onrender.com",

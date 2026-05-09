@@ -3,14 +3,13 @@ import Pcards from './Pcards'
 import PIntro from './PIntro'
 import Footer from './Footer'
 import { NavLink } from 'react-router-dom'
-
-const projectsData = [
-  { title: 'StayPay', description: 'A sleek, high-contrast property management platform designed for the modern rental ecosystem. It bridges the gap between landlords and tenants.', link: 'https://github.com/BmKaranja/StayPay-1.git', category: 'mobile' },
-];
+import projectdata from '../data/projectdata.json'
 
 function Mobile() {
+  const mobileProjects = projectdata.filter(project => project.category === 'mobile');
+
   return (
-    <div className='flex flex-col gap-10 overflow-hidden'>
+    <div className='flex flex-col gap-10 overflow-hidden' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
         <NavLink to='/projects' id='p-nav1'>All Work</NavLink>
@@ -19,7 +18,7 @@ function Mobile() {
       </nav>
       <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {projectsData.map((project) => (
+          {mobileProjects.map((project) => (
             <Pcards key={project.link} {...project} />
           ))}
         </div>
