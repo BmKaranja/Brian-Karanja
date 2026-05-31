@@ -9,7 +9,7 @@ function Mobile() {
   const mobileProjects = projectdata.filter(project => project.category === 'mobile');
 
   return (
-    <div className='flex flex-col gap-10 overflow-hidden' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
         <NavLink to='/projects' id='p-nav1'>All Work</NavLink>

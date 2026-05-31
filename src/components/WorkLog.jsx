@@ -150,9 +150,9 @@ function WorkLog() {
   const timelineEntries = logdata.slice(0, 4)
 
   return (
-    <div className='flex flex-col gap-10 overflow-hidden' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <NavBar />
-      <section><hr style={{ width: '100vw', borderColor: '#222' }} /></section>
+      <section><hr style={{ borderColor: '#222' }} /></section>
 
       {/* Header */}
       <section style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>

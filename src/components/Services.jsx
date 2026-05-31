@@ -2,23 +2,23 @@ import React from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
-import { FaArrowRight, FaCheck, FaCode, FaLinkedin, FaMobileAlt, FaPalette } from 'react-icons/fa'
+import { FaArrowRight, FaCode, FaLinkedin, FaMobileAlt, FaPalette } from 'react-icons/fa'
 
 function Services() {
   return (
-    <div className='flex flex-col gap-10 overflow-hidden'style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <NavBar/>
       <div>
-        <hr style={{width:'100vw'}} className='text-gray-600'></hr>
+        <hr className='text-gray-600'></hr>
         <section className='sec-intro'>
           <article>
-            <p className='font mb-2'id='cap'>CAPABILITIES</p>
+            <p className='font mb-2' id='cap'>WHAT WE BUILD</p>
             <h1 className='text-7xl'>
-              Crafting <span className='color'>digital experience </span>through code and design
+              Digital products<span className='color'> crafted</span> with precision
             </h1>
             <p className='mt-5 pr-20'>
-              I specialize in creating visually appealing and user-friendly
-              websites and applications that deliver exceptional user experiences.
+              Prismlabs specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions. 
+              From concept to launch—clean code, thoughtful design, measurable impact.
             </p>
           </article>
         </section>
@@ -28,11 +28,11 @@ function Services() {
               <FaCode size={30} color='#00ff00'/>
             </div>
             <h2 className='font'>Web Development</h2>
-            <p>Custom web applications built with modern frameworks. Emphasis on speed, SEO, and exceptional user experience across all devices.</p>
+            <p>Production-grade web applications built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.</p>
             <div className='mt-5'>
-              <p><span style={{color:'#00ff00'}}>✓ </span>React & TailwindCss Expert </p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>HTML, CSS & JS Expert</p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>Git Workflows</p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>React & TailwindCSS Expert </p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>Full-Stack Architecture</p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>SEO & Performance Optimized</p>
             </div>
             <Link to='/Projects' className='color font link'>
               View Projects <span  className='pl-1'>
@@ -46,12 +46,12 @@ function Services() {
             </div>
             <h2 className='font'>Mobile Apps</h2>
             <p>
-                Native-feel mobile experiences for iOS and Android. Cross-platform efficiency without compromising performance or design.
+              Cross-platform mobile experiences that feel native. iOS and Android apps built with Flutter for efficiency without compromising design quality.
             </p>
             <div className='mt-5'>
               <p><span style={{color:'#00ff00'}}>✓ </span>Flutter Expert </p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>Smooth Animtions</p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>Offlne Functionality</p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>Smooth Animations</p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>Offline Functionality</p>
             </div>
             <Link to='/Projects' className='color font link'>
               View Projects <span  className='pl-1'>
@@ -64,11 +64,11 @@ function Services() {
               <FaPalette size={30} color='#00ff00'/>
             </div>
             <h2 className='font'>UI/UX Design</h2>
-            <p>User-centric design systems that solve problems. Combines aesthetic beauty with functional clarity to delight users.</p>
+            <p>User-centric design systems that balance beauty with function. Every pixel serves a purpose—creating interfaces that users love.</p>
             <div className='mt-5'>
               <p><span style={{color:'#00ff00'}}>✓ </span>Design Systems </p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>Prototyping </p>
-              <p><span style={{color:'#00ff00'}}>✓ </span>Branding Identity</p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>Prototyping & Testing </p>
+              <p><span style={{color:'#00ff00'}}>✓ </span>Brand Identity</p>
             </div>
             <Link to='/Projects' className='color font link'>
               View Projects <span className='pl-1'>
@@ -79,10 +79,10 @@ function Services() {
         </section>
         <section className='cta'>
           <h2>Have a project in mind?</h2>
-          <p>I am currently available freelance work and full-time opprortunities.Let's build something amazing together</p>
+          <p>I'm available for freelance work and select full-time opportunities. Let's build something extraordinary together.</p>
           <span>
-            <a href='https://www.linkedin.com/in/b-karanja'className='link p-10' id='btn4' target='_blank' rel='noopener noreferrer'>Let's Chat<FaLinkedin></FaLinkedin></a>
-            <a href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' target='_blank' id='btn3' ><span>See CV </span><FaArrowRight color='white'/></a>
+            <a href='https://www.linkedin.com/in/b-karanja' className='link p-10' id='btn4' target='_blank' rel='noopener noreferrer'>Let's Talk<FaLinkedin></FaLinkedin></a>
+            <a href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' target='_blank' id='btn3' ><span>Resume </span><FaArrowRight color='white'/></a>
           </span> 
         </section>
       </div>

@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react'
 import {
   FaCss3, FaDatabase, FaFigma, FaGit,
-  FaHtml5, FaJs, FaReact, FaArrowRight
+  FaHtml5, FaJs, FaReact, FaArrowRight, FaGoogle, FaRobot
 } from 'react-icons/fa'
 import { FaFlutter } from 'react-icons/fa6'
+import { SiFirebase } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 
 const skills = [
@@ -23,14 +24,17 @@ const skills = [
       { icon: <FaFigma />, label: 'Figma' },
       { icon: <FaGit />, label: 'Git' },
       { icon: <FaDatabase />, label: 'SQL' },
+      { icon: <FaGoogle />, label: 'Google Stitch' },
+      { icon: <FaRobot />, label: 'Ai Studio' },
+      { icon: <SiFirebase />, label: 'Firebase' },
     ],
   },
 ]
 
 const stats = [
-  { value: '5+', label: 'Projects Shipped' },
+  { value: '5+', label: 'Projects Delivered' },
   { value: '2+', label: 'Years Building' },
-  { value: '8', label:'Technologies Mastered' },
+  { value: '10+', label:'Tech Stacks Mastered' },
 ]
 
 function SkillChip({ icon, label }) {
@@ -96,10 +100,10 @@ function AboutMe() {
           borderRadius: '20px',
           padding: '4px 14px',
         }}>
-          ABOUT.ME
+          ABOUT PRISMLABS
         </span>
         <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, #1e2228, transparent)' }} />
-        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>v2.0</span>
+        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>2025–present</span>
       </div>
 
       {/* Main two-column layout */}
@@ -110,9 +114,9 @@ function AboutMe() {
         alignItems: 'start',
       }}>
 
-        {/* LEFT — profile photo + stats */}
+        {/* LEFT — Prism visual + stats */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          {/* Photo frame */}
+          {/* Prism brand mark */}
           <div style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: 0,
@@ -125,19 +129,43 @@ function AboutMe() {
               style={{
                 height: '50vh',
                 minHeight: '320px',
-                background: `url('/me.jpg') center/cover no-repeat`,
+                background: 'linear-gradient(135deg, rgba(0,255,0,0.05) 0%, rgba(0,255,0,0.02) 50%, transparent 100%)',
                 borderRadius: '4px',
                 border: '1px solid #1e2228',
                 position: 'relative',
                 overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
-              {/* green scan-line overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(to bottom, transparent 80%, rgba(0,255,0,0.05) 100%)',
-                pointerEvents: 'none',
-              }} />
+              {/* Prism SVG */}
+              <svg 
+                viewBox="0 0 200 200" 
+                style={{ 
+                  width: '180px', 
+                  height: '180px',
+                  filter: 'drop-shadow(0 0 30px rgba(0,255,0,0.2))'
+                }}
+              >
+                {/* Main prism */}
+                <defs>
+                  <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#00ff00', stopOpacity: 0.8}} />
+                    <stop offset="100%" style={{stopColor: '#00ff00', stopOpacity: 0.2}} />
+                  </linearGradient>
+                </defs>
+                <polygon 
+                  points="100,30 170,140 30,140" 
+                  fill="url(#prismGrad)" 
+                  stroke="#00ff00" 
+                  strokeWidth="2"
+                />
+                {/* Light rays */}
+                <line x1="100" y1="30" x2="100" y2="140" stroke="#00ff00" strokeWidth="1" opacity="0.4" strokeDasharray="5,5"/>
+                {/* Center point */}
+                <circle cx="100" cy="85" r="6" fill="#00ff00"/>
+              </svg>
               {/* bottom badge */}
               <div style={{
                 position: 'absolute', bottom: '16px', left: '16px',
@@ -150,7 +178,7 @@ function AboutMe() {
                 color: '#00ff00',
                 letterSpacing: '1.5px',
               }}>
-                BRIAN K. MAINA — KE
+                PRISMLABS — KE
               </div>
             </div>
           </div>
@@ -204,9 +232,9 @@ function AboutMe() {
               color: '#fff',
               margin: 0,
             }}>
-              Crafting digital<br />
-              <span style={{ color: '#00ff00' }}>experiences</span><br />
-              with precision.
+              Refract ideas<br />
+              <span style={{ color: '#00ff00' }}>into code</span><br />
+              and design.
             </h1>
           </div>
 
@@ -219,10 +247,7 @@ function AboutMe() {
             paddingLeft: '20px',
             margin: 0,
           }}>
-            Frontend engineer specializing in React, Flutter, and TailwindCSS. I treat
-            Git not just as version control but as a communication tool — clean commits,
-            structured branches, and collaborative workflows that keep teams aligned and
-            codebases maintainable.
+            A one-person creative lab specializing in React, Flutter, and full-stack development. I focus on building products with clean architecture, thoughtful UX, and maintainable code. Every project is crafted with precision and shipped with confidence.
           </p>
 
           {/* Skill groups */}
@@ -279,7 +304,7 @@ function AboutMe() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              VIEW_CV <FaArrowRight size={12} />
+              RESUME <FaArrowRight size={12} />
             </a>
             <Link
               to="/Projects"
@@ -308,7 +333,7 @@ function AboutMe() {
                 e.currentTarget.style.color = '#090C11'
               }}
             >
-              PROJECTS <FaArrowRight size={12} />
+              WORK <FaArrowRight size={12} />
             </Link>
           </div>
         </div>
