@@ -5,7 +5,7 @@ import Top from './Top'
 
 function Home() {
   return (
-    <div style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <div style={{minHeight: '100vh' }}>
       <Top/>
       <main id='aboutme'>
         <AboutMe/>

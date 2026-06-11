@@ -22,7 +22,7 @@ function Top() {
               target='_blank'
               rel='noopener noreferrer'
               id='btn1' 
-              style={{ background: 'var(--background-color)' }}
+              style={{ background: 'var(--neutralDark)' }}
             >
               <span>Resume</span>
               <FaArrowRight color='white'/>

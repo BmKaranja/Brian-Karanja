@@ -14,21 +14,6 @@
     "link":"https://github.com/BmKaranja/Wincer_Project.git"
 },
 
-    {
-    "date":"2026-05-13",
-    "project":"UoEm Christian Union App",
-    "description":"implemented providers on my appbar that makes updating data more efficient than prop drilling",
-    "tags":["Flutter", "Dart"],
-    "link":"https://github.com/BmKaranja/CU-App.git"
-},
-
-    {
-    "date":"2026-05-02",
-    "project":"UoEm Christian Union App",
-    "description":"Began a Christian Union App, that connects the UoEm christian community, allowing them to join Bible Study groups, access the service materials and more.",
-    "tags":["Flutter", "Dart"],
-    "link":"https://github.com/BmKaranja/CU-App.git"
-},
 {
     "date":"2026-05-02",
     "project":"My Portfolio website",

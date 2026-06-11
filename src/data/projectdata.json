@@ -3,36 +3,42 @@
     "title": "UoEm Christian Union App",
     "description":"Began a Christian Union App, that connects the UoEm christian community, allowing them to join Bible Study groups, access the service materials and more.",
     "link": "https://github.com/BmKaranja/CU-App.git",
-    "category": "mobile"
+    "category": "mobile",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=300&fit=crop"
   },
   {
     "title": "Tenga and Thrive",
     "description": "Tenga & Thrive is an e-commerce hub for intentional living, offering curated products across tech, fashion, and home designed with clarity, style, and purpose",
     "link": "https://tenga-and-thrive.onrender.com",
-    "category": "website"
+    "category": "website",
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
   },
   {
     "title": "My Portfolio",
     "description": "This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
     "link": "https://brian-karanja.onrender.com",
-    "category": "website"
+    "category": "website",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
   },
   {
     "title": "Oakwood Web",
     "description": "Oakwood Academy is a fictional academic institution created as a project concept, featuring a welcoming digital platform for its 2025 academic year",
     "link": "https://oakwood-web.onrender.com",
-    "category": "website"
+    "category": "website",
+    "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=300&fit=crop"
   },
   {
     "title": "StayPay",
     "description": "A sleek, high-contrast property management platform designed for the modern rental ecosystem. It bridges the gap between landlords and tenants.",
     "link": "https://github.com/BmKaranja/StayPay-1.git",
-    "category": "mobile"
+    "category": "mobile",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=300&fit=crop"
   },
   {
     "title": "Restaurant",
     "description": "A clean, responsive site showcasing a restaurant's menu, ambiance, and contact details. Built with HTML and JavaScript, it highlights user-friendly navigation and a modern design for an engaging dining experience.",
     "link": "https://github.com/BmKaranja/Restaurant.git",
-    "category": "website"
+    "category": "website",
+    "image": "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=300&fit=crop"
   }
 ]
