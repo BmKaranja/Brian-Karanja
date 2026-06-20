@@ -5,15 +5,13 @@ function NavBar() {
   return (
     <div id='grid1'>
       <div className='name'>
-        <Link to='/' style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Link to='/' style={{ display: 'flex', alignItems: 'center', gap: '12px', fontFamily: 'Arial, sans-serif' }}>
           <span style={{
-            fontFamily: 'monospace',
-            fontSize: '14px',
+            fontSize: '28px',
+            fontWeight: 900,
             color: '#00ff00',
-            fontWeight: 700,
-            letterSpacing: '2px'
-          }}>◇</span>
-          BYMA
+            letterSpacing: '-1px'
+          }}>BYMA</span>
         </Link>
       </div>
       {/* Internal navigation */}

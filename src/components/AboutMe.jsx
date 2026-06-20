@@ -114,9 +114,9 @@ function AboutMe() {
         alignItems: 'start',
       }}>
 
-        {/* LEFT — Prism visual + stats */}
+        {/* LEFT — Developer Workspace Image + stats */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          {/* Prism brand mark */}
+          {/* Coding Workspace Image */}
           <div style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: 0,
@@ -139,33 +139,27 @@ function AboutMe() {
                 justifyContent: 'center',
               }}
             >
-              {/* Prism SVG */}
-              <svg
-                viewBox="0 0 200 200"
+              {/* Developer workspace image */}
+              <img
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=600&fit=crop"
+                alt="Developer workspace"
                 style={{
-                  width: '180px',
-                  height: '180px',
-                  filter: 'drop-shadow(0 0 30px rgba(0,255,0,0.2))'
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  filter: 'brightness(0.85) contrast(1.1)',
                 }}
-              >
-                {/* Main prism */}
-                <defs>
-                  <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: '#00ff00', stopOpacity: 0.8 }} />
-                    <stop offset="100%" style={{ stopColor: '#00ff00', stopOpacity: 0.2 }} />
-                  </linearGradient>
-                </defs>
-                <polygon
-                  points="100,30 170,140 30,140"
-                  fill="url(#prismGrad)"
-                  stroke="#00ff00"
-                  strokeWidth="2"
-                />
-                {/* Light rays */}
-                <line x1="100" y1="30" x2="100" y2="140" stroke="#00ff00" strokeWidth="1" opacity="0.4" strokeDasharray="5,5" />
-                {/* Center point */}
-                <circle cx="100" cy="85" r="6" fill="#00ff00" />
-              </svg>
+              />
+
+              {/* Overlay gradient for cohesion */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(135deg, rgba(0,255,0,0.08) 0%, rgba(0,255,0,0.02) 100%)',
+                borderRadius: '4px',
+              }} />
+
               {/* bottom badge */}
               <div style={{
                 position: 'absolute', bottom: '16px', left: '16px',
