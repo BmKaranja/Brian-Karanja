@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow AI/LLM web crawlers for AEO/GEO indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://brian-karanja.onrender.com/sitemap.xml

@@ -11,7 +11,7 @@ function Top() {
       </div>
       <section id='sec-1'>
         <div className='w-2xl h-96 intro'>      
-          <h1>Prismlabs</h1>
+          <h1>Byma</h1>
           <p style={{fontWeight: 500, color: '#888', marginTop: '12px'}}>
             Creative full-stack development. Pixel-perfect interfaces, robust systems, and digital experiences that solve real problems.
           </p>

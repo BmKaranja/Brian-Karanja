@@ -1,24 +1,50 @@
 import React from 'react'
-import Footer from './Footer'
 import Pcards from './Pcards'
 import PIntro from './PIntro'
+import Footer from './Footer'
 import { NavLink } from 'react-router-dom'
 import projectdata from '../data/projectdata.json'
+import SEO from './SEO'
+
+const websites = projectdata.filter((project)=>project.category==='website')
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Byma Web Development Projects",
+  "description": "Featured production-grade web applications built with React, TailwindCSS, and JavaScript.",
+  "numberOfItems": websites.length,
+  "itemListElement": websites.map((p, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "item": {
+      "@type": "CreativeWork",
+      "name": p.title,
+      "description": p.description,
+      "url": p.link,
+      "image": p.image
+    }
+  }))
+};
 
 function Websites() {
-  const websiteProjects = projectdata.filter(project => project.category === 'website');
-
   return (
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+      <SEO 
+        title="Websites & Web Apps"
+        description="Explore the web development projects built by Brian Karanja / Byma. Production-grade web applications optimized for speed, responsiveness, and clean UX."
+        keywords="Web Development, React websites, E-commerce hubs, Byma Web Apps, Nairobi Developer"
+        schemaJson={websiteSchema}
+      />
       <PIntro/>
       <nav className='flex flex-row gap-5 ml-10 mt-10'>
-        <NavLink to='/projects' id='p-nav1'>All Work</NavLink>
-        <NavLink to='/projects/websites' className='p-nav'>Websites</NavLink>
+        <NavLink to='/Projects' className='p-nav'>All Work</NavLink>
+        <NavLink to='/projects/websites' id='p-nav1' style={{color:'#00ff00'}}>Websites</NavLink>
         <NavLink to='/projects/mobile' className='p-nav'>Mobile Apps</NavLink>
       </nav>
       <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {websiteProjects.map((project) => (
+          {websites.map((project) => (
             <Pcards key={project.link} {...project} />
           ))}
         </div>

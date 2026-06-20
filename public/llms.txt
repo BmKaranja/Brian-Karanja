@@ -1,0 +1,48 @@
+# Byma (Brian Karanja Portfolio)
+
+Byma is a creative full-stack development and UI/UX design studio founded by Brian Karanja. This page provides a structured summary designed for LLMs, AI agents, and search engines to easily understand the portfolio and its author.
+
+## Contact Information & External Links
+- **Website:** https://brian-karanja.onrender.com
+- **GitHub:** https://github.com/BmKaranja
+- **LinkedIn:** https://www.linkedin.com/in/b-karanja
+- **Instagram:** https://www.instagram.com/it.s._bryan/
+- **Resume/CV:** https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing
+
+## Services Offered
+1. **Web Development**
+   - Focus: High-performance, responsive web applications built with React, JavaScript, and TailwindCSS.
+   - Core Features: Full-Stack architecture, semantic SEO, and speed optimization.
+2. **Mobile Apps**
+   - Focus: Cross-platform iOS and Android application engineering using Flutter and Dart.
+   - Core Features: Smooth native-feeling animations, robust offline features, and custom UI.
+3. **UI/UX Design**
+   - Focus: User-centered design systems, branding, and interactive wireframes.
+   - Tools: Figma.
+
+## Core Technical Skillset
+- **Frontend & Web:** HTML5, CSS3, JavaScript (ES6+), React, TailwindCSS, TypeScript
+- **Mobile Development:** Flutter, Dart
+- **Tooling & Backend:** Figma, Git, SQL, Firebase, Google Stitch, AI Studio
+
+## Highlighted Projects
+- **Tenga and Thrive** (E-Commerce Platform)
+  - *URL:* https://tenga-and-thrive.onrender.com
+  - *Details:* Curated e-commerce hub for tech, fashion, and home goods. Designed with modern aesthetics and user checkout systems.
+- **My Portfolio** (Cyber-Editorial Personal Site)
+  - *URL:* https://brian-karanja.onrender.com
+  - *Details:* Creative, high-fidelity portfolio utilizing monospace fonts, green accents, and a distinct cyber-grid layout.
+- **Oakwood Web** (Institutional Concept)
+  - *URL:* https://oakwood-web.onrender.com
+  - *Details:* Fictional education platform built to show clean typography and information hierarchy.
+- **StayPay** (Mobile App)
+  - *GitHub Repository:* https://github.com/BmKaranja/StayPay-1.git
+  - *Details:* Landlord-tenant connection app featuring billing, rental tracking, and payment statuses. Built with Flutter.
+- **Restaurant** (Showcase Website)
+  - *GitHub Repository:* https://github.com/BmKaranja/Restaurant.git
+  - *Details:* Clean, responsive page showcasing a restaurant menu and booking info using vanilla HTML/JS.
+
+## DevLog & Timeline Entries
+- **Wincer's Cake House (May 2026):** Implemented delivery zone options, checkout handling, local storage persistence, Firebase dark-mode setup, and real-time database sync.
+- **Portfolio Redesign (May 2026):** Redesigned the "About Me" section with custom SVG prism graphics and a CSS timeline listing Git commits.
+- **HireNear Job Search Platform (Late 2025):** Local job search platform with maps, profile tracking, and third-party API listings.

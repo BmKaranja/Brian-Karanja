@@ -34,7 +34,7 @@ const skills = [
 const stats = [
   { value: '5+', label: 'Projects Delivered' },
   { value: '2+', label: 'Years Building' },
-  { value: '10+', label:'Tech Stacks Mastered' },
+  { value: '10+', label: 'Tech Stacks Mastered' },
 ]
 
 function SkillChip({ icon, label }) {
@@ -100,7 +100,7 @@ function AboutMe() {
           borderRadius: '20px',
           padding: '4px 14px',
         }}>
-          ABOUT PRISMLABS
+          ABOUT BYMA
         </span>
         <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, #1e2228, transparent)' }} />
         <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>2025–present</span>
@@ -140,10 +140,10 @@ function AboutMe() {
               }}
             >
               {/* Prism SVG */}
-              <svg 
-                viewBox="0 0 200 200" 
-                style={{ 
-                  width: '180px', 
+              <svg
+                viewBox="0 0 200 200"
+                style={{
+                  width: '180px',
                   height: '180px',
                   filter: 'drop-shadow(0 0 30px rgba(0,255,0,0.2))'
                 }}
@@ -151,20 +151,20 @@ function AboutMe() {
                 {/* Main prism */}
                 <defs>
                   <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor: '#00ff00', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: '#00ff00', stopOpacity: 0.2}} />
+                    <stop offset="0%" style={{ stopColor: '#00ff00', stopOpacity: 0.8 }} />
+                    <stop offset="100%" style={{ stopColor: '#00ff00', stopOpacity: 0.2 }} />
                   </linearGradient>
                 </defs>
-                <polygon 
-                  points="100,30 170,140 30,140" 
-                  fill="url(#prismGrad)" 
-                  stroke="#00ff00" 
+                <polygon
+                  points="100,30 170,140 30,140"
+                  fill="url(#prismGrad)"
+                  stroke="#00ff00"
                   strokeWidth="2"
                 />
                 {/* Light rays */}
-                <line x1="100" y1="30" x2="100" y2="140" stroke="#00ff00" strokeWidth="1" opacity="0.4" strokeDasharray="5,5"/>
+                <line x1="100" y1="30" x2="100" y2="140" stroke="#00ff00" strokeWidth="1" opacity="0.4" strokeDasharray="5,5" />
                 {/* Center point */}
-                <circle cx="100" cy="85" r="6" fill="#00ff00"/>
+                <circle cx="100" cy="85" r="6" fill="#00ff00" />
               </svg>
               {/* bottom badge */}
               <div style={{
@@ -178,7 +178,7 @@ function AboutMe() {
                 color: '#00ff00',
                 letterSpacing: '1.5px',
               }}>
-                PRISMLABS — KE
+                BYMA — KE
               </div>
             </div>
           </div>

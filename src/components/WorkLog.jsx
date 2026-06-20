@@ -2,6 +2,29 @@ import React, { useState } from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 import logdata from '../data/logdata.json'
+import SEO from './SEO'
+
+const workLogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Byma DevLog",
+  "description": "A digital garden recording my technical journey, architectural decisions, and daily learnings in frontend and mobile engineering.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Brian Karanja"
+  },
+  "blogPost": logdata.map((log) => ({
+    "@type": "BlogPosting",
+    "headline": `Update on ${log.project}`,
+    "description": log.description,
+    "datePublished": log.date,
+    "author": {
+      "@type": "Person",
+      "name": "Brian Karanja"
+    },
+    "url": log.link
+  }))
+};
 
 // ─── Tag Badge ────────────────────────────────────────────────────────────────
 function Tag({ label }) {
@@ -151,6 +174,12 @@ function WorkLog() {
 
   return (
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+      <SEO 
+        title="Development WorkLog & Timeline"
+        description="Follow Brian Karanja's coding updates, technical logs, architectural design changes, and commit history for projects like StayPay and Wincer's Cake House."
+        keywords="DevLog, Brian Karanja timeline, software engineering commits, web development logs, Flutter engineering journal"
+        schemaJson={workLogSchema}
+      />
       <NavBar />
       <section><hr style={{ borderColor: '#222' }} /></section>
 
