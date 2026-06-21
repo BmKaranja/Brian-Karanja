@@ -247,7 +247,7 @@ function Services() {
                 Perfect for small shops, bakeries, or service businesses looking to build instant trust online.
               </p>
               <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 5,000</span>
+                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 10,000</span>
                 <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
               </div>
               <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
@@ -258,11 +258,11 @@ function Services() {
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Fully optimized for mobile & desktop</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Direct WhatsApp/Email click-to-chat</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Basic Google Maps & contact details</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 2–3 Days</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 1 Week</li>
               </ul>
               <p style={{ color: '#666', fontSize: '12px', fontStyle: 'italic', marginBottom: '24px' }}>Note: Client covers domain registration (approx. KSh 1,000)</p>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 5,000 Digital Business Card package for my business.")}`}
+                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
@@ -283,7 +283,7 @@ function Services() {
                 Perfect for businesses that need space to showcase a portfolio of work, standard packages, or distinct services.
               </p>
               <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 15,000</span>
+                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 20,000</span>
                 <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
               </div>
               <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
@@ -295,10 +295,10 @@ function Services() {
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Interactive photo galleries or pricing tables</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Advanced contact & quote request forms</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Basic on-page SEO setup for Google visibility</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 5–7 Days</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 2-3 Weeks</li>
               </ul>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 12,000 Essential Growth package for my business.")}`}
+                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
@@ -316,7 +316,7 @@ function Services() {
                 Perfect for businesses looking to automate bookings, securely collect client data, or run a custom portal.
               </p>
               <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 25,000</span>
+                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 35,000</span>
                 <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
               </div>
               <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
@@ -328,10 +328,10 @@ function Services() {
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom booking request or client sign-up management</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Secure database setup for client interactions</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 14 Days of post-launch technical support</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 1–2 Weeks</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 3-5 Weeks</li>
               </ul>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Smart Business System package for my business.")}`}
+                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
