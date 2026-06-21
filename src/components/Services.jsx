@@ -238,7 +238,7 @@ function Services() {
             </p>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
             {/* Package 1 */}
             <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 1</h3>
@@ -270,6 +270,7 @@ function Services() {
               >
                 START A CHAT
               </a>
+
             </article>
 
             {/* Package 2 (Most Popular) */}
@@ -291,7 +292,7 @@ function Services() {
               </p>
               <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flexGrow: 1 }}>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Up to 4 Dedicated Pages (Home, About, Gallery, Contact)</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 5k tier</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 10k tier</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Interactive photo galleries or pricing tables</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Advanced contact & quote request forms</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Basic on-page SEO setup for Google visibility</li>
@@ -306,6 +307,7 @@ function Services() {
               >
                 START A CHAT
               </a>
+
             </article>
 
             {/* Package 3 */}
@@ -324,7 +326,7 @@ function Services() {
               </p>
               <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flexGrow: 1 }}>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 5+ Pages with Secure Cloud Database Integration</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 12k tier</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 20k tier</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom booking request or client sign-up management</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Secure database setup for client interactions</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 14 Days of post-launch technical support</li>
@@ -341,6 +343,48 @@ function Services() {
               </a>
             </article>
           </div>
+          {/* Package 4 - Corporate & Custom Systems (Premium) */}
+          <article style={{ background: '#111417', border: '2px solid #00ff00', borderRadius: '8px', padding: '32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start', position: 'relative', marginTop: '5rem' }}>
+            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#00ff00', color: '#000', padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 700, letterSpacing: '1px', fontFamily: 'monospace', zIndex: 1 }}>
+              ENTERPRISE
+            </div>
+
+            {/* Left column */}
+            <div>
+              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 4</h3>
+              <h2 style={{ fontSize: '28px', fontWeight: 600, color: '#fff', marginBottom: '16px' }}>Corporate & Custom Systems</h2>
+              <p style={{ color: '#aaa', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6' }}>
+                Bespoke enterprise solution engineered for high-performance infrastructure, advanced security, and seamless integrations tailored to your industry prestige.
+              </p>
+              <div>
+                <span style={{ fontSize: '28px', fontWeight: 700, color: '#fff' }}>Custom Quote</span>
+                <span style={{ color: '#666', fontSize: '13px', display: 'block', marginTop: '4px' }}>Via Detailed Proposal</span>
+              </div>
+            </div>
+
+            {/* Right column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div>
+                <p style={{ color: '#888', fontSize: '13px', marginBottom: '12px', letterSpacing: '1px', fontFamily: 'monospace' }}>INCLUDES:</p>
+                <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom industry architecture</li>
+                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Supabase database engineering</li>
+                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> API integrations (M-Pesa, CRM)</li>
+                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Advanced semantic SEO</li>
+                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Formal SLA & priority support</li>
+                </ul>
+              </div>
+              <a
+                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in discussing the Corporate & Custom Systems package for my professional firm/established brand.")}`}
+                target="_blank" rel="noopener noreferrer"
+                style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', marginTop: 'auto' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
+              >
+                REQUEST PROPOSAL
+              </a>
+            </div>
+          </article>
 
           {/* Section Footer (The Trust Builder) */}
           <div style={{ marginTop: '60px', background: '#090C11', border: '1px solid #1e2228', borderRadius: '8px', padding: '40px' }}>
