@@ -243,7 +243,6 @@ function AboutMe() {
           }}>
             A one-person creative lab specializing in React, Flutter, and full-stack development. I focus on building products with clean architecture, thoughtful UX, and maintainable code. Every project is crafted with precision and shipped with confidence.
           </p>
-
           {/* Skill groups */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
             {skills.map((group) => (

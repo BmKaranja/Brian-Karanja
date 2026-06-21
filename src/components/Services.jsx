@@ -364,6 +364,64 @@ function Services() {
           </div>
         </section>
 
+        {/* Maintenance Section */}
+        <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <p className='font mb-2' id='cap'>ONGOING SUPPORT</p>
+            <h2 style={{
+              fontFamily: "'Lexend', sans-serif",
+              fontSize: 'clamp(28px, 4vw, 48px)',
+              fontWeight: 700,
+              color: '#fff',
+              marginBottom: '16px'
+            }}>
+              🛠️ Ongoing Website Care & Peace-of-Mind
+            </h2>
+            <p style={{ color: '#888', maxWidth: '700px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
+              Your website is an investment. We keep it fast, secure, and completely up to date so you can focus on running your business.
+            </p>
+          </div>
+
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            {/* Basic Care Plan */}
+            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>MAINTENANCE 1</h3>
+              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The Basic Care Plan</h2>
+              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '45px' }}>
+                Small local landing pages (The 5k sites)
+              </p>
+              <div style={{ marginBottom: '24px' }}>
+                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 2,500</span>
+                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>/ month</span>
+              </div>
+              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }}>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Monthly security checks & database backups</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Small content updates (phone number, price, announcements)</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Hosting monitoring (keeping your site live)</li>
+              </ul>
+            </article>
+
+            {/* Growth Support Plan */}
+            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>MAINTENANCE 2</h3>
+              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The Growth Support Plan</h2>
+              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '45px' }}>
+                Active businesses with database systems (Supabase users)
+              </p>
+              <div style={{ marginBottom: '24px' }}>
+                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 5,000</span>
+                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>/ month</span>
+              </div>
+              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }}>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything in Basic Care</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Up to 2 hours of dedicated dev time per month</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Database optimization & account management checks</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Priority support (24-hour response time)</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
         {/* FAQ Accordion Section for AEO / GEO optimizations */}
         <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
