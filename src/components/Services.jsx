@@ -171,25 +171,29 @@ function Services() {
             </p>
           </article>
         </section>
-        <section className='grid grid-cols-1 md:grid-cols-3 gap-10 mt-20 px-10' >
-          <article className='mycards'>
+        <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 px-5 sm:px-10' >
+          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaCode size={30} color='#00ff00' />
             </div>
             <h2 className='font'>Web Development</h2>
-            <p>Production-grade web applications built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.</p>
+            <p>Production-grade web applicatio  ns built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.</p>
             <div className='mt-5'>
               <p><span style={{ color: '#00ff00' }}>✓ </span>React & TailwindCSS Expert </p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>Full-Stack Architecture</p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>SEO & Performance Optimized</p>
             </div>
-            <Link to='/Projects' className='color font link'>
+            <Link
+              to='/Projects'
+              className='color font link'
+              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
+            >
               View Projects <span className='pl-1'>
                 <FaArrowRight />
               </span>
             </Link>
           </article>
-          <article className='mycards'>
+          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaMobileAlt size={30} color='#00ff00' />
             </div>
@@ -202,13 +206,17 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Smooth Animations</p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>Offline Functionality</p>
             </div>
-            <Link to='/Projects' className='color font link'>
+            <Link
+              to='/Projects'
+              className='color font link'
+              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
+            >
               View Projects <span className='pl-1'>
                 <FaArrowRight />
               </span>
             </Link>
           </article>
-          <article className='mycards'>
+          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaPalette size={30} color='#00ff00' />
             </div>
@@ -219,7 +227,11 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Prototyping & Testing </p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>Brand Identity</p>
             </div>
-            <Link to='/Projects' className='color font link'>
+            <Link
+              to='/Projects'
+              className='color font link'
+              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
+            >
               View Projects <span className='pl-1'>
                 <FaArrowRight />
               </span>
@@ -245,7 +257,7 @@ function Services() {
             </p>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8'>
             {/* Package 1 */}
             <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 1</h3>
