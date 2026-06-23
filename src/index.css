@@ -36,25 +36,39 @@ body {
 
 #grid1 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-left: 8%;
+  grid-template-columns: 1fr;  /* Mobile: 1 column (stacked) */
+  padding-left: 5vw;
   position: relative;
   top: 5vh;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  #grid1 {
+    grid-template-columns: repeat(2, 1fr);  /* Tablet+: 2 columns */
+    padding-left: 8%;
+  }
 }
 
 .grid-items1 {
   display: flex;
   flex-direction: row;
-  gap: 1;
+  gap: 8px;  /* Fixed: was "gap: 1" (invalid) */
+  flex-wrap: wrap;  /* Allow wrapping on smaller screens */
 }
 
 .nav-items {
   color: white;
   transition: all 600ms;
-  padding: 0 15px;
+  padding: 0 8px;  /* Reduced from 15px for mobile */
+  font-size: clamp(12px, 2vw, 14px);  /* Responsive text */
 }
 
-.vline {
+@media (min-width: 768px) {
+  .nav-items {
+    padding: 0 15px;
+  }
+}.vline {
   border-right: 1px solid grey;
 }
 
@@ -217,11 +231,16 @@ h4 {
 }
 
 .sec-intro {
-  width: 50%;
+  width: 100%;       /* Mobile: full width */
   margin-left: 5vw;
   margin-top: 10vh;
 }
 
+@media (min-width: 768px) {
+  .sec-intro {
+    width: 50%;      /* Tablet+ : 50% */
+  }
+}
 .sec-intro p {
   color: var(--tertiary);
 }
@@ -258,7 +277,6 @@ h4 {
 .mycards {
   background-color: var(--component-bg);
   padding: 5vh 2vw;
-  width: 30vw;
   border-radius: 20px;
 }
 
@@ -363,27 +381,30 @@ h4 {
 .p-nav {
   background-color: var(--neutralDark);
   color: var(--text);
-  padding: 0.5vh 1vw;
-  font-size: small;
+  padding: 8px 14px;
+  font-size: clamp(12px, 2vw, 14px);
   border-radius: 10px;
+  transition: all 300ms;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.p-nav.active {
-  color: var(--primary);
-}
-
-#p-nav.active {
-  color: var(--primary);
-}
-
-#p-nav {
+.p-nav-active {
   background-color: var(--neutralDark);
   color: var(--primary);
-  padding: 0.5vh 1vw;
-  font-size: small;
+  padding: 8px 14px;
+  font-size: clamp(12px, 2vw, 14px);
   border-radius: 10px;
+  border: 1px solid var(--primary);
+  text-decoration: none;
+  display: inline-block;
 }
 
+/* Remove all these: */
+/* #p-nav { ... } */
+/* #p-nav1 { ... } */
+/* Remove this entirely: */
+/* #p-nav1 { ... } */
 #p-nav1 {
   background-color: var(--neutralDark);
   color: var(--text);
@@ -407,27 +428,39 @@ a {
 }
 
 .project-divs {
-  height: 60vh;
-  width: 30vw;
+  /* Remove width: 30vw; */
+  height: auto;  /* ← Let content dictate height */
   background-color: var(--component-bg);
   border-radius: 10px;
   transition: all 600ms;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-height: 400px;  /* Mobile min-height */
 }
 
-.project-imgs {
-  height: 30vh;
-  width: 100%;
+@media (min-width: 768px) {
+  .project-divs {
+    min-height: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-divs {
+    min-height: 500px;
+  }
 }
 
 .project-image {
-  height: 30vh;
+  height: 30vh;  /* Mobile image height */
   border-radius: 10px 10px 0 0;
-  /* Removed background-image here because it is already handled by the <img> tag in Pcards.jsx */
 }
 
+@media (min-width: 768px) {
+  .project-image {
+    height: 40vh;
+  }
+}
 .Log_card {
   background-color: var(--component-bg);
   padding: 5vh 2vw;

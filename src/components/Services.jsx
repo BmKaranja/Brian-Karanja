@@ -165,14 +165,14 @@ function Services() {
             <h1 className='text-7xl'>
               Digital products<span className='color'> crafted</span> with precision
             </h1>
-            <p className='mt-5 pr-20'>
+            <p className='mt-5 pr-4 md:pr-10 lg:pr-20'>
               Byma specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions.
               From concept to launch—clean code, thoughtful design, measurable impact.
-            </p>
-          </article>
+            </p>          
+            </article>
         </section>
         <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 px-5 sm:px-10' >
-          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
+          <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaCode size={30} color='#00ff00' />
             </div>
@@ -193,7 +193,7 @@ function Services() {
               </span>
             </Link>
           </article>
-          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
+          <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaMobileAlt size={30} color='#00ff00' />
             </div>
@@ -216,7 +216,7 @@ function Services() {
               </span>
             </Link>
           </article>
-          <article className='mycards md:w-1/2 lg:w-1/3 w-full' style={{ minWidth: 0 }}>
+          <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaPalette size={30} color='#00ff00' />
             </div>
@@ -549,15 +549,6 @@ function Services() {
               />
             ))}
           </div>
-        </section>
-
-        <section className='cta'>
-          <h2>Have a project in mind?</h2>
-          <p>I'm available for freelance work and select full-time opportunities. Let's build something extraordinary together.</p>
-          <span style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href='https://www.linkedin.com/in/b-karanja' className='link p-10' id='btn4' target='_blank' rel='noopener noreferrer'>Let's Talk<FaLinkedin></FaLinkedin></a>
-            <a href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' target='_blank' id='btn3' ><span>Resume </span><FaArrowRight color='white' /></a>
-          </span>
         </section>
       </div>
       <footer>

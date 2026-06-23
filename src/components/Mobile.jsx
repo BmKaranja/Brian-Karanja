@@ -37,12 +37,30 @@ function Mobile() {
         schemaJson={mobileSchema}
       />
       <PIntro/>
-      <nav className='flex flex-row gap-5 ml-10 mt-10'>
-        <NavLink to='/Projects' className='p-nav'>All Work</NavLink>
-        <NavLink to='/projects/websites' className='p-nav'>Websites</NavLink>
-        <NavLink to='/projects/mobile' id='p-nav1' style={{color:'#00ff00'}}>Mobile Apps</NavLink>
-      </nav>
-      <section className='px-10'>
+        <nav className='flex flex-row gap-2 md:gap-5 ml-2 md:ml-10 mt-10 flex-wrap'>
+          <NavLink 
+            to='/Projects'
+            end
+            className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
+          >
+            All Work
+          </NavLink>
+          <NavLink 
+            to='/projects/websites'
+            end
+            className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
+          >
+            Websites
+          </NavLink>
+          <NavLink 
+            to='/projects/mobile'
+            end
+            className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
+          >
+            Mobile Apps
+          </NavLink>
+        </nav>      
+        <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {mobileApps.map((project) => (
             <Pcards key={project.link} {...project} />

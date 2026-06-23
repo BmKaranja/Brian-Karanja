@@ -1,6 +1,13 @@
 [
     {
-    "date":"2026-05-24",
+    "date":"2026-06-23",
+    "project":"My Portfolio website",
+    "description":"enhanced navigation and layout for improved responsiveness across components",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
+    "date":"2026-06-10",
     "project":"Wincer's cake house",
     "description":"Replaced Firebase SDK with Supabase for backend services, updated environment variables, and refactored data fetching components accordingly.",
     "tags":[ "Supabase","TailwindCss", "Typescript"],
