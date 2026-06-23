@@ -4,7 +4,7 @@ import {
   FaHtml5, FaJs, FaReact, FaArrowRight, FaGoogle, FaRobot
 } from 'react-icons/fa'
 import { FaFlutter } from 'react-icons/fa6'
-import { SiFirebase } from 'react-icons/si'
+import { SiFirebase, SiSupabase } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 
 const skills = [
@@ -26,7 +26,7 @@ const skills = [
       { icon: <FaDatabase />, label: 'SQL' },
       { icon: <FaGoogle />, label: 'Google Stitch' },
       { icon: <FaRobot />, label: 'Ai Studio' },
-      { icon: <SiFirebase />, label: 'Firebase' },
+      { icon: <SiSupabase />, label: 'Supabase' },
     ],
   },
 ]
@@ -90,7 +90,7 @@ function AboutMe() {
       }}
     >
       {/* Section header */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '60px', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '60px' }}>
         <span style={{
           fontFamily: 'monospace',
           fontSize: '11px',
@@ -106,8 +106,8 @@ function AboutMe() {
         <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>2025–present</span>
       </div>
 
-      {/* Main two-column layout with proper class for media query */}
-      <div className="about-grid" style={{
+      {/* Main two-column layout */}
+      <div style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
         gap: '6vw',
@@ -192,7 +192,6 @@ function AboutMe() {
                 background: '#090C11',
                 padding: '20px 12px',
                 textAlign: 'center',
-                minWidth: 0,
               }}>
                 <p style={{
                   fontFamily: 'monospace',
@@ -286,8 +285,6 @@ function AboutMe() {
                 borderRadius: '4px',
                 transition: 'all 400ms',
                 textDecoration: 'none',
-                minHeight: '44px',
-                justifyContent: 'center',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.borderColor = '#00ff00'
@@ -319,8 +316,6 @@ function AboutMe() {
                 borderRadius: '4px',
                 transition: 'all 400ms',
                 textDecoration: 'none',
-                minHeight: '44px',
-                justifyContent: 'center',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = 'transparent'
@@ -337,13 +332,10 @@ function AboutMe() {
         </div>
       </div>
 
-      {/* Mobile breakpoint styles */}
+      {/* Mobile: stack columns */}
       <style>{`
         @media (max-width: 768px) {
-          .about-grid {
-            grid-template-columns: 1fr !important;
-            gap: 3rem !important;
-          }
+          .about-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
