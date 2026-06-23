@@ -121,6 +121,13 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
 function Services() {
   const [openFAQIndex, setOpenFAQIndex] = useState(null);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const faqs = [
     {
@@ -264,7 +271,7 @@ function Services() {
               <a
                 href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
-                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
+                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
               >
@@ -301,7 +308,7 @@ function Services() {
               <a
                 href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
-                style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
+                style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
                 onMouseLeave={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
               >
@@ -335,7 +342,7 @@ function Services() {
               <a
                 href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
-                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms' }}
+                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
               >
@@ -343,8 +350,19 @@ function Services() {
               </a>
             </article>
           </div>
-          {/* Package 4 - Corporate & Custom Systems (Premium) */}
-          <article style={{ background: '#111417', border: '2px solid #00ff00', borderRadius: '8px', padding: '32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start', position: 'relative', marginTop: '5rem' }}>
+          {/* Package 4 - Corporate & Custom Systems (Premium) - NOW RESPONSIVE */}
+          <article style={{
+            background: '#111417',
+            border: '2px solid #00ff00',
+            borderRadius: '8px',
+            padding: '32px',
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+            gap: '48px',
+            alignItems: 'start',
+            position: 'relative',
+            marginTop: '5rem'
+          }}>
             <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#00ff00', color: '#000', padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 700, letterSpacing: '1px', fontFamily: 'monospace', zIndex: 1 }}>
               ENTERPRISE
             </div>
@@ -377,7 +395,22 @@ function Services() {
               <a
                 href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in discussing the Corporate & Custom Systems package for my professional firm/established brand.")}`}
                 target="_blank" rel="noopener noreferrer"
-                style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', marginTop: 'auto' }}
+                style={{
+                  background: '#00ff00',
+                  border: '1px solid #00ff00',
+                  color: '#000',
+                  padding: '12px',
+                  textAlign: 'center',
+                  borderRadius: '4px',
+                  fontFamily: 'monospace',
+                  fontWeight: 600,
+                  transition: 'all 300ms',
+                  marginTop: 'auto',
+                  minHeight: '44px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
                 onMouseLeave={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
               >
@@ -468,7 +501,7 @@ function Services() {
 
         {/* FAQ Accordion Section for AEO / GEO optimizations */}
         <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px', flexWrap: 'wrap' }}>
             <span style={{
               fontFamily: 'monospace',
               fontSize: '11px',
@@ -509,7 +542,7 @@ function Services() {
         <section className='cta'>
           <h2>Have a project in mind?</h2>
           <p>I'm available for freelance work and select full-time opportunities. Let's build something extraordinary together.</p>
-          <span>
+          <span style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a href='https://www.linkedin.com/in/b-karanja' className='link p-10' id='btn4' target='_blank' rel='noopener noreferrer'>Let's Talk<FaLinkedin></FaLinkedin></a>
             <a href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing' target='_blank' id='btn3' ><span>Resume </span><FaArrowRight color='white' /></a>
           </span>

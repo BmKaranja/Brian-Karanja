@@ -42,20 +42,43 @@ body {
   top: 5vh;
 }
 
+/* Mobile: NavBar stacks vertically */
+@media (max-width: 640px) {
+  #grid1 {
+    grid-template-columns: 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 12px;
+  }
+}
+
 .grid-items1 {
   display: flex;
   flex-direction: row;
   gap: 1;
+  flex-wrap: wrap;
+}
+
+/* Mobile: nav items wrap and reduce padding */
+@media (max-width: 640px) {
+  .grid-items1 {
+    gap: 8px;
+  }
+
+  .nav-items {
+    padding: 0 8px !important;
+    font-size: 13px;
+  }
+}
+
+.vline {
+  border-right: 1px solid grey;
 }
 
 .nav-items {
   color: white;
   transition: all 600ms;
   padding: 0 15px;
-}
-
-.vline {
-  border-right: 1px solid grey;
 }
 
 .nav-items.active {
@@ -81,6 +104,17 @@ body {
   flex-direction: row;
 }
 
+/* Mobile: Hero stacks vertically */
+@media (max-width: 768px) {
+  #sec-1 {
+    flex-direction: column;
+    top: 15vh;
+    left: 5%;
+    right: 5%;
+    gap: 32px;
+  }
+}
+
 .intro {
   padding-left: 5%;
   padding-top: 5%;
@@ -91,6 +125,22 @@ body {
 #sec-1 img {
   height: 33vh;
   margin-top: 15vh;
+}
+
+/* Mobile: Hero text and image sizing */
+@media (max-width: 768px) {
+  #sec-1 img {
+    height: 25vh;
+    margin-top: 0;
+  }
+
+  .intro h1 {
+    font-size: clamp(32px, 7vw, 8vh);
+  }
+
+  .intro p {
+    font-size: clamp(16px, 4vw, 3vh);
+  }
 }
 
 .intro h1 {
@@ -110,6 +160,7 @@ body {
   align-items: center;
   gap: 5px;
   transition: all 600ms;
+  min-height: 44px;
 }
 
 #btn1:hover {
@@ -125,6 +176,7 @@ body {
   align-items: center;
   gap: 5px;
   transition: all 600ms;
+  min-height: 44px;
 }
 
 #btn2:hover {
@@ -174,6 +226,14 @@ body {
   backdrop-filter: inherit;
 }
 
+/* Mobile: AboutMe image sizing */
+@media (max-width: 768px) {
+  .mypic {
+    width: 100%;
+    height: 40vh;
+  }
+}
+
 h4 {
   color: var(--tertiary);
 }
@@ -194,6 +254,15 @@ h4 {
 .my-sum {
   width: 50vw;
   padding-left: 5vw;
+}
+
+/* Mobile: my-sum width */
+@media (max-width: 768px) {
+  .my-sum {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
 }
 
 .my-sum h1 {
@@ -220,6 +289,15 @@ h4 {
   width: 50%;
   margin-left: 5vw;
   margin-top: 10vh;
+}
+
+/* Mobile: sec-intro */
+@media (max-width: 768px) {
+  .sec-intro {
+    width: calc(100% - 10vw);
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 }
 
 .sec-intro p {
@@ -262,6 +340,13 @@ h4 {
   border-radius: 20px;
 }
 
+/* Mobile: mycards full width */
+@media (max-width: 768px) {
+  .mycards {
+    width: 100%;
+  }
+}
+
 .mycards p {
   color: var(--tertiary);
 }
@@ -289,6 +374,7 @@ h4 {
   gap: 5px;
   transition: all 600ms;
   margin-left: 10px;
+  min-height: 44px;
 }
 
 #btn4 {
@@ -301,6 +387,17 @@ h4 {
   gap: 5px;
   transition: all 600ms;
   flex-wrap: wrap;
+  min-height: 44px;
+}
+
+/* Mobile: buttons stack */
+@media (max-width: 640px) {
+  #btn3, #btn4 {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .cta {
@@ -330,6 +427,13 @@ h4 {
   overflow-x: auto;
 }
 
+/* Mobile: prj-intro */
+@media (max-width: 768px) {
+  .prj-intro {
+    width: calc(100% - 10vw);
+  }
+}
+
 .prj-intro p {
   color: var(--tertiary);
 }
@@ -341,6 +445,13 @@ h4 {
   gap: 5;
   border-radius: 10px;
   width: 30%;
+}
+
+/* Mobile: p-card */
+@media (max-width: 768px) {
+  .p-card {
+    width: 100%;
+  }
 }
 
 .p-card:hover {
@@ -417,6 +528,14 @@ a {
   overflow: hidden;
 }
 
+/* Mobile: project-divs */
+@media (max-width: 768px) {
+  .project-divs {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
 .project-imgs {
   height: 30vh;
   width: 100%;
@@ -425,7 +544,6 @@ a {
 .project-image {
   height: 30vh;
   border-radius: 10px 10px 0 0;
-  /* Removed background-image here because it is already handled by the <img> tag in Pcards.jsx */
 }
 
 .Log_card {
@@ -433,6 +551,14 @@ a {
   padding: 5vh 2vw;
   width: 30vw;
   border-radius: 20px;
+}
+
+/* Mobile: Log_card */
+@media (max-width: 768px) {
+  .Log_card {
+    width: 100%;
+    max-width: 380px;
+  }
 }
 
 .Log_card p {
@@ -465,4 +591,20 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 3vw;
   margin-left: 1vw;
+}
+
+/* Mobile: log-cards timeline layout */
+@media (max-width: 768px) {
+  .log-cards {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+  .intro p {
+  max-width: 280px;
+  line-height: 1.6;
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+  .byma-logo{
+    display: none;
+  }
 }

@@ -26,7 +26,6 @@ const workLogSchema = {
   }))
 };
 
-// ─── Tag Badge ────────────────────────────────────────────────────────────────
 function Tag({ label }) {
   return (
     <span style={{
@@ -43,7 +42,6 @@ function Tag({ label }) {
   )
 }
 
-// ─── Timeline Card ────────────────────────────────────────────────────────────
 function LogCard({ entry }) {
   const [hovered, setHovered] = useState(false)
   return (
@@ -55,8 +53,8 @@ function LogCard({ entry }) {
         border: `1px solid ${hovered ? '#2a3a2a' : '#1e2228'}`,
         borderRadius: '8px',
         padding: '24px',
-        maxWidth: '380px',
         width: '100%',
+        maxWidth: '380px',
         transition: 'all 400ms',
         boxShadow: hovered ? '0 0 20px rgba(0,255,0,0.08)' : 'none',
       }}
@@ -88,7 +86,6 @@ function LogCard({ entry }) {
   )
 }
 
-// ─── Meta Label (date + first tag) ───────────────────────────────────────────
 function MetaLabel({ entry, align }) {
   return (
     <div style={{ textAlign: align === 'right' ? 'right' : 'left' }}>
@@ -100,7 +97,26 @@ function MetaLabel({ entry, align }) {
   )
 }
 
-// ─── Single Timeline Row ──────────────────────────────────────────────────────
+/* Mobile: single-column layout */
+function TimelineEntryMobile({ entry }) {
+  return (
+    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', marginBottom: '40px' }}>
+      <div style={{
+        width: '14px', height: '14px', borderRadius: '50%',
+        border: '2px solid #00ff00', background: '#090C11',
+        boxShadow: '0 0 10px rgba(0,255,0,0.4)', flexShrink: 0, marginTop: '8px'
+      }} />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <MetaLabel entry={entry} align='left' />
+        <div style={{ marginTop: '12px' }}>
+          <LogCard entry={entry} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* Desktop: 3-column alternating layout */
 function TimelineEntry({ entry, index }) {
   const isRight = index % 2 === 0
   return (
@@ -122,7 +138,6 @@ function TimelineEntry({ entry, index }) {
   )
 }
 
-// ─── Grid Card ────────────────────────────────────────────────────────────────
 function GridCard({ entry }) {
   const [hovered, setHovered] = useState(false)
   return (
@@ -167,10 +182,16 @@ function GridCard({ entry }) {
   )
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 function WorkLog() {
   const [showAll, setShowAll] = useState(false)
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
   const timelineEntries = logdata.slice(0, 4)
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
@@ -211,18 +232,24 @@ function WorkLog() {
         </p>
       </section>
 
-      {/* Timeline View */}
+      {/* Timeline View - Desktop or Mobile */}
       {!showAll && (
         <section style={{ position: 'relative', padding: '0 5vw', marginTop: '20px', marginBottom: '40px' }}>
-          <div style={{
-            position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px',
-            background: 'linear-gradient(to bottom, transparent, #2a2a2a 5%, #2a2a2a 95%, transparent)',
-            transform: 'translateX(-50%)', zIndex: 0,
-          }} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
-            {timelineEntries.map((entry, i) => (
-              <TimelineEntry key={entry.id} entry={entry} index={i} />
-            ))}
+          {!isMobile && (
+            <div style={{
+              position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px',
+              background: 'linear-gradient(to bottom, transparent, #2a2a2a 5%, #2a2a2a 95%, transparent)',
+              transform: 'translateX(-50%)', zIndex: 0,
+            }} />
+          )}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '24px' : '60px' }}>
+            {timelineEntries.map((entry, i) =>
+              isMobile ? (
+                <TimelineEntryMobile key={entry.id} entry={entry} />
+              ) : (
+                <TimelineEntry key={entry.id} entry={entry} index={i} />
+              )
+            )}
           </div>
         </section>
       )}
@@ -253,6 +280,7 @@ function WorkLog() {
             background: 'transparent', border: '1px solid #444', color: '#fff',
             padding: '14px 40px', fontFamily: 'monospace', fontSize: '13px',
             letterSpacing: '2px', cursor: 'pointer', borderRadius: '4px', transition: 'all 400ms',
+            minHeight: '44px'
           }}
           onMouseEnter={e => {
             e.target.style.borderColor = '#00ff00'
