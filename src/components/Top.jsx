@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from './NavBar';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import sifiWallpaper from '../assets/sifi wallpaper.png';
+
 function Top() {
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
 
@@ -42,32 +42,28 @@ function Top() {
           </div>
         </div>
         {/* BYMA Geometric Wordmark Logo */}
-        <div
-          className='byma-logo'
+      <div
+        className='byma-logo'
+        style={{
+          height: isMobile ? '25vh' : '33vh',
+          marginTop: isMobile ? '0' : '15vh',
+          width: isMobile ? '100%' : '400px',
+          position: 'relative',
+          overflow: 'hidden',
+          // zIndex: -1  ← REMOVED
+        }}
+      >
+        <img
+          src='src/assets/code.png'
+          className='byma-logo-img'
           style={{
-            height: isMobile ? '25vh' : '33vh',
-            marginTop: isMobile ? '0' : '15vh',
-            width: isMobile ? '100%' : '400px',
-            maxWidth: 'calc(100vw - 20px)',
-            background: 'linear-gradient(135deg, rgba(0,255,0,0.05) 0%, rgba(0,255,0,0.02) 50%, transparent 100%)',
-            border: '1px solid rgba(0,255,0,0.15)',
-            position: 'relative',
-            overflow: 'hidden',
-            zIndex: -1,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
           }}
-        >
-          <img
-            src={sifiWallpaper}
-            alt='BYMA Geometric Wordmark Logo'
-            className='byma-logo-img'
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </div>
+        />
+      </div>
       </section>
     </div>
   );
