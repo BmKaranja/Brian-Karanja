@@ -4,7 +4,7 @@ import {
   FaHtml5, FaJs, FaReact, FaArrowRight, FaGoogle, FaRobot
 } from 'react-icons/fa'
 import { FaFlutter } from 'react-icons/fa6'
-import { SiFirebase } from 'react-icons/si'
+import { SiFirebase, SiSupabase } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 
 const skills = [
@@ -26,7 +26,7 @@ const skills = [
       { icon: <FaDatabase />, label: 'SQL' },
       { icon: <FaGoogle />, label: 'Google Stitch' },
       { icon: <FaRobot />, label: 'Ai Studio' },
-      { icon: <SiFirebase />, label: 'Firebase' },
+      { icon: <SiSupabase />, label: 'Supabase' },
     ],
   },
 ]

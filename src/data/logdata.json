@@ -1,48 +1,33 @@
 [
     {
-        "date": "2026-05-01",
-        "project": "My Portfolio website",
-        "description": "Implemented SEO module and structured data for portfolio pages",
-        "tags": [
-            "React",
-            "TailwindCss",
-            "Typescript"
-        ],
-        "link": "https://github.com/BmKaranja/Brian-Karanja.git"
-    },
+    "date":"2026-05-24",
+    "project":"Wincer's cake house",
+    "description":"Replaced Firebase SDK with Supabase for backend services, updated environment variables, and refactored data fetching components accordingly.",
+    "tags":[ "Supabase","TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
     {
-        "date": "2026-05-24",
-        "project": "Wincer's cake house",
-        "description": "Implement delivery zone selection for orders with associated fees and store the selected zone in local storage. Update order management and checkout interfaces to capture and display delivery details, including specific zones and addresses.",
-        "tags": [
-            "React",
-            "TailwindCss",
-            "Typescript"
-        ],
-        "link": "https://github.com/BmKaranja/Wincer_Project.git"
-    },
+    "date":"2026-05-24",
+    "project":"Wincer's cake house",
+    "description":"Implement delivery zone selection for orders with associated fees and store the selected zone in local storage. Update order management and checkout interfaces to capture and display delivery details, including specific zones and addresses.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
     {
-        "date": "2026-05-14",
-        "project": "Wincer's cake house",
-        "description": "Intergrated dark theme and learnt more about Firebase's as a CLoud-based database, which allows for seamless data synchronization and real-time updates across all clients, making it ideal for applications that require instant data sharing and collaboration.",
-        "tags": [
-            "React",
-            "TailwindCss",
-            "Typescript"
-        ],
-        "link": "https://github.com/BmKaranja/Wincer_Project.git"
-    },
-    {
-        "date": "2026-05-02",
-        "project": "My Portfolio website",
-        "description": "Redesigned About Me section to match the vibe of the rest of the website",
-        "tags": [
-            "React",
-            "TailwindCss",
-            "Typescript"
-        ],
-        "link": "https://github.com/BmKaranja/Brian-Karanja.git"
-    },
+    "date":"2026-05-14",
+    "project":"Wincer's cake house",
+    "description":"Intergrated dark theme and learnt more about Firebase's as a CLoud-based database, which allows for seamless data synchronization and real-time updates across all clients, making it ideal for applications that require instant data sharing and collaboration.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
+
+{
+    "date":"2026-05-02",
+    "project":"My Portfolio website",
+    "description":"Redesigned About Me section to match the vibe of the rest of the website",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
     {
         "date": "2026-05-01",
         "project": "My Portfolio website",
