@@ -5,110 +5,222 @@ import NavBar from './NavBar'
 
 function Top() {
   return (
-    <div id='top'>
-      <div>
+    <div id='top' style={styles.container}>
+      {/* Navigation - Fixed at top */}
+      <div style={styles.navWrapper}>
         <NavBar />
       </div>
-      <section id='sec-1'>
-        <div className='w-2xl h-96 intro'>
-          <h1>Byma</h1>
-          <p style={{ fontWeight: 500, color: '#888', marginTop: '12px' }}>
-            Creative full-stack development. Pixel-perfect interfaces, robust systems, and digital experiences that solve real problems.
-          </p>
-          <p className='CTA' style={{ marginTop: '32px' }}>Ready to build something exceptional?</p>
-          <div className='flex gap-10 mt-5'>
-            <a
-              href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing'
-              target='_blank'
-              rel='noopener noreferrer'
-              id='btn1'
-              style={{ background: 'var(--neutralDark)' }}
-            >
-              <span>Resume</span>
-              <FaArrowRight color='white' />
-            </a>
-            <Link to='/projects' id='btn2'>
-              View Work
-              <FaArrowRight color='black' />
-            </Link>
-          </div>
-        </div>
-        {/* BYMA Geometric Wordmark Logo */}
-        <div
-          style={{
-            height: '33vh',
-            marginTop: '15vh',
-            width: '400px',
-            background: 'linear-gradient(135deg, rgba(0,255,0,0.05) 0%, rgba(0,255,0,0.02) 50%, transparent 100%)',
-            border: '1px solid rgba(0,255,0,0.15)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-            overflow: 'hidden'
-          }}
-        >
-          <svg
-            viewBox="0 0 380 120"
-            style={{
-              width: '320px',
-              height: '100px',
-              filter: 'drop-shadow(0 0 25px rgba(0,255,0,0.3))'
+
+      {/* Centered Hero Content */}
+      <section style={styles.heroContent}>
+        <h1 style={styles.heading}>Byma</h1>
+        
+        <p style={styles.subheading}>
+          Creative full-stack development. Pixel-perfect interfaces, robust systems, and digital experiences that solve real problems.
+        </p>
+
+        <p style={styles.ctaText}>Ready to build something exceptional?</p>
+
+        {/* CTA Buttons */}
+        <div style={styles.buttonsContainer}>
+          <a
+            href='https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={styles.resumeBtn}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#00ff00'
+              e.currentTarget.style.color = '#00ff00'
+              e.currentTarget.style.boxShadow = '0 0 16px rgba(0,255,0,0.15)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#333'
+              e.currentTarget.style.color = '#fff'
+              e.currentTarget.style.boxShadow = 'none'
             }}
           >
-            <defs>
-              <linearGradient id="bymaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00ff00" stopOpacity="1" />
-                <stop offset="100%" stopColor="#00ff00" stopOpacity="0.9" />
-              </linearGradient>
-            </defs>
+            <span>Resume</span>
+            <FaArrowRight size={14} />
+          </a>
 
-            {/* B */}
-            <g>
-              <rect x="10" y="15" width="28" height="90" fill="url(#bymaGradient)" />
-              <path d="M 38 15 Q 65 15 65 38 Q 65 55 38 58 L 38 15 Z" fill="url(#bymaGradient)" />
-              <path d="M 38 58 Q 70 58 70 82 Q 70 105 38 105 L 38 58 Z" fill="url(#bymaGradient)" />
-              {/* Circular dots in B */}
-              <circle cx="28" cy="35" r="6" fill="#090C11" />
-              <circle cx="28" cy="82" r="6" fill="#090C11" />
-            </g>
-
-            {/* Y */}
-            <g>
-              <path d="M 85 15 L 110 55 L 135 15" stroke="url(#bymaGradient)" strokeWidth="14" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <rect x="105" y="55" width="10" height="50" fill="url(#bymaGradient)" />
-            </g>
-
-            {/* M */}
-            <g>
-              <rect x="155" y="15" width="14" height="90" fill="url(#bymaGradient)" />
-              <path d="M 155 15 L 185 55 L 215 15" stroke="url(#bymaGradient)" strokeWidth="14" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <rect x="216" y="15" width="14" height="90" fill="url(#bymaGradient)" />
-            </g>
-
-            {/* A */}
-            <g>
-              <path d="M 250 105 L 275 15 L 300 105" stroke="url(#bymaGradient)" strokeWidth="14" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <line x1="260" y1="75" x2="290" y2="75" stroke="url(#bymaGradient)" strokeWidth="12" strokeLinecap="round" />
-              {/* Circular dot in A */}
-              <circle cx="305" cy="45" r="6" fill="#090C11" />
-            </g>
-          </svg>
-
-          <style>{`
-            @keyframes glowPulse {
-              0%, 100% { filter: drop-shadow(0 0 25px rgba(0,255,0,0.3)); }
-              50% { filter: drop-shadow(0 0 35px rgba(0,255,0,0.5)); }
-            }
-            svg {
-              animation: glowPulse 3s ease-in-out infinite;
-            }
-          `}</style>
+          <Link
+            to='/projects'
+            style={styles.workBtn}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.color = '#00ff00'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#00ff00'
+              e.currentTarget.style.color = '#090C11'
+            }}
+          >
+            <span>View Work</span>
+            <FaArrowRight size={14} />
+          </Link>
         </div>
       </section>
+
+
+      {/* Bottom gradient overlay */}
+      <div style={styles.bottomGradient} />
+
+      <style>{`
+        @keyframes glowPulse {
+          0%, 100% { filter: drop-shadow(0 0 20px rgba(0,255,0,0.25)); }
+          50% { filter: drop-shadow(0 0 30px rgba(0,255,0,0.4)); }
+        }
+
+        #top svg {
+          animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+          #top {
+            padding: 0 20px;
+          }
+        }
+      `}</style>
     </div>
   )
+}
+
+// Styles object (prevents syntax errors)
+const styles = {
+  container: {
+    height: '100vh',
+    background: `linear-gradient(135deg, rgba(9,12,17,0.75) 0%, rgba(9,12,17,0.85) 100%), url('https://karanjamaina.sirv.com/Images/portfolio/heroimg.jpeg')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundOrigin: 'border-box',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+
+  navWrapper: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
+  },
+
+  heroContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    zIndex: 2,
+    maxWidth: '700px',
+    padding: '0 20px',
+  },
+
+  heading: {
+    fontFamily: "'Lexend', sans-serif",
+    fontSize: 'clamp(48px, 8vw, 102px)',
+    fontWeight: 700,
+    color: '#fff',
+    margin: '0 0 20px 0',
+    letterSpacing: '-1px',
+    lineHeight: 1.1,
+  },
+
+  subheading: {
+    fontWeight: 500,
+    color: '#888',
+    fontSize: 'clamp(16px, 2.5vw, 20px)',
+    lineHeight: 1.6,
+    margin: '0 0 32px 0',
+    maxWidth: '600px',
+  },
+
+  ctaText: {
+    fontSize: 'clamp(14px, 1.8vw, 16px)',
+    color: '#aaa',
+    marginBottom: '24px',
+    letterSpacing: '0.5px',
+  },
+
+  buttonsContainer: {
+    display: 'flex',
+    gap: '16px',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
+
+  resumeBtn: {
+    background: 'var(--neutralDark)',
+    color: '#fff',
+    padding: '12px 28px',
+    borderRadius: '5px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+    transition: 'all 400ms',
+    textDecoration: 'none',
+    fontFamily: 'monospace',
+    fontSize: '14px',
+    fontWeight: 600,
+    border: '1px solid #333',
+    minHeight: '44px',
+    cursor: 'pointer',
+  },
+
+  workBtn: {
+    background: '#00ff00',
+    color: '#090C11',
+    padding: '12px 28px',
+    borderRadius: '5px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+    transition: 'all 400ms',
+    textDecoration: 'none',
+    fontFamily: 'monospace',
+    fontSize: '14px',
+    fontWeight: 700,
+    border: '1px solid #00ff00',
+    minHeight: '44px',
+    cursor: 'pointer',
+  },
+
+  logoContainer: {
+    position: 'absolute',
+    bottom: '40px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    height: '80px',
+    width: '300px',
+    background: 'linear-gradient(135deg, rgba(0,255,0,0.05) 0%, rgba(0,255,0,0.02) 50%, transparent 100%)',
+    border: '1px solid rgba(0,255,0,0.15)',
+    borderRadius: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+  },
+
+  svg: {
+    width: '200px',
+    height: '60px',
+  },
+
+  bottomGradient: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: '100px',
+    background: 'linear-gradient(to top, rgba(9,12,17,0.9), transparent)',
+    zIndex: 0,
+  },
 }
 
 export default Top
