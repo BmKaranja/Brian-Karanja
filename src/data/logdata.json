@@ -1,6 +1,13 @@
 [
     {
     "date":"2026-06-25",
+    "project":"Wincer's cake house",
+    "description":"Initialize a Supabase admin client to handle M-Pesa callbacks bypassing RLS and exempt the callback endpoint from general rate limiting to ensure successful payment processing.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
+    {
+    "date":"2026-06-25",
     "project":"My Portfolio website",
     "description":"added Vercel configuration for URL rewrites to serve index.html",
     "tags":["React", "TailwindCss", "Typescript"],
