@@ -159,19 +159,19 @@ function Services() {
       <NavBar />
       <div>
         <hr className='text-gray-600'></hr>
-        <section className='sec-intro'>
-          <article>
-            <p className='font mb-2' id='cap'>WHAT WE BUILD</p>
-            <h1 className='text-7xl'>
-              Digital products<span className='color'> crafted</span> with precision
-            </h1>
-            <p className='mt-5 pr-4 md:pr-10 lg:pr-20'>
-              Byma specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions.
-              From concept to launch—clean code, thoughtful design, measurable impact.
-            </p>          
+          <section className='sec-intro'>
+            <article>
+              <p className='font mb-2' id='cap'>WHAT WE BUILD</p>
+              <h1 className='text-4xl sm:text-5xl md:text-7xl'>
+                Digital products<span className='color'> crafted</span> with precision
+              </h1>
+              <p className='mt-5 pr-4 md:pr-20'>
+                Byma specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions.
+                From concept to launch—clean code, thoughtful design, measurable impact.
+              </p>
             </article>
-        </section>
-        <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 px-5 sm:px-10' >
+          </section>        
+          <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 px-5 sm:px-10' >
           <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
               <FaCode size={30} color='#00ff00' />

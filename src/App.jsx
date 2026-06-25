@@ -9,6 +9,7 @@ import AboutMe from './components/AboutMe'
 import Websites from './components/Websites'
 import Mobile from './components/Mobile'
 import { FaWhatsapp } from 'react-icons/fa'
+import PrivacyPolicy from './components/PrivacyPolicy'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/AboutMe' element={<AboutMe/>}></Route>
         <Route path='/projects/websites' element={<Websites/>}></Route>
         <Route path='/projects/mobile' element={<Mobile/>}></Route>
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
       
       {/* Floating WhatsApp Button */}

@@ -231,14 +231,15 @@ h4 {
 }
 
 .sec-intro {
-  width: 100%;       /* Mobile: full width */
+  width: 50%;
   margin-left: 5vw;
   margin-top: 10vh;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .sec-intro {
-    width: 50%;      /* Tablet+ : 50% */
+    width: 90%;
+    margin-top: 8vh;
   }
 }
 .sec-intro p {
@@ -348,6 +349,12 @@ h4 {
   overflow-x: auto;
 }
 
+@media (max-width: 768px) {
+  .prj-intro {
+    width: 90%;
+    margin-top: 8vh;
+  }
+}
 .prj-intro p {
   color: var(--tertiary);
 }

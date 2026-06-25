@@ -106,13 +106,13 @@ function AboutMe() {
         <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#333' }}>2025–present</span>
       </div>
 
-      {/* Main two-column layout */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
-        gap: '6vw',
-        alignItems: 'start',
-      }}>
+              {/* Main two-column layout */}
+        <div className='about-grid' style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
+          gap: '6vw',
+          alignItems: 'start',
+        }}>
 
         {/* LEFT — Developer Workspace Image + stats */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
