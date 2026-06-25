@@ -1,5 +1,12 @@
 [
     {
+    "date":"2026-06-25",
+    "project":"My Portfolio website",
+    "description":"added Vercel configuration for URL rewrites to serve index.html",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
     "date":"2026-06-23",
     "project":"My Portfolio website",
     "description":"enhanced navigation and layout for improved responsiveness across components",
