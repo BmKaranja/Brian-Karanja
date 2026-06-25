@@ -60,7 +60,7 @@ function PrivacyPolicy() {
             Privacy <span className='color'>Policy</span>
           </h1>
           <p style={{ color: '#666', fontSize: '13px', fontFamily: 'monospace', marginTop: '10px' }}>
-            Last updated: June 2026
+            Last updated: June 25, 2026
           </p>
         </article>
       </section>
@@ -83,6 +83,7 @@ function PrivacyPolicy() {
           <p>We collect information in the following ways:</p>
           <ul style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li><span style={{ color: '#00ff00' }}>✓</span> Messages sent via WhatsApp click-to-chat links</li>
+            <li><span style={{ color: '#00ff00' }}>✓</span> Details submitted through our Proposal Request form (company/brand name, project type, estimated budget, timeline, and project description), which are formatted into a message and sent to us via WhatsApp click-to-chat — this data is not stored on our servers or any database, it is only transmitted directly to WhatsApp on submission</li>
             <li><span style={{ color: '#00ff00' }}>✓</span> Usage data collected automatically via Google Analytics (pages visited, device type, approximate location, time on site)</li>
             <li><span style={{ color: '#00ff00' }}>✓</span> For clients using custom systems we build (e.g. booking platforms), data is stored securely via Supabase under that specific project's own terms</li>
           </ul>
@@ -90,7 +91,7 @@ function PrivacyPolicy() {
 
         <Section title="How We Use Your Information">
           <p>
-            Information collected is used solely to respond to enquiries, deliver quotes,
+            Information collected is used solely to respond to enquiries, scope and deliver quotes,
             manage active projects, and understand how visitors use this site so we can
             improve it. We do not sell or rent your personal data to third parties.
           </p>
@@ -114,17 +115,18 @@ function PrivacyPolicy() {
         <Section title="Data Storage & Security">
           <p>
             Client project data (where applicable) is stored using Supabase, a secure
-            cloud database provider. Reasonable technical measures are taken to protect
-            your information, but no method of transmission over the internet is 100%
-            secure.
+            cloud database provider. Proposal request form details are not stored by us in any
+            database — they pass directly to WhatsApp at the moment of submission. Reasonable
+            technical measures are taken to protect your information, but no method of
+            transmission over the internet is 100% secure.
           </p>
         </Section>
 
         <Section title="Third-Party Services">
           <p>
             We may communicate with you via WhatsApp (Meta) when you initiate contact
-            through a "Start a Chat" link. WhatsApp's own privacy policy governs how
-            that platform handles your message data.
+            through a "Start a Chat" link or submit our Proposal Request form. WhatsApp's
+            own privacy policy governs how that platform handles your message data.
           </p>
         </Section>
 

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaCode, FaLinkedin, FaMobileAlt, FaPalette } from 'react-icons/fa'
 import SEO from './SEO'
-
+import ProposalRequestModal from './ProposalRequestModal'
 const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -122,6 +122,7 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 function Services() {
   const [openFAQIndex, setOpenFAQIndex] = useState(null);
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
+  const [showProposalModal, setShowProposalModal] = useState(false)
 
   React.useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768)
@@ -281,7 +282,7 @@ function Services() {
               </ul>
               <p style={{ color: '#666', fontSize: '12px', fontStyle: 'italic', marginBottom: '24px' }}>Note: Client covers domain registration (approx. KSh 1,000)</p>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.")}`}
+                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
@@ -318,7 +319,7 @@ function Services() {
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 2-3 Weeks</li>
               </ul>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.")}`}
+                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
@@ -348,11 +349,12 @@ function Services() {
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 20k tier</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom booking request or client sign-up management</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Secure database setup for client interactions</li>
+                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> M-Pesa integration</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 14 Days of post-launch technical support</li>
                 <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 3-5 Weeks</li>
               </ul>
               <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.")}`}
+                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.")}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
@@ -404,30 +406,13 @@ function Services() {
                   <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Formal SLA & priority support</li>
                 </ul>
               </div>
-              <a
-                href={`https://wa.me/254795972904?text=${encodeURIComponent("Hi! I'm interested in discussing the Corporate & Custom Systems package for my professional firm/established brand.")}`}
-                target="_blank" rel="noopener noreferrer"
-                style={{
-                  background: '#00ff00',
-                  border: '1px solid #00ff00',
-                  color: '#000',
-                  padding: '12px',
-                  textAlign: 'center',
-                  borderRadius: '4px',
-                  fontFamily: 'monospace',
-                  fontWeight: 600,
-                  transition: 'all 300ms',
-                  marginTop: 'auto',
-                  minHeight: '44px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
+              <button
+                onClick={() => setShowProposalModal(true)}
+                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 REQUEST PROPOSAL
-              </a>
+              </button>
+              <ProposalRequestModal isOpen={showProposalModal} onClose={() => setShowProposalModal(false)} />
             </div>
           </article>
 
