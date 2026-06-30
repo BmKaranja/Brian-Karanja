@@ -15,3 +15,7 @@ User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://brian-karanja.onrender.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://brian-karanja.onrender.com/sitemap.xml
