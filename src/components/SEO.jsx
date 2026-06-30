@@ -28,14 +28,14 @@ function SEO({ title, description, keywords, ogImage, ogType = 'website', canoni
     updateMetaTag('og:title', formattedTitle, true);
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:type', ogType, true);
-    updateMetaTag('og:image', ogImage || 'https://brian-karanja.onrender.com/me.png', true);
+    updateMetaTag('og:image', ogImage || 'https://byma.co.ke/me.png', true);
     updateMetaTag('og:url', canonicalUrl || window.location.href, true);
 
     // 4. Update Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', formattedTitle);
     updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', ogImage || 'https://brian-karanja.onrender.com/me.png');
+    updateMetaTag('twitter:image', ogImage || 'https://byma.co.ke/me.png');
 
     // 5. Update Canonical link
     let canonicalEl = document.querySelector('link[rel="canonical"]');
