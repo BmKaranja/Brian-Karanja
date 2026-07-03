@@ -13,7 +13,14 @@
     "category": "website",
     "image": "https://ik.imagekit.io/oaundupgio/Designs/byma.png"
   },
-    {
+  {
+    "title": "Law Firm Design",
+    "description": "A premium, multi-page web application designed for a premier corporate and litigation law firm based in Nairobi, Kenya. The objective was to create an authoritative, trustworthy, and modern digital presence that departs from cluttered traditional legal websites, focusing instead on clean typography, generous negative space, and intuitive user navigation.",
+    "link": "https://sweet-art-one.vercel.app",
+    "category": "designs",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/Screenshot%20from%202026-07-03%2014-15-45.png"
+  },
+  {
     "title": "Cake House Design",
     "description": "SweetArt Patisserie is a high-end, responsive e-commerce web application designed for an artisanal bakery. The project breaks away from generic e-commerce templates, opting instead for a high-fashion, editorial-style layout that feels like a premium digital boutique. It provides a seamless, immersive shopping experience from product discovery through checkout and order tracking.",
     "link": "https://sweet-art-one.vercel.app",
