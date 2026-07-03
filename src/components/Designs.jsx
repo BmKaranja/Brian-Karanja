@@ -6,15 +6,15 @@ import { NavLink } from 'react-router-dom'
 import projectdata from '../data/projectdata.json'
 import SEO from './SEO'
 
-const mobileApps = projectdata.filter((project)=>project.category==='mobile')
+const designs= projectdata.filter((project)=>project.category==='designs')
 
-const mobileSchema = {
+const designSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Mobile App Projects",
-  "description": "Featured cross-platform iOS and Android mobile applications built with Flutter and Dart.",
-  "numberOfItems": mobileApps.length,
-  "itemListElement": mobileApps.map((p, idx) => ({
+  "name": "Byma Web Development Projects",
+  "description": "Featured production-grade web applications built with React, TailwindCSS, and JavaScript.",
+  "numberOfItems": designs.length,
+  "itemListElement": designs.map((p, idx) => ({
     "@type": "ListItem",
     "position": idx + 1,
     "item": {
@@ -27,14 +27,14 @@ const mobileSchema = {
   }))
 };
 
-function Mobile() {
+function Designs() {
   return (
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
-        title="Mobile Apps"
-        description="Browse cross-platform mobile apps engineered by Brian Karanja / Byma using Flutter and Dart. Fast, native performance and clean UI/UX design."
-        keywords="Mobile App Development, Flutter apps, iOS and Android, StayPay mobile, Dart, Cross-platform"
-        schemaJson={mobileSchema}
+        title="Designs"
+        description="Explore the Design projects built by Brian Karanja / Byma. Luxuirous UI/UX designs optimized for speed, responsiveness, and clean UX."
+        keywords="Web Development, React designs, E-commerce hubs, Byma Web Apps, Nairobi Developer"
+        schemaJson={designSchema}
       />
       <PIntro/>
         <nav className='flex flex-row gap-2 md:gap-5 ml-2 md:ml-10 mt-10 flex-wrap'>
@@ -52,13 +52,13 @@ function Mobile() {
           >
             Websites
           </NavLink>
-          <NavLink 
+          {/*<NavLink 
             to='/projects/mobile'
             end
             className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
           >
             Mobile Apps
-          </NavLink>
+          </NavLink>*/}
           <NavLink 
             to='/projects/designs'
             end
@@ -69,7 +69,7 @@ function Mobile() {
         </nav>      
         <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {mobileApps.map((project) => (
+          {designs.map((project) => (
             <Pcards key={project.link} {...project} />
           ))}
         </div>
@@ -81,4 +81,4 @@ function Mobile() {
   )
 }
 
-export default Mobile
+export default Designs

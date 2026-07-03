@@ -1,37 +1,44 @@
 [
   {
+    "title": "Wincer Cake House",
+    "description": "Wincer Cake House is a modern, full-stack e-commerce and content management platform built specifically for a boutique bakery. Designed with both the customer experience and business operations in mind, the application allows users to seamlessly browse bakery products, read blog updates, and securely check out. On the operational side, it provides the business owner with a comprehensive admin dashboard to manage inventory, engage with customers, and track sales.",
+    "link": "https://wincer-project.vercel.app",
+    "category": "website",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/wincer.png"
+  },
+    {
+    "title": "My Portfolio",
+    "description": "This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
+    "link": "https://www.byma.co.ke",
+    "category": "website",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/byma.png"
+  },
+    {
+    "title": "Cake House Design",
+    "description": "SweetArt Patisserie is a high-end, responsive e-commerce web application designed for an artisanal bakery. The project breaks away from generic e-commerce templates, opting instead for a high-fashion, editorial-style layout that feels like a premium digital boutique. It provides a seamless, immersive shopping experience from product discovery through checkout and order tracking.",
+    "link": "https://sweet-art-one.vercel.app",
+    "category": "designs",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/design1.png"
+  },
+  {
+    "title": "Driving school Design",
+    "description": "A bespoke, premium digital experience designed for California Driving School, an intensive driving academy based in the bustling commercial hub of Eastleigh, Nairobi. The objective was to completely break away from generic, template-driven local business websites and SaaS layouts. Instead, the project delivers a high-end, magazine-inspired editorial portal that elevates the brand's core offering: a hyper-efficient 21-day transformation from beginner to licensed driver.",
+    "link": "https://california-diving-school.vercel.app?_vercel_share=rg4bF30Yw9ND5huctoUPXpAu77bU2zru",
+    "category": "designs",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/design2.png"
+  },
+    {
+    "title": "Oakwood Web",
+    "description": "Oakwood Academy is a fictional academic institution created as a project concept, featuring a welcoming digital platform for its 2025 academic year",
+    "link": "https://oakwood-web.onrender.com",
+    "category": "website",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/Screenshot%20from%202026-07-03%2013-21-52.png"
+  },
+  {
     "title": "Tenga and Thrive",
     "description": "Tenga & Thrive is an e-commerce hub for intentional living, offering curated products across tech, fashion, and home designed with clarity, style, and purpose",
     "link": "https://tenga-and-thrive.onrender.com",
     "category": "website",
     "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
-  },
-  {
-    "title": "My Portfolio",
-    "description": "This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
-    "link": "https://brian-karanja.onrender.com",
-    "category": "website",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
-  },
-  {
-    "title": "Oakwood Web",
-    "description": "Oakwood Academy is a fictional academic institution created as a project concept, featuring a welcoming digital platform for its 2025 academic year",
-    "link": "https://oakwood-web.onrender.com",
-    "category": "website",
-    "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=300&fit=crop"
-  },
-  {
-    "title": "StayPay",
-    "description": "A sleek, high-contrast property management platform designed for the modern rental ecosystem. It bridges the gap between landlords and tenants.",
-    "link": "https://github.com/BmKaranja/StayPay-1.git",
-    "category": "mobile",
-    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=300&fit=crop"
-  },
-  {
-    "title": "Restaurant",
-    "description": "A clean, responsive site showcasing a restaurant's menu, ambiance, and contact details. Built with HTML and JavaScript, it highlights user-friendly navigation and a modern design for an engaging dining experience.",
-    "link": "https://github.com/BmKaranja/Restaurant.git",
-    "category": "website",
-    "image": "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=300&fit=crop"
   }
 ]

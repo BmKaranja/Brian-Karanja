@@ -50,12 +50,19 @@ function Projects() {
           >
             Websites
           </NavLink>
-          <NavLink 
+          {/*<NavLink 
             to='/projects/mobile'
             end
             className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
           >
             Mobile Apps
+          </NavLink>*/}
+          <NavLink 
+            to='/projects/designs'
+            end
+            className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
+          >
+            Designs
           </NavLink>
         </nav>      
         <section className='px-10'>

@@ -185,7 +185,7 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>SEO & Performance Optimized</p>
             </div>
             <Link
-              to='/Projects'
+              to='/Projects/websites'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >
@@ -207,15 +207,15 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Smooth Animations</p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>Offline Functionality</p>
             </div>
-            <Link
-              to='/Projects'
+            {/*<Link
+              to='/Projects/Mobile'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >
               View Projects <span className='pl-1'>
                 <FaArrowRight />
               </span>
-            </Link>
+            </Link>*/}
           </article>
           <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
@@ -229,7 +229,7 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Brand Identity</p>
             </div>
             <Link
-              to='/Projects'
+              to='/Projects/designs'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >

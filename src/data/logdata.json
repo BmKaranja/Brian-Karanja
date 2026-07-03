@@ -1,9 +1,23 @@
 [
     {
+    "date":"2026-07-03",
+    "project":"My Portfolio website",
+    "description":"added Designs section to showcase design projects; update navigation and project data",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
+    "date":"2026-06-25",
+    "project":"Wincer's cake house",
+    "description":"feat: integrate M-Pesa STK push and refine schema",
+    "tags":["Supabase", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
+    {
     "date":"2026-06-25",
     "project":"Wincer's cake house",
     "description":"Initialize a Supabase admin client to handle M-Pesa callbacks bypassing RLS and exempt the callback endpoint from general rate limiting to ensure successful payment processing.",
-    "tags":["React", "TailwindCss", "Typescript"],
+    "tags":["Supabase", "TailwindCss", "Typescript"],
     "link":"https://github.com/BmKaranja/Wincer_Project.git"
 },
     {
