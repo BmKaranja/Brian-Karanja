@@ -16,7 +16,7 @@ function Top() {
         <h1 style={styles.heading}>Byma</h1>
         
         <p style={styles.subheading}>
-          Creative full-stack development. Pixel-perfect interfaces, robust systems, and digital experiences that solve real problems.
+          Byma Solutions — Creative full-stack development. Pixel-perfect interfaces, robust systems, and digital experiences that solve real problems.
         </p>
 
         <p style={styles.ctaText}>Ready to build something exceptional?</p>

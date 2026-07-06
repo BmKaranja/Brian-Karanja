@@ -7,10 +7,10 @@ const privacySchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Privacy Policy",
-  "url": "https://brian-karanja.onrender.com/privacy-policy",
+  "url": "https://byma.co.ke/privacy-policy",
   "publisher": {
-    "@type": "Person",
-    "name": "Brian Karanja Maina"
+    "@type": "Organization",
+    "name": "Byma Solutions"
   }
 }
 
@@ -41,8 +41,8 @@ function PrivacyPolicy() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO
         title="Privacy Policy"
-        description="Privacy Policy for Byma — how Brian Karanja Maina collects, uses, and protects your data."
-        keywords="Privacy Policy, Byma, Brian Karanja Maina, data protection"
+        description="Privacy Policy for Byma Solutions — how Byma Solutions collects, uses, and protects your data."
+        keywords="Privacy Policy, Byma Solutions, data protection"
         schemaJson={privacySchema}
       />
       <NavBar />
@@ -69,8 +69,8 @@ function PrivacyPolicy() {
 
         <Section title="Who We Are">
           <p>
-            This website ("Byma") is operated by Brian Karanja Maina, a solo full-stack developer
-            and designer based in Nairobi, Kenya. For any privacy-related questions, you can
+            This website ("Byma Solutions") is operated by Byma Solutions, a creative development
+            and design studio based in Nairobi, Kenya. For any privacy-related questions, you can
             reach out via:
           </p>
           <ul style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>

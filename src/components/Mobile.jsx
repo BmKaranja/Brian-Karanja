@@ -11,8 +11,8 @@ const mobileApps = projectdata.filter((project)=>project.category==='mobile')
 const mobileSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Mobile App Projects",
-  "description": "Featured cross-platform iOS and Android mobile applications built with Flutter and Dart.",
+  "name": "Byma Solutions Mobile App Projects",
+  "description": "Featured cross-platform iOS and Android mobile applications built by Byma Solutions with Flutter and Dart.",
   "numberOfItems": mobileApps.length,
   "itemListElement": mobileApps.map((p, idx) => ({
     "@type": "ListItem",
@@ -32,7 +32,7 @@ function Mobile() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
         title="Mobile Apps"
-        description="Browse cross-platform mobile apps engineered by Brian Karanja / Byma using Flutter and Dart. Fast, native performance and clean UI/UX design."
+        description="Browse cross-platform mobile apps engineered by Byma Solutions using Flutter and Dart. Fast, native performance and clean UI/UX design."
         keywords="Mobile App Development, Flutter apps, iOS and Android, StayPay mobile, Dart, Cross-platform"
         schemaJson={mobileSchema}
       />

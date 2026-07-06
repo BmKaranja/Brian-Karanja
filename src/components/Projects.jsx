@@ -9,8 +9,8 @@ import SEO from './SEO'
 const projectsSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Projects Portfolio",
-  "description": "Featured software engineering, web development, and mobile app projects by Brian Karanja.",
+  "name": "Byma Solutions Projects Portfolio",
+  "description": "Featured software engineering, web development, and mobile app projects by Byma Solutions.",
   "numberOfItems": projectdata.length,
   "itemListElement": projectdata.map((p, idx) => ({
     "@type": "ListItem",
@@ -30,8 +30,8 @@ function Projects() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
         title="Featured Projects"
-        description="Browse the technical projects, web applications, and mobile products engineered by Brian Karanja / Byma. Built with React, Flutter, and Firebase."
-        keywords="Brian Karanja projects, web apps, StayPay, Tenga and Thrive, Oakwood Academy, Flutter applications, React portfolio"
+        description="Browse the technical projects, web applications, and mobile products engineered by Byma Solutions. Built with React, Flutter, and Firebase."
+        keywords="Byma Solutions projects, web apps, StayPay, Tenga and Thrive, Oakwood Academy, Flutter applications, React portfolio"
         schemaJson={projectsSchema}
       />
       <PIntro/>

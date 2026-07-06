@@ -11,8 +11,8 @@ const designs= projectdata.filter((project)=>project.category==='designs')
 const designSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Web Development Projects",
-  "description": "Featured production-grade web applications built with React, TailwindCSS, and JavaScript.",
+  "name": "Byma Solutions Design Projects",
+  "description": "Featured UI/UX and design projects built by Byma Solutions with modern aesthetics and clean user experience.",
   "numberOfItems": designs.length,
   "itemListElement": designs.map((p, idx) => ({
     "@type": "ListItem",
@@ -32,8 +32,8 @@ function Designs() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
         title="Designs"
-        description="Explore the Design projects built by Brian Karanja / Byma. Luxuirous UI/UX designs optimized for speed, responsiveness, and clean UX."
-        keywords="Web Development, React designs, E-commerce hubs, Byma Web Apps, Nairobi Developer"
+        description="Explore the Design projects built by Byma Solutions. Luxurious UI/UX designs optimized for speed, responsiveness, and clean UX."
+        keywords="Web Development, React designs, E-commerce hubs, Byma Solutions, Nairobi Developer"
         schemaJson={designSchema}
       />
       <PIntro/>

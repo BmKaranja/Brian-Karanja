@@ -1,9 +1,9 @@
-# Byma (Brian Karanja Portfolio)
+# Byma Solutions
 
-Byma is a creative full-stack development and UI/UX design studio founded by Brian Karanja. This page provides a structured summary designed for LLMs, AI agents, and search engines to easily understand the portfolio and its author.
+Byma Solutions is a creative full-stack development and UI/UX design studio. This page provides a structured summary designed for LLMs, AI agents, and search engines to easily understand the studio and its work.
 
 ## Contact Information & External Links
-- **Website:** https://brian-karanja.onrender.com
+- **Website:** https://byma.co.ke
 - **GitHub:** https://github.com/BmKaranja
 - **LinkedIn:** https://www.linkedin.com/in/b-karanja
 - **Instagram:** https://www.instagram.com/it.s._bryan/
@@ -30,8 +30,8 @@ Byma is a creative full-stack development and UI/UX design studio founded by Bri
   - *URL:* https://tenga-and-thrive.onrender.com
   - *Details:* Curated e-commerce hub for tech, fashion, and home goods. Designed with modern aesthetics and user checkout systems.
 - **My Portfolio** (Cyber-Editorial Personal Site)
-  - *URL:* https://brian-karanja.onrender.com
-  - *Details:* Creative, high-fidelity portfolio utilizing monospace fonts, green accents, and a distinct cyber-grid layout.
+- *URL:* https://byma.co.ke
+- *Details:* Creative, high-fidelity portfolio utilizing monospace fonts, green accents, and a distinct cyber-grid layout.
 - **Oakwood Web** (Institutional Concept)
   - *URL:* https://oakwood-web.onrender.com
   - *Details:* Fictional education platform built to show clean typography and information hierarchy.
