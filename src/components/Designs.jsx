@@ -1,18 +1,20 @@
 import React from 'react'
-import Footer from './Footer'
 import Pcards from './Pcards'
 import PIntro from './PIntro'
+import Footer from './Footer'
 import { NavLink } from 'react-router-dom'
 import projectdata from '../data/projectdata.json'
 import SEO from './SEO'
 
-const projectsSchema = {
+const designs= projectdata.filter((project)=>project.category==='designs')
+
+const designSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Solutions Projects Portfolio",
-  "description": "Featured software engineering, web development, and mobile app projects by Byma Solutions.",
-  "numberOfItems": projectdata.length,
-  "itemListElement": projectdata.map((p, idx) => ({
+  "name": "Byma Solutions Design Projects",
+  "description": "Featured UI/UX and design projects built by Byma Solutions with modern aesthetics and clean user experience.",
+  "numberOfItems": designs.length,
+  "itemListElement": designs.map((p, idx) => ({
     "@type": "ListItem",
     "position": idx + 1,
     "item": {
@@ -25,14 +27,14 @@ const projectsSchema = {
   }))
 };
 
-function Projects() {
+function Designs() {
   return (
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
-        title="Featured Projects"
-        description="Browse the technical projects, web applications, and mobile products engineered by Byma Solutions. Built with React, Flutter, and Firebase."
-        keywords="Byma Solutions projects, web apps, StayPay, Tenga and Thrive, Oakwood Academy, Flutter applications, React portfolio"
-        schemaJson={projectsSchema}
+        title="Designs"
+        description="Explore the Design projects built by Byma Solutions. Luxurious UI/UX designs optimized for speed, responsiveness, and clean UX."
+        keywords="Web Development, React designs, E-commerce hubs, Byma Solutions, Nairobi Developer"
+        schemaJson={designSchema}
       />
       <PIntro/>
         <nav className='flex flex-row gap-2 md:gap-5 ml-2 md:ml-10 mt-10 flex-wrap'>
@@ -67,7 +69,7 @@ function Projects() {
         </nav>      
         <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {projectdata.map((project) => (
+          {designs.map((project) => (
             <Pcards key={project.link} {...project} />
           ))}
         </div>
@@ -79,4 +81,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default Designs

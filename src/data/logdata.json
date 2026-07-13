@@ -1,9 +1,44 @@
-[
+[   
+    {
+    "date":"2026-07-06",
+    "project":"Wincer's cake house",
+    "description":"Increased VU targets from 10 to 100 sustained load during 1-minute stages.Add ADMIN_SECRET environment variable support for protected admin endpoints.Add tests for /api/admin/users, /api/admin/orders, and /api/admin/inquiries.Improve response validation with try-catch blocks for JSON parsing.Refactor headers into reusable base and admin configurations for clarity.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
+    "date":"2026-07-06",
+    "project":"My Portfolio website",
+    "description":"chore: rebrand project to Byma Solutions across all assets.Update all branding references from the personal 'Brian Karanja / Byma' portfolio to the 'Byma Solutions' studio brand. Changes include site meta tags, package.json name, public LLM/robots.txt content, component copy, and canonical/sitemap URLs, plus removal of duplicate sitemap entries in robots.txt to align with the official byma.co.ke domain.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+{
+    "date":"2026-07-04",
+    "project":"Salio",
+    "description":"Set up the core application scaffold for Salio, including Vite configuration, PWA support, Tailwind CSS integration, Supabase client initialization, and offline-first storage logic via IndexedDB.",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Salio.git"
+},
+    {
+    "date":"2026-07-03",
+    "project":"My Portfolio website",
+    "description":"added Designs section to showcase design projects; update navigation and project data",
+    "tags":["React", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
+    "date":"2026-06-25",
+    "project":"Wincer's cake house",
+    "description":"feat: integrate M-Pesa STK push and refine schema",
+    "tags":["Supabase", "TailwindCss", "Typescript"],
+    "link":"https://github.com/BmKaranja/Wincer_Project.git"
+},
     {
     "date":"2026-06-25",
     "project":"Wincer's cake house",
     "description":"Initialize a Supabase admin client to handle M-Pesa callbacks bypassing RLS and exempt the callback endpoint from general rate limiting to ensure successful payment processing.",
-    "tags":["React", "TailwindCss", "Typescript"],
+    "tags":["Supabase", "TailwindCss", "Typescript"],
     "link":"https://github.com/BmKaranja/Wincer_Project.git"
 },
     {

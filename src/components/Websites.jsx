@@ -11,8 +11,8 @@ const websites = projectdata.filter((project)=>project.category==='website')
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Byma Web Development Projects",
-  "description": "Featured production-grade web applications built with React, TailwindCSS, and JavaScript.",
+  "name": "Byma Solutions Web Development Projects",
+  "description": "Featured production-grade web applications built by Byma Solutions with React, TailwindCSS, and JavaScript.",
   "numberOfItems": websites.length,
   "itemListElement": websites.map((p, idx) => ({
     "@type": "ListItem",
@@ -32,8 +32,8 @@ function Websites() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
         title="Websites & Web Apps"
-        description="Explore the web development projects built by Brian Karanja / Byma. Production-grade web applications optimized for speed, responsiveness, and clean UX."
-        keywords="Web Development, React websites, E-commerce hubs, Byma Web Apps, Nairobi Developer"
+        description="Explore the web development projects built by Byma Solutions. Production-grade web applications optimized for speed, responsiveness, and clean UX."
+        keywords="Web Development, React websites, E-commerce hubs, Byma Solutions, Nairobi Developer"
         schemaJson={websiteSchema}
       />
       <PIntro/>
@@ -52,13 +52,21 @@ function Websites() {
           >
             Websites
           </NavLink>
-          <NavLink 
+          {/*<NavLink 
             to='/projects/mobile'
             end
             className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
           >
             Mobile Apps
+          </NavLink>*/}
+          <NavLink 
+            to='/projects/designs'
+            end
+            className={({ isActive }) => isActive ? 'p-nav-active' : 'p-nav'}
+          >
+            Designs
           </NavLink>
+          
         </nav>      
         <section className='px-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>

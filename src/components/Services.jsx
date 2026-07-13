@@ -10,18 +10,18 @@ const servicesSchema = {
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "name": "Byma",
-      "image": "https://brian-karanja.onrender.com/me.png",
+      "name": "Byma Solutions",
+      "image": "https://byma.co.ke/me.jpg",
       "description": "Professional Web Development, Mobile App Development, and UI/UX Design services.",
-      "url": "https://brian-karanja.onrender.com/Services",
+      "url": "https://byma.co.ke/Services",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "KE"
       },
       "provider": {
-        "@type": "Person",
-        "name": "Brian Karanja"
+        "@type": "Organization",
+        "name": "Byma Solutions"
       }
     },
     {
@@ -29,23 +29,23 @@ const servicesSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What services does Byma offer?",
+          "name": "What services does Byma Solutions offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Byma specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
+            "text": "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
           }
         },
         {
           "@type": "Question",
-          "name": "What technical stack does Brian Karanja specialize in?",
+          "name": "What technical stack does Byma Solutions specialize in?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Brian Karanja specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
+            "text": "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
           }
         },
         {
           "@type": "Question",
-          "name": "How does Byma ensure high performance and SEO/GEO optimization?",
+          "name": "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
@@ -53,10 +53,10 @@ const servicesSchema = {
         },
         {
           "@type": "Question",
-          "name": "Is Brian Karanja available for freelance or full-time opportunities?",
+          "name": "Is Byma Solutions available for freelance or full-time opportunities?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, I am open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
+            "text": "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
           }
         }
       ]
@@ -132,20 +132,20 @@ function Services() {
 
   const faqs = [
     {
-      question: "What services does Byma offer?",
-      answer: "Byma specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
+      question: "What services does Byma Solutions offer?",
+      answer: "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
     },
     {
-      question: "What technical stack does Brian Karanja specialize in?",
-      answer: "Brian Karanja specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
+      question: "What technical stack does Byma Solutions specialize in?",
+      answer: "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
     },
     {
-      question: "How does Byma ensure high performance and SEO/GEO optimization?",
+      question: "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
       answer: "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
     },
     {
-      question: "Is Brian Karanja available for freelance or full-time opportunities?",
-      answer: "Yes, I am open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
+      question: "Is Byma Solutions available for freelance or full-time opportunities?",
+      answer: "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
     }
   ];
 
@@ -185,7 +185,7 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>SEO & Performance Optimized</p>
             </div>
             <Link
-              to='/Projects'
+              to='/Projects/websites'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >
@@ -207,15 +207,15 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Smooth Animations</p>
               <p><span style={{ color: '#00ff00' }}>✓ </span>Offline Functionality</p>
             </div>
-            <Link
-              to='/Projects'
+            {/*<Link
+              to='/Projects/Mobile'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >
               View Projects <span className='pl-1'>
                 <FaArrowRight />
               </span>
-            </Link>
+            </Link>*/}
           </article>
           <article className='mycards ' style={{ minWidth: 0 }}>
             <div className='p-2 w-12'>
@@ -229,7 +229,7 @@ function Services() {
               <p><span style={{ color: '#00ff00' }}>✓ </span>Brand Identity</p>
             </div>
             <Link
-              to='/Projects'
+              to='/Projects/designs'
               className='color font link'
               style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
             >

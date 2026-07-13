@@ -8,10 +8,10 @@ const workLogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Byma DevLog",
-  "description": "A digital garden recording my technical journey, architectural decisions, and daily learnings in frontend and mobile engineering.",
+  "description": "A digital garden recording technical journey, architectural decisions, and daily learnings in frontend and mobile engineering by Byma Solutions.",
   "publisher": {
-    "@type": "Person",
-    "name": "Brian Karanja"
+    "@type": "Organization",
+    "name": "Byma Solutions"
   },
   "blogPost": logdata.map((log) => ({
     "@type": "BlogPosting",
@@ -19,8 +19,8 @@ const workLogSchema = {
     "description": log.description,
     "datePublished": log.date,
     "author": {
-      "@type": "Person",
-      "name": "Brian Karanja"
+      "@type": "Organization",
+      "name": "Byma Solutions"
     },
     "url": log.link
   }))
@@ -197,8 +197,8 @@ function WorkLog() {
     <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
       <SEO 
         title="Development WorkLog & Timeline"
-        description="Follow Brian Karanja's coding updates, technical logs, architectural design changes, and commit history for projects like StayPay and Wincer's Cake House."
-        keywords="DevLog, Brian Karanja timeline, software engineering commits, web development logs, Flutter engineering journal"
+        description="Follow Byma Solutions' coding updates, technical logs, architectural design changes, and commit history for projects like StayPay and Wincer's Cake House."
+        keywords="DevLog, Byma Solutions timeline, software engineering commits, web development logs, Flutter engineering journal"
         schemaJson={workLogSchema}
       />
       <NavBar />
@@ -227,8 +227,8 @@ function WorkLog() {
         </h1>
 
         <p style={{ color: '#888', maxWidth: '520px', fontSize: '15px', lineHeight: 1.7 }}>
-          A digital garden recording my technical journey, architectural decisions,
-          and daily learnings in frontend and mobile engineering.
+          A digital garden recording technical journey, architectural decisions,
+          and daily learnings in frontend and mobile engineering by Byma Solutions.
         </p>
       </section>
 

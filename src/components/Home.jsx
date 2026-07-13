@@ -9,20 +9,20 @@ const homeSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://brian-karanja.onrender.com/#website",
-      "url": "https://brian-karanja.onrender.com/",
-      "name": "Byma",
-      "description": "Creative full-stack development by Brian Karanja. Pixel-perfect interfaces, robust systems, and digital experiences.",
+      "@id": "https://byma.co.ke/#website",
+      "url": "https://byma.co.ke/",
+      "name": "Byma Solutions",
+      "description": "Creative full-stack development and UI/UX design by Byma Solutions. Pixel-perfect interfaces, robust systems, and digital experiences.",
       "publisher": {
-        "@id": "https://brian-karanja.onrender.com/#person"
+        "@id": "https://byma.co.ke/#organization"
       }
     },
     {
-      "@type": "Person",
-      "@id": "https://brian-karanja.onrender.com/#person",
-      "name": "Brian Karanja",
-      "url": "https://brian-karanja.onrender.com/",
-      "jobTitle": "Creative Full-Stack Developer & Designer",
+      "@type": "Organization",
+      "@id": "https://byma.co.ke/#organization",
+      "name": "Byma Solutions",
+      "url": "https://byma.co.ke/",
+      "description": "A creative full-stack development and design studio specializing in React, Flutter, and high-performance digital solutions.",
       "sameAs": [
         "https://github.com/BmKaranja",
         "https://www.linkedin.com/in/b-karanja",
@@ -50,8 +50,8 @@ function Home() {
     <div style={{ minHeight: '100vh' }}>
       <SEO
         title="Creative Full-Stack Development"
-        description="Welcome to Byma, the creative developer portfolio of Brian Karanja. Specializing in high-performance React web applications and Flutter mobile experiences."
-        keywords="Brian Karanja, Byma, Full-Stack Developer, React, TailwindCSS, Flutter, UI/UX Design, Nairobi, Kenya"
+        description="Welcome to Byma Solutions, a creative development and design studio. Specializing in high-performance React web applications, Flutter mobile experiences, and custom UI/UX design."
+        keywords="Byma Solutions, Full-Stack Development, React, TailwindCSS, Flutter, UI/UX Design, Web Development, Nairobi, Kenya"
         schemaJson={homeSchema}
       />
       <Top />

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 function SEO({ title, description, keywords, ogImage, ogType = 'website', canonicalUrl, schemaJson }) {
   useEffect(() => {
     // 1. Update document title
-    const formattedTitle = title ? `${title} | BYMA` : 'BYMA | Creative Full-Stack Development';
+    const formattedTitle = title ? `${title} | BYMA Solutions` : 'BYMA Solutions | Creative Full-Stack Development';
     document.title = formattedTitle;
 
     // Helper to update or create meta tags

@@ -241,7 +241,7 @@ function AboutMe() {
             paddingLeft: '20px',
             margin: 0,
           }}>
-            A one-person creative lab specializing in React, Flutter, and full-stack development. I focus on building products with clean architecture, thoughtful UX, and maintainable code. Every project is crafted with precision and shipped with confidence.
+            Byma Solutions is a creative development and design studio specializing in React, Flutter, and full-stack development. We focus on building products with clean architecture, thoughtful UX, and maintainable code. Every project is crafted with precision and shipped with confidence.
           </p>
           {/* Skill groups */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>

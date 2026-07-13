@@ -11,7 +11,7 @@ function NavBar() {
             fontWeight: 900,
             color: '#00ff00',
             letterSpacing: '-1px'
-          }}>BYMA</span>
+          }}>BYMA Solutions</span>
         </Link>
       </div>
       {/* Internal navigation */}

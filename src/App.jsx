@@ -10,6 +10,7 @@ import Websites from './components/Websites'
 import Mobile from './components/Mobile'
 import { FaWhatsapp } from 'react-icons/fa'
 import PrivacyPolicy from './components/PrivacyPolicy'
+import Designs from './components/Designs'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/AboutMe' element={<AboutMe/>}></Route>
         <Route path='/projects/websites' element={<Websites/>}></Route>
         <Route path='/projects/mobile' element={<Mobile/>}></Route>
+        <Route path='/projects/designs' element={<Designs/>}></Route>
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
       
