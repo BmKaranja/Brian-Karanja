@@ -1,5 +1,12 @@
 [
   {
+    "title": "Salio",
+    "description": "Salio is a comprehensive Point of Sale (POS) system designed for small retail businesses that need to operate reliably in environments with unstable internet connectivity. The application provides a seamless experience whether online or offline, automatically syncing sales and inventory data when connectivity is restored.",
+    "link": "https://salio-app.vercel.app",
+    "category": "website",
+    "image": "https://ik.imagekit.io/oaundupgio/Designs/Screenshot%202026-07-14%20175200.png"
+  },
+  {
     "title": "Wincer Cake House",
     "description": "Wincer Cake House is a modern, full-stack e-commerce and content management platform built specifically for a boutique bakery. Designed with both the customer experience and business operations in mind, the application allows users to seamlessly browse bakery products, read blog updates, and securely check out. On the operational side, it provides the business owner with a comprehensive admin dashboard to manage inventory, engage with customers, and track sales.",
     "link": "https://wincer-project.vercel.app",

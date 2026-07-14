@@ -1,5 +1,12 @@
 [   
     {
+    "date":"2026-07-14",
+    "project":"Salio",
+    "description":"Explicitly configured Supabase auth client options for PWA usage: enabled session persistence via localStorage, automatic token refresh, and disabled URL session detection (no OAuth/magic link redirect flows in this app). Added inline documentation clarifying that the 14-day absolute session lifetime is enforced server-side via Supabase Dashboard settings, not client-side code.Removed hardcoded placeholder store and user IDs in CashierFlow, replacing them with the authenticated user's profile from the useAuth hook to resolve the prior TODO for wiring real session identifiers. Added guard checks to prevent quick add and checkout operations when no user is authenticated..",
+    "tags":["Supabase", "React", "Typescript"],
+    "link":"https://github.com/BmKaranja/Brian-Karanja.git"
+},
+    {
     "date":"2026-07-06",
     "project":"Wincer's cake house",
     "description":"Increased VU targets from 10 to 100 sustained load during 1-minute stages.Add ADMIN_SECRET environment variable support for protected admin endpoints.Add tests for /api/admin/users, /api/admin/orders, and /api/admin/inquiries.Improve response validation with try-catch blocks for JSON parsing.Refactor headers into reusable base and admin configurations for clarity.",
