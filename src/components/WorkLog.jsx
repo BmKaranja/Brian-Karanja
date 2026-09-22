@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import logdata from '../data/logdata.json'
 import SEO from './SEO'
+import { useGitHubCommits } from '../hooks/useGitHubCommits'
 
 const workLogSchema = {
   "@context": "https://schema.org",
@@ -25,6 +26,58 @@ const workLogSchema = {
     "url": log.link
   }))
 };
+
+/* Loading skeleton for a single card */
+function SkeletonCard() {
+  return (
+    <div style={{
+      background: '#111417',
+      border: '1px solid #1e2228',
+      borderRadius: '8px',
+      padding: '24px',
+      width: '100%',
+      maxWidth: '380px',
+    }}>
+      {[80, 60, 100, 40].map((w, i) => (
+        <div key={i} style={{
+          height: i === 0 ? '18px' : '13px',
+          width: `${w}%`,
+          background: 'linear-gradient(90deg, #1a1f25 25%, #242930 50%, #1a1f25 75%)',
+          backgroundSize: '200% 100%',
+          borderRadius: '4px',
+          marginBottom: '14px',
+          animation: 'shimmer 1.5s infinite',
+        }} />
+      ))}
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+/* Error state */
+function ErrorBanner({ message }) {
+  return (
+    <div style={{
+      margin: '0 5vw 40px',
+      padding: '20px 24px',
+      background: '#120a0a',
+      border: '1px solid #3a1515',
+      borderRadius: '8px',
+      fontFamily: 'monospace',
+    }}>
+      <p style={{ color: '#ff4444', fontSize: '13px', marginBottom: '6px', letterSpacing: '1px' }}>
+        ⚠ GITHUB_API_ERROR
+      </p>
+      <p style={{ color: '#666', fontSize: '12px', marginBottom: '12px' }}>{message}</p>
+      <p style={{ color: '#555', fontSize: '11px' }}>Falling back to cached log entries.</p>
+    </div>
+  )
+}
 
 function Tag({ label }) {
   return (
@@ -185,7 +238,11 @@ function GridCard({ entry }) {
 function WorkLog() {
   const [showAll, setShowAll] = useState(false)
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
-  const timelineEntries = logdata.slice(0, 4)
+  const { commits, loading, error } = useGitHubCommits()
+
+  // Use live GitHub commits; fall back to logdata if error or still loading
+  const activeData = (!loading && !error && commits.length > 0) ? commits : logdata
+  const timelineEntries = activeData.slice(0, 4)
 
   React.useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768)
@@ -245,11 +302,27 @@ function WorkLog() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '24px' : '60px' }}>
             {timelineEntries.map((entry, i) =>
               isMobile ? (
-                <TimelineEntryMobile key={entry.id} entry={entry} />
+                <TimelineEntryMobile key={entry.id || i} entry={entry} />
               ) : (
-                <TimelineEntry key={entry.id} entry={entry} index={i} />
+                <TimelineEntry key={entry.id || i} entry={entry} index={i} />
               )
             )}
+          </div>
+        </section>
+      )}
+
+      {/* Error banner */}
+      {error && <ErrorBanner message={error} />}
+
+      {/* Loading skeletons */}
+      {loading && !showAll && (
+        <section style={{ padding: '0 5vw', marginBottom: '40px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '24px' : '60px' }}>
+            {[0, 1, 2, 3].map(i => (
+              <div key={i} style={{ display: 'flex', justifyContent: i % 2 === 0 ? 'flex-end' : 'flex-start', paddingRight: i % 2 === 0 && !isMobile ? '80px' : '0', paddingLeft: i % 2 !== 0 && !isMobile ? '80px' : '0' }}>
+                <SkeletonCard />
+              </div>
+            ))}
           </div>
         </section>
       )}
@@ -258,16 +331,22 @@ function WorkLog() {
       {showAll && (
         <section style={{ padding: '0 5vw', marginBottom: '40px' }}>
           <p style={{ color: '#555', fontFamily: 'monospace', fontSize: '12px', marginBottom: '24px', letterSpacing: '1px' }}>
-            ALL_COMMITS — {logdata.length} entries
+            {loading
+              ? 'LOADING_COMMITS...'
+              : `ALL_COMMITS — ${activeData.length} entries${!error && commits.length > 0 ? ' · live' : ' · cached'}`
+            }
           </p>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
             gap: '24px',
           }}>
-            {logdata.map(entry => (
-              <GridCard key={entry.id} entry={entry} />
-            ))}
+            {loading
+              ? [0,1,2,3,4,5].map(i => <SkeletonCard key={i} />)
+              : activeData.map((entry, i) => (
+                  <GridCard key={entry.id || i} entry={entry} />
+                ))
+            }
           </div>
         </section>
       )}
