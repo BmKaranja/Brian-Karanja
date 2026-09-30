@@ -5,32 +5,21 @@ import PageShell from './layout/PageShell'
 import ProjectTabs from './layout/ProjectTabs'
 import projectdata from '../data/projectdata.json'
 import SEO from './SEO'
+import { breadcrumb, graph, projectList, webPage } from '../seo/schema'
 
 const websites = projectdata.filter((project)=>project.category==='website')
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Byma Solutions Web Development Projects",
-  "description": "Featured production-grade web applications built by Byma Solutions with React, TailwindCSS, and JavaScript.",
-  "numberOfItems": websites.length,
-  "itemListElement": websites.map((p, idx) => ({
-    "@type": "ListItem",
-    "position": idx + 1,
-    "item": {
-      "@type": "CreativeWork",
-      "name": p.title,
-      "description": p.description,
-      "url": p.link,
-      "image": p.image
-    }
-  }))
-};
+const websiteSchema = graph(
+  webPage('CollectionPage', '/projects/websites', 'Byma Solutions Web Development Projects', 'Featured production-grade web applications built by Byma Solutions with React, TailwindCSS, and JavaScript.'),
+  projectList('Byma Solutions Web Development Projects', 'Featured production-grade web applications built by Byma Solutions with React, TailwindCSS, and JavaScript.', websites),
+  breadcrumb([{ name: 'Projects', path: '/Projects' }, { name: 'Websites', path: '/projects/websites' }]),
+)
 
 function Websites() {
   return (
     <PageShell>
-      <SEO 
+      <SEO
+        path='/projects/websites'
         title="Websites & Web Apps"
         description="Explore the web development projects built by Byma Solutions. Production-grade web applications optimized for speed, responsiveness, and clean UX."
         keywords="Web Development, React websites, E-commerce hubs, Byma Solutions, Nairobi Developer"

@@ -3,6 +3,17 @@ import PageShell from './layout/PageShell'
 import PageHeading from './layout/PageHeading'
 import Reveal from './home/Reveal'
 import ContactCta from './home/ContactCta'
+import SEO from './SEO'
+import { breadcrumb, graph, organization, webPage } from '../seo/schema'
+
+const DESCRIPTION =
+  'Byma Solutions is a Nairobi-based development and design studio, founded in 2025, specializing in React web apps, Flutter mobile apps, and UI/UX design.'
+
+const aboutSchema = graph(
+  organization,
+  webPage('AboutPage', '/AboutMe', 'About Byma Solutions', DESCRIPTION),
+  breadcrumb([{ name: 'About', path: '/AboutMe' }]),
+)
 
 const skills = [
   { category: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Flutter'] },
@@ -17,6 +28,13 @@ const stats = [
 function AboutMe() {
   return (
     <PageShell>
+      <SEO
+        path='/AboutMe'
+        title='About'
+        description={DESCRIPTION}
+        keywords='About Byma Solutions, Nairobi web developer, Flutter developer Kenya, UI/UX designer Nairobi'
+        schemaJson={aboutSchema}
+      />
       <PageHeading
         eyebrow='About Byma · 2025–present'
         title={<>Refract ideas <span className='text-accent'>into code</span> and design.</>}

@@ -5,30 +5,19 @@ import Pcards from './Pcards'
 import PIntro from './PIntro'
 import projectdata from '../data/projectdata.json'
 import SEO from './SEO'
+import { breadcrumb, graph, projectList, webPage } from '../seo/schema'
 
-const projectsSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Byma Solutions Projects Portfolio",
-  "description": "Featured software engineering, web development, and mobile app projects by Byma Solutions.",
-  "numberOfItems": projectdata.length,
-  "itemListElement": projectdata.map((p, idx) => ({
-    "@type": "ListItem",
-    "position": idx + 1,
-    "item": {
-      "@type": "CreativeWork",
-      "name": p.title,
-      "description": p.description,
-      "url": p.link,
-      "image": p.image
-    }
-  }))
-};
+const projectsSchema = graph(
+  webPage('CollectionPage', '/Projects', 'Byma Solutions Projects Portfolio', 'Featured software engineering, web development, and mobile app projects by Byma Solutions.'),
+  projectList('Byma Solutions Projects Portfolio', 'Featured software engineering, web development, and mobile app projects by Byma Solutions.', projectdata),
+  breadcrumb([{ name: 'Projects', path: '/Projects' }]),
+)
 
 function Projects() {
   return (
     <PageShell>
-      <SEO 
+      <SEO
+        path='/Projects'
         title="Featured Projects"
         description="Browse the technical projects, web applications, and mobile products engineered by Byma Solutions. Built with React, Flutter, and Firebase."
         keywords="Byma Solutions projects, web apps, StayPay, Tenga and Thrive, Oakwood Academy, Flutter applications, React portfolio"

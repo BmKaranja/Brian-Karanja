@@ -1,18 +1,13 @@
 import React from 'react'
 import SEO from './SEO'
+import { breadcrumb, graph, webPage } from '../seo/schema'
 import PageShell from './layout/PageShell'
 import PageHeading from './layout/PageHeading'
 
-const privacySchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Privacy Policy",
-  "url": "https://www.byma.co.ke/privacy-policy",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Byma Solutions"
-  }
-}
+const privacySchema = graph(
+  webPage('WebPage', '/privacy-policy', 'Privacy Policy', 'How Byma Solutions collects, uses, and protects your data.'),
+  breadcrumb([{ name: 'Privacy Policy', path: '/privacy-policy' }]),
+)
 
 const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
@@ -32,6 +27,7 @@ function PrivacyPolicy() {
   return (
     <PageShell>
       <SEO
+        path='/privacy-policy'
         title="Privacy Policy"
         description="Privacy Policy for Byma Solutions — how Byma Solutions collects, uses, and protects your data."
         keywords="Privacy Policy, Byma Solutions, data protection"

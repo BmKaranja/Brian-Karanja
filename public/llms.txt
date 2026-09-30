@@ -1,43 +1,41 @@
 # Byma Solutions
 
-Byma Solutions is a creative full-stack development and UI/UX design studio. This page provides a structured summary designed for LLMs, AI agents, and search engines to easily understand the studio and its work.
+> Byma Solutions is a web, mobile and UI/UX design studio in Nairobi, Kenya, founded in 2025. It builds React web applications, Flutter mobile apps for iOS and Android, and custom design systems for small and growing businesses across Kenya. Fixed-price website packages start at KSh 10,000.
 
-## Contact Information & External Links
-- **Website:** https://www.byma.co.ke
-- **GitHub:** https://github.com/BmKaranja
-- **LinkedIn:** https://www.linkedin.com/in/b-karanja
-- **Instagram:** https://www.instagram.com/it.s._bryan/
-- **Resume/CV:** https://drive.google.com/file/d/1yFLi32q3UE26ZRoLQrjitQNEfz7fpoIe/view?usp=sharing
+## Key facts
+- Location: Nairobi, Kenya (serves clients across Kenya)
+- Founded: 2025
+- Services: web development, mobile app development, UI/UX design
+- Stack: React, TypeScript, JavaScript, TailwindCSS, Flutter, Dart, Firebase, Supabase, SQL, Figma
+- Contact: WhatsApp (via the "Get in touch" button on https://www.byma.co.ke) or LinkedIn
 
-## Services Offered
-1. **Web Development**
-   - Focus: High-performance, responsive web applications built with React, JavaScript, and TailwindCSS.
-   - Core Features: Full-Stack architecture, semantic SEO, and speed optimization.
-2. **Mobile Apps**
-   - Focus: Cross-platform iOS and Android application engineering using Flutter and Dart.
-   - Core Features: Smooth native-feeling animations, robust offline features, and custom UI.
-3. **UI/UX Design**
-   - Focus: User-centered design systems, branding, and interactive wireframes.
-   - Tools: Figma.
+## Pages
+- [Home](https://www.byma.co.ke/): Studio overview, services and featured projects
+- [Services & pricing](https://www.byma.co.ke/Services): Services, website packages, maintenance plans and FAQ
+- [Projects](https://www.byma.co.ke/Projects): Full portfolio
+- [Websites & web apps](https://www.byma.co.ke/projects/websites): Web development projects
+- [Designs](https://www.byma.co.ke/projects/designs): UI/UX design projects
+- [About](https://www.byma.co.ke/AboutMe): About the studio, experience and skills
+- [Privacy policy](https://www.byma.co.ke/privacy-policy): How client data is handled under Kenya's Data Protection Act, 2019
 
-## Core Technical Skillset
-- **Frontend & Web:** HTML5, CSS3, JavaScript (ES6+), React, TailwindCSS, TypeScript
-- **Mobile Development:** Flutter, Dart
-- **Tooling & Backend:** Figma, Git, SQL, Firebase, Google Stitch, AI Studio
+## Website packages (one-time development fee)
+- Digital Business Card — KSh 10,000: one-page site, mobile-optimized, WhatsApp/email click-to-chat, Google Maps. Ready in about 1 week. Domain (about KSh 1,000) paid by the client.
+- Essential Growth — KSh 20,000: up to 4 pages, galleries or pricing tables, quote forms, basic on-page SEO. Ready in 2–3 weeks.
+- Smart Business System — KSh 35,000: 5+ pages with a secure cloud database, booking or sign-up management, M-Pesa integration, 14 days of post-launch support. Ready in 3–5 weeks.
+- Enterprise: custom architecture, Supabase engineering, API integrations (M-Pesa, CRM), advanced SEO and a formal SLA. Quoted individually.
 
-## Highlighted Projects
-- **Tenga and Thrive** (E-Commerce Platform)
-  - *URL:* https://tenga-and-thrive.onrender.com
-  - *Details:* Curated e-commerce hub for tech, fashion, and home goods. Designed with modern aesthetics and user checkout systems.
-- **My Portfolio** (Cyber-Editorial Personal Site)
-- *URL:* https://www.byma.co.ke
-- *Details:* Creative, high-fidelity portfolio utilizing monospace fonts, green accents, and a distinct cyber-grid layout.
-- **Oakwood Web** (Institutional Concept)
-  - *URL:* https://oakwood-web.onrender.com
-  - *Details:* Fictional education platform built to show clean typography and information hierarchy.
-- **StayPay** (Mobile App)
-  - *GitHub Repository:* https://github.com/BmKaranja/StayPay-1.git
-  - *Details:* Landlord-tenant connection app featuring billing, rental tracking, and payment statuses. Built with Flutter.
-- **Restaurant** (Showcase Website)
-  - *GitHub Repository:* https://github.com/BmKaranja/Restaurant.git
-  - *Details:* Clean, responsive page showcasing a restaurant menu and booking info using vanilla HTML/JS.
+## Maintenance plans (monthly)
+- Basic Care Plan — KSh 2,500/month: security checks, backups, small content updates, hosting monitoring.
+- Growth Support Plan — KSh 5,000/month: everything in Basic Care, up to 2 hours of development time per month, priority support with a 24-hour response time.
+
+## Selected projects
+- [Salio](https://app.salio.co.ke): Offline-first point-of-sale system for small retailers with unreliable internet; syncs sales and inventory when back online.
+- [Wincer Cake House](https://wincer-project.vercel.app): Full-stack e-commerce and content platform for a bakery, with checkout and an admin dashboard for inventory and sales.
+- [Law Firm Design](https://sweet-art-one.vercel.app): Multi-page site design for a corporate and litigation law firm in Nairobi.
+- [Bakery Design](https://frenchmaid-bakery.vercel.app): Multi-page e-commerce and marketing site for a family-run French bakery in Nairobi, built with React and Tailwind CSS.
+- Driving School Design: Editorial-style site for California Driving School in Eastleigh, Nairobi.
+
+## Links
+- GitHub: https://github.com/BmKaranja
+- LinkedIn: https://www.linkedin.com/in/b-karanja
+- Instagram: https://www.instagram.com/it.s._bryan/

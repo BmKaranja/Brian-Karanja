@@ -1,9 +1,14 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
+import { SITE_URL } from '../seo/routes'
+import { DEFAULT_IMAGE, HeadContext, formatTitle } from '../seo/head'
 
-function SEO({ title, description, keywords, ogImage, ogType = 'website', canonicalUrl, schemaJson }) {
+function SEO({ title, description, keywords, ogImage, ogType = 'website', path, schemaJson }) {
+  const collect = useContext(HeadContext)
+  if (collect) collect({ title, description, keywords, ogImage, ogType, path, schemaJson })
+
   useEffect(() => {
-    // 1. Update document title
-    const formattedTitle = title ? `${title} | BYMA Solutions` : 'BYMA Solutions | Creative Full-Stack Development';
+    const formattedTitle = formatTitle(title);
+    const url = path ? `${SITE_URL}${path}` : window.location.href;
     document.title = formattedTitle;
 
     // Helper to update or create meta tags
@@ -20,55 +25,44 @@ function SEO({ title, description, keywords, ogImage, ogType = 'website', canoni
       el.setAttribute('content', value);
     };
 
-    // 2. Update standard meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
 
-    // 3. Update Open Graph tags
     updateMetaTag('og:title', formattedTitle, true);
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:type', ogType, true);
-    updateMetaTag('og:image', ogImage || 'https://www.byma.co.ke/me.jpg', true);
-    updateMetaTag('og:url', canonicalUrl || window.location.href, true);
+    updateMetaTag('og:image', ogImage || DEFAULT_IMAGE, true);
+    updateMetaTag('og:url', url, true);
 
-    // 4. Update Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', formattedTitle);
     updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', ogImage || 'https://www.byma.co.ke/me.jpg');
+    updateMetaTag('twitter:image', ogImage || DEFAULT_IMAGE);
 
-    // 5. Update Canonical link
     let canonicalEl = document.querySelector('link[rel="canonical"]');
     if (!canonicalEl) {
       canonicalEl = document.createElement('link');
       canonicalEl.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalEl);
     }
-    canonicalEl.setAttribute('href', canonicalUrl || window.location.href);
+    canonicalEl.setAttribute('href', url);
 
-    // 6. Handle JSON-LD Structured Data Injection
+    // JSON-LD: replace any existing block (including the prerendered one) with this page's
     const schemaId = 'seo-schema-jsonld';
-    let schemaEl = document.getElementById(schemaId);
-    if (schemaEl) {
-      schemaEl.remove();
-    }
+    document.getElementById(schemaId)?.remove();
 
     if (schemaJson) {
-      schemaEl = document.createElement('script');
+      const schemaEl = document.createElement('script');
       schemaEl.id = schemaId;
       schemaEl.type = 'application/ld+json';
       schemaEl.text = JSON.stringify(schemaJson);
       document.head.appendChild(schemaEl);
     }
 
-    // Cleanup: remove injected schema element on component unmount to prevent duplicate tags
     return () => {
-      const el = document.getElementById(schemaId);
-      if (el) {
-        el.remove();
-      }
+      document.getElementById(schemaId)?.remove();
     };
-  }, [title, description, keywords, ogImage, ogType, canonicalUrl, schemaJson]);
+  }, [title, description, keywords, ogImage, ogType, path, schemaJson]);
 
   return null;
 }

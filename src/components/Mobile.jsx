@@ -5,32 +5,21 @@ import PageShell from './layout/PageShell'
 import ProjectTabs from './layout/ProjectTabs'
 import projectdata from '../data/projectdata.json'
 import SEO from './SEO'
+import { breadcrumb, graph, projectList, webPage } from '../seo/schema'
 
 const mobileApps = projectdata.filter((project)=>project.category==='mobile')
 
-const mobileSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Byma Solutions Mobile App Projects",
-  "description": "Featured cross-platform iOS and Android mobile applications built by Byma Solutions with Flutter and Dart.",
-  "numberOfItems": mobileApps.length,
-  "itemListElement": mobileApps.map((p, idx) => ({
-    "@type": "ListItem",
-    "position": idx + 1,
-    "item": {
-      "@type": "CreativeWork",
-      "name": p.title,
-      "description": p.description,
-      "url": p.link,
-      "image": p.image
-    }
-  }))
-};
+const mobileSchema = graph(
+  webPage('CollectionPage', '/projects/mobile', 'Byma Solutions Mobile App Projects', 'Featured cross-platform iOS and Android mobile applications built by Byma Solutions with Flutter and Dart.'),
+  projectList('Byma Solutions Mobile App Projects', 'Featured cross-platform iOS and Android mobile applications built by Byma Solutions with Flutter and Dart.', mobileApps),
+  breadcrumb([{ name: 'Projects', path: '/Projects' }, { name: 'Mobile apps', path: '/projects/mobile' }]),
+)
 
 function Mobile() {
   return (
     <PageShell>
-      <SEO 
+      <SEO
+        path='/projects/mobile'
         title="Mobile Apps"
         description="Browse cross-platform mobile apps engineered by Byma Solutions using Flutter and Dart. Fast, native performance and clean UI/UX design."
         keywords="Mobile App Development, Flutter apps, iOS and Android, StayPay mobile, Dart, Cross-platform"

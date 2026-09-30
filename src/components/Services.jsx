@@ -2,70 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaCode, FaMobileAlt, FaPalette } from 'react-icons/fa'
 import SEO from './SEO'
+import { breadcrumb, graph, organization, ORG_ID, webPage } from '../seo/schema'
 import ProposalRequestModal from './ProposalRequestModal'
 import PageShell from './layout/PageShell'
 import PageHeading from './layout/PageHeading'
 import Reveal from './home/Reveal'
 import { btnPrimary, btnSecondary } from './home/contact'
 
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "name": "Byma Solutions",
-      "image": "https://www.byma.co.ke/me.jpg",
-      "description": "Professional Web Development, Mobile App Development, and UI/UX Design services.",
-      "url": "https://www.byma.co.ke/Services",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "KE"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "Byma Solutions"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What services does Byma Solutions offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What technical stack does Byma Solutions specialize in?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Byma Solutions available for freelance or full-time opportunities?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
-          }
-        }
-      ]
-    }
-  ]
-};
+
 
 const SERVICES_WA = '254773852135'
 const chatLink = (message) => `https://wa.me/${SERVICES_WA}?text=${encodeURIComponent(message)}`
@@ -76,7 +20,7 @@ const services = [
     title: 'Web Development',
     text: 'Production-grade web applications built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.',
     points: ['React & TailwindCSS Expert', 'Full-Stack Architecture', 'SEO & Performance Optimized'],
-    to: '/Projects/websites',
+    to: '/projects/websites',
   },
   {
     icon: FaMobileAlt,
@@ -89,7 +33,7 @@ const services = [
     title: 'UI/UX Design',
     text: 'User-centric design systems that balance beauty with function. Every pixel serves a purpose—creating interfaces that users love.',
     points: ['Design Systems', 'Prototyping & Testing', 'Brand Identity'],
-    to: '/Projects/designs',
+    to: '/projects/designs',
   },
 ]
 
@@ -189,24 +133,76 @@ const maintenance = [
   },
 ]
 
+// Answer-first wording: the first sentence stands alone as the answer (for snippets and AI answers).
+// Prices and timelines mirror the packages above — update both together.
 const faqs = [
   {
     question: "What services does Byma Solutions offer?",
-    answer: "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
+    answer: "Byma Solutions offers three services: web development, mobile app development, and UI/UX design. Websites and web apps are built with React, TypeScript, and TailwindCSS; mobile apps for iOS and Android with Flutter and Dart; and interfaces and design systems in Figma."
   },
   {
-    question: "What technical stack does Byma Solutions specialize in?",
-    answer: "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
+    question: "How much does a website cost with Byma Solutions?",
+    answer: "Websites start at KSh 10,000 for a one-page site, KSh 20,000 for a site of up to 4 pages, and KSh 35,000 for a web app with a cloud database and M-Pesa integration. Each is a one-time development fee; domain registration (about KSh 1,000) is paid by the client. Larger systems are quoted individually."
   },
   {
-    question: "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
-    answer: "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
+    question: "How long does it take to build a website?",
+    answer: "A one-page site is ready in about 1 week, a multi-page site in 2–3 weeks, and a database-backed web app in 3–5 weeks."
   },
   {
-    question: "Is Byma Solutions available for freelance or full-time opportunities?",
-    answer: "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
+    question: "Does Byma Solutions offer website maintenance?",
+    answer: "Yes. The Basic Care Plan (KSh 2,500 per month) covers security checks, backups, small content updates, and hosting monitoring. The Growth Support Plan (KSh 5,000 per month) adds up to 2 hours of development time a month and priority support with a 24-hour response time."
+  },
+  {
+    question: "Where is Byma Solutions based?",
+    answer: "Byma Solutions is based in Nairobi, Kenya, and works with businesses across Kenya. Projects are coordinated over WhatsApp and email."
+  },
+  {
+    question: "What technical stack does Byma Solutions use?",
+    answer: "Byma Solutions builds with React, TypeScript, JavaScript, TailwindCSS, Flutter, Dart, Firebase, Supabase, and SQL, and designs in Figma."
+  },
+  {
+    question: "How does Byma Solutions make websites fast and easy to find on Google and AI search?",
+    answer: "Every page is pre-rendered to static HTML with structured data (JSON-LD), so Google and AI assistants can read it without running JavaScript. Sites also use semantic HTML, small bundles, and an llms.txt summary for AI crawlers."
+  },
+  {
+    question: "Is Byma Solutions available for freelance or full-time work?",
+    answer: "Yes. Byma Solutions takes on freelance projects and consulting, and is open to select full-time roles. Get in touch on WhatsApp or LinkedIn to discuss details."
   }
 ]
+
+const servicesSchema = graph(
+  organization,
+  webPage('WebPage', '/Services', 'Services & Pricing — Byma Solutions', 'Web development, mobile app development, and UI/UX design services from Byma Solutions in Nairobi, with fixed website packages from KSh 10,000.'),
+  ...services.map((s) => ({
+    '@type': 'Service',
+    name: s.title,
+    description: s.text,
+    serviceType: s.title,
+    provider: { '@id': ORG_ID },
+    areaServed: { '@type': 'Country', name: 'Kenya' },
+  })),
+  {
+    '@type': 'OfferCatalog',
+    name: 'Website packages',
+    itemListElement: packages.map((p) => ({
+      '@type': 'Offer',
+      name: p.title.replace(/"/g, ''),
+      description: p.description,
+      price: p.price.replace(/[^0-9]/g, ''),
+      priceCurrency: 'KES',
+      seller: { '@id': ORG_ID },
+    })),
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+  breadcrumb([{ name: 'Services', path: '/Services' }]),
+)
 
 const badge =
   'absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-widest text-accent-ink'
@@ -276,6 +272,7 @@ function Services() {
   return (
     <PageShell>
       <SEO
+        path='/Services'
         title="Services & Capabilities"
         description="Explore the range of design and engineering services offered by Byma. From responsive web development (React/TypeScript) to mobile applications (Flutter) and UI/UX design."
         keywords="Web Development, React developer, Flutter app development, UI/UX Design, Figma, Freelance developer, Nairobi, Kenya"
