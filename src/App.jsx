@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe'
 import Websites from './components/Websites'
 import Mobile from './components/Mobile'
 import { FaWhatsapp } from 'react-icons/fa'
+import { whatsappLink } from './components/home/contact'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import Designs from './components/Designs'
 
@@ -28,7 +29,7 @@ function App() {
       
       {/* Floating WhatsApp Button */}
       <a 
-        href="https://wa.me/254798779452?text=Hello%20BYMA,%20I%20would%20like%20to%20know%20more%20about%20your%20services" 
+        href={whatsappLink('Hello BYMA, I would like to know more about your services')} 
         target="_blank" 
         rel="noopener noreferrer"
         style={{

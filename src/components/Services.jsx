@@ -7,12 +7,10 @@ import ProposalRequestModal from './ProposalRequestModal'
 import PageShell from './layout/PageShell'
 import PageHeading from './layout/PageHeading'
 import Reveal from './home/Reveal'
-import { btnPrimary, btnSecondary } from './home/contact'
+import { btnPrimary, btnSecondary, whatsappLink } from './home/contact'
 
 
 
-const SERVICES_WA = '254773852135'
-const chatLink = (message) => `https://wa.me/${SERVICES_WA}?text=${encodeURIComponent(message)}`
 
 const services = [
   {
@@ -344,7 +342,7 @@ function Services() {
                   </div>
                   {p.note && <p className='mb-5 text-xs italic text-muted'>{p.note}</p>}
                   <a
-                    href={chatLink(p.message)}
+                    href={whatsappLink(p.message)}
                     target='_blank'
                     rel='noopener noreferrer'
                     className={`${p.popular ? btnPrimary : btnSecondary} w-full`}

@@ -48,7 +48,7 @@ function PrivacyPolicy() {
           </p>
           <ul className='mt-3 flex flex-col gap-1.5'>
             <li><span className='text-accent'>Email:</span> bymasolns@gmail.com</li>
-            <li><span className='text-accent'>Phone / WhatsApp:</span> +254 773 852 135</li>
+            <li><span className='text-accent'>Phone / WhatsApp:</span> +254 762 677 923</li>
           </ul>
         </Section>
 

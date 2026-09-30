@@ -25,8 +25,15 @@ export const organization = {
     { '@type': 'City', name: 'Nairobi' },
     { '@type': 'Country', name: 'Kenya' },
   ],
-  // TODO(owner): add "telephone" / "contactPoint" once the canonical WhatsApp number is confirmed,
-  // and "email" if there is a public contact address.
+  telephone: '+254762677923',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    telephone: '+254762677923',
+    url: 'https://wa.me/254762677923',
+    areaServed: 'KE',
+  },
+  // TODO(owner): add "email" if there is a public contact address.
   sameAs: [
     'https://github.com/BmKaranja',
     'https://www.linkedin.com/in/b-karanja',

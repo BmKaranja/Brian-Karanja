@@ -7,7 +7,7 @@
 - Founded: 2025
 - Services: web development, mobile app development, UI/UX design
 - Stack: React, TypeScript, JavaScript, TailwindCSS, Flutter, Dart, Firebase, Supabase, SQL, Figma
-- Contact: WhatsApp (via the "Get in touch" button on https://www.byma.co.ke) or LinkedIn
+- Contact: WhatsApp +254 762 677 923 (https://wa.me/254762677923) or LinkedIn
 
 ## Pages
 - [Home](https://www.byma.co.ke/): Studio overview, services and featured projects

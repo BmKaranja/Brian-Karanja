@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { btnPrimary } from './home/contact'
+import { btnPrimary, whatsappLink } from './home/contact'
 
 const fieldClass =
   'w-full rounded-md border border-line bg-bg px-3 py-2.5 text-sm text-fg placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent'
@@ -76,7 +76,7 @@ function ProposalRequestModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const message = buildMessage()
-    const url = `https://wa.me/2547973852135?text=${encodeURIComponent(message)}`
+    const url = whatsappLink(message)
     window.open(url, '_blank', 'noopener,noreferrer')
     onClose()
   }
