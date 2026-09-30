@@ -11,9 +11,9 @@ const servicesSchema = {
     {
       "@type": "ProfessionalService",
       "name": "Byma Solutions",
-      "image": "https://byma.co.ke/me.jpg",
+      "image": "https://www.byma.co.ke/me.jpg",
       "description": "Professional Web Development, Mobile App Development, and UI/UX Design services.",
-      "url": "https://byma.co.ke/Services",
+      "url": "https://www.byma.co.ke/Services",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",

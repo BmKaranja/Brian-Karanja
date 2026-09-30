@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Byma Solutions">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" role="img" aria-label="Byma Solutions">
   <rect x="1" y="1" width="62" height="62" rx="14" fill="#0a0d12" stroke="#232a35" stroke-width="2"/>
   <path d="M16 15V49H32.5a8.5 8.5 0 0 0 0-17H16M16 32H30.5a8.5 8.5 0 0 0 0-17H16"
         fill="none" stroke="#e7eaf0" stroke-width="7" stroke-linejoin="round" stroke-linecap="square"/>
   <rect x="47" y="42" width="7" height="8" rx="1" fill="#00ff00"/>
+  <text x="78" y="43" font-family="Lexend, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="-0.5" fill="#0a0d12">Byma<tspan fill="#00b800"> Solutions</tspan></text>
 </svg>

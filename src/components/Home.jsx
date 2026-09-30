@@ -9,19 +9,19 @@ const homeSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://byma.co.ke/#website",
-      "url": "https://byma.co.ke/",
+      "@id": "https://www.byma.co.ke/#website",
+      "url": "https://www.byma.co.ke/",
       "name": "Byma Solutions",
       "description": "Creative full-stack development and UI/UX design by Byma Solutions. Pixel-perfect interfaces, robust systems, and digital experiences.",
       "publisher": {
-        "@id": "https://byma.co.ke/#organization"
+        "@id": "https://www.byma.co.ke/#organization"
       }
     },
     {
       "@type": "Organization",
-      "@id": "https://byma.co.ke/#organization",
+      "@id": "https://www.byma.co.ke/#organization",
       "name": "Byma Solutions",
-      "url": "https://byma.co.ke/",
+      "url": "https://www.byma.co.ke/",
       "description": "A creative full-stack development and design studio specializing in React, Flutter, and high-performance digital solutions.",
       "sameAs": [
         "https://github.com/BmKaranja",

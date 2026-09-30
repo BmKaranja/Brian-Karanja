@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://byma.co.ke/</loc>
+    <loc>https://www.byma.co.ke/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/Services</loc>
+    <loc>https://www.byma.co.ke/Services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/Projects</loc>
+    <loc>https://www.byma.co.ke/Projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/projects/websites</loc>
+    <loc>https://www.byma.co.ke/projects/websites</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/projects/mobile</loc>
+    <loc>https://www.byma.co.ke/projects/mobile</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/WorkLog</loc>
+    <loc>https://www.byma.co.ke/WorkLog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://byma.co.ke/privacy-policy</loc>
+    <loc>https://www.byma.co.ke/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

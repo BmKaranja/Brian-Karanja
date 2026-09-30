@@ -7,7 +7,7 @@ const privacySchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Privacy Policy",
-  "url": "https://byma.co.ke/privacy-policy",
+  "url": "https://www.byma.co.ke/privacy-policy",
   "publisher": {
     "@type": "Organization",
     "name": "Byma Solutions"
