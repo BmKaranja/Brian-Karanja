@@ -1,25 +1,32 @@
 import React from 'react'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
 
 function Pcards({ title, description, link, image }) {
   return (
-    <div className='project-divs group overflow-hidden transition-all duration-300 hover:shadow-xl'>
-      <div className="project-image overflow-hidden h-[20vh]">
-        <img 
-          src={image || '/pexels-cesar-gaviria-232160-36571389.jpg'} 
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
-      </div>
-      <article className='p-6 flex flex-col gap-2'>
-        <h2 className='text-xl font-bold tracking-tight'>{title}</h2>
-        <p className='text-gray-400 line-clamp-5 leading-relaxed'>{description}</p>
-        <a href={link} className='color font flex items-center gap-2 mt-2 w-fit hover:gap-3 transition-all' target='_blank' rel='noopener noreferrer'>
-          View Project <FaArrowRight size={14} className='transition-transform' />
+    <article className='flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-colors hover:border-accent'>
+      <img
+        src={image || '/pexels-cesar-gaviria-232160-36571389.jpg'}
+        alt={`${title} screenshot`}
+        width='640'
+        height='400'
+        loading='lazy'
+        decoding='async'
+        className='aspect-[16/10] w-full border-b border-line object-cover object-top'
+      />
+      <div className='flex flex-1 flex-col p-5'>
+        <h2 className='mb-2 font-display text-lg font-medium'>{title}</h2>
+        <p className='mb-5 line-clamp-5 flex-1 text-sm leading-relaxed text-muted'>{description}</p>
+        <a
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-accent hover:text-accent-strong focus-visible:outline-2 focus-visible:outline-accent'
+        >
+          View project <FaArrowUpRightFromSquare size={12} aria-hidden='true' />
+          <span className='sr-only'> — {title}</span>
         </a>
-      </article>
-    </div>
+      </div>
+    </article>
   )
 }
 

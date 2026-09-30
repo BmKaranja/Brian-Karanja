@@ -1,5 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
+import { btnPrimary } from './home/contact'
+
+const fieldClass =
+  'w-full rounded-md border border-line bg-bg px-3 py-2.5 text-sm text-fg placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent'
+
+const labelClass = 'mb-1.5 block font-mono text-xs uppercase tracking-wider text-muted'
+
+const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
 function ProposalRequestModal({ isOpen, onClose }) {
   const [form, setForm] = useState({
@@ -9,6 +17,44 @@ function ProposalRequestModal({ isOpen, onClose }) {
     timeline: '',
     description: '',
   })
+  const dialogRef = useRef(null)
+  const firstFieldRef = useRef(null)
+  const onCloseRef = useRef(onClose)
+  useEffect(() => {
+    onCloseRef.current = onClose
+  })
+
+  // Move focus into the dialog on open, restore it on close, close on Escape, trap Tab.
+  useEffect(() => {
+    if (!isOpen) return
+    const previouslyFocused = document.activeElement
+    firstFieldRef.current?.focus()
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onCloseRef.current()
+        return
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return
+      const items = dialogRef.current.querySelectorAll(FOCUSABLE)
+      if (!items.length) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      previouslyFocused?.focus?.()
+    }
+  }, [isOpen])
 
   if (!isOpen) return null
 
@@ -35,106 +81,53 @@ function ProposalRequestModal({ isOpen, onClose }) {
     onClose()
   }
 
-  const inputStyle = {
-    width: '100%',
-    background: '#0e1117',
-    border: '1px solid #1e2228',
-    borderRadius: '4px',
-    color: '#fff',
-    padding: '10px 12px',
-    fontSize: '14px',
-    fontFamily: 'inherit',
-    outline: 'none',
-  }
-
-  const labelStyle = {
-    display: 'block',
-    color: '#888',
-    fontSize: '12px',
-    fontFamily: 'monospace',
-    letterSpacing: '0.5px',
-    marginBottom: '6px',
-  }
-
   return (
     <div
       onClick={onClose}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'rgba(9,12,17,0.85)',
-        backdropFilter: 'blur(4px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1000,
-        padding: '20px',
-      }}
+      className='fixed inset-0 z-[1100] flex items-center justify-center bg-bg/85 p-5 backdrop-blur-sm'
     >
       <form
+        ref={dialogRef}
+        role='dialog'
+        aria-modal='true'
+        aria-labelledby='proposal-title'
         onClick={(e) => e.stopPropagation()}
         onSubmit={handleSubmit}
-        style={{
-          background: '#111417',
-          border: '1px solid #1e2228',
-          borderRadius: '8px',
-          padding: '32px',
-          width: '100%',
-          maxWidth: '480px',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          position: 'relative',
-        }}
+        className='relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-lg border border-line bg-surface p-7 sm:p-8'
       >
         <button
-          type="button"
+          type='button'
           onClick={onClose}
-          aria-label="Close"
-          style={{
-            position: 'absolute',
-            top: '16px',
-            right: '16px',
-            background: 'none',
-            border: 'none',
-            color: '#666',
-            cursor: 'pointer',
-            padding: '6px',
-          }}
+          aria-label='Close'
+          className='absolute right-3 top-3 inline-flex size-11 items-center justify-center rounded-md text-muted hover:text-fg focus-visible:outline-2 focus-visible:outline-accent'
         >
-          <FaTimes size={16} />
+          <FaTimes size={16} aria-hidden='true' />
         </button>
 
-        <h3
-          style={{
-            fontFamily: 'monospace',
-            color: '#00ff00',
-            fontSize: '13px',
-            letterSpacing: '1px',
-            marginBottom: '8px',
-          }}
-        >
-          REQUEST PROPOSAL
-        </h3>
-        <h2 style={{ color: '#fff', fontSize: '22px', fontWeight: 600, marginBottom: '24px' }}>
+        <p className='mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent'>Request proposal</p>
+        <h2 id='proposal-title' className='mb-6 font-display text-xl font-semibold'>
           A few details before we talk
         </h2>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+        <div className='mb-6 flex flex-col gap-4'>
           <div>
-            <label style={labelStyle}>COMPANY / BRAND</label>
+            <label htmlFor='proposal-company' className={labelClass}>Company / Brand</label>
             <input
-              style={inputStyle}
+              id='proposal-company'
+              ref={firstFieldRef}
+              className={fieldClass}
               value={form.company}
               onChange={handleChange('company')}
-              placeholder="e.g. My Company"
+              placeholder='e.g. My Company'
               required
             />
           </div>
 
           <div>
-            <label style={labelStyle}>PROJECT TYPE</label>
+            <label htmlFor='proposal-type' className={labelClass}>Project type</label>
             <select
-              style={inputStyle}
+              id='proposal-type'
+              className={fieldClass}
               value={form.projectType}
               onChange={handleChange('projectType')}
               required
@@ -149,9 +142,10 @@ function ProposalRequestModal({ isOpen, onClose }) {
           </div>
 
           <div>
-            <label style={labelStyle}>ESTIMATED BUDGET</label>
+            <label htmlFor='proposal-budget' className={labelClass}>Estimated budget</label>
             <select
-              style={inputStyle}
+              id='proposal-budget'
+              className={fieldClass}
               value={form.budget}
               onChange={handleChange('budget')}
               required
@@ -165,9 +159,10 @@ function ProposalRequestModal({ isOpen, onClose }) {
           </div>
 
           <div>
-            <label style={labelStyle}>TIMELINE</label>
+            <label htmlFor='proposal-timeline' className={labelClass}>Timeline</label>
             <select
-              style={inputStyle}
+              id='proposal-timeline'
+              className={fieldClass}
               value={form.timeline}
               onChange={handleChange('timeline')}
               required
@@ -181,36 +176,20 @@ function ProposalRequestModal({ isOpen, onClose }) {
           </div>
 
           <div>
-            <label style={labelStyle}>BRIEF DESCRIPTION</label>
+            <label htmlFor='proposal-description' className={labelClass}>Brief description</label>
             <textarea
-              style={{ ...inputStyle, minHeight: '80px', resize: 'vertical' }}
+              id='proposal-description'
+              className={`${fieldClass} min-h-20 resize-y`}
               value={form.description}
               onChange={handleChange('description')}
-              placeholder="What problem are you trying to solve?"
+              placeholder='What problem are you trying to solve?'
               required
             />
           </div>
         </div>
 
-        <button
-          type="submit"
-          style={{
-            width: '100%',
-            background: '#00ff00',
-            border: '1px solid #00ff00',
-            color: '#000',
-            padding: '14px',
-            textAlign: 'center',
-            borderRadius: '4px',
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            fontSize: '14px',
-            letterSpacing: '1px',
-            cursor: 'pointer',
-            minHeight: '44px',
-          }}
-        >
-          SEND TO WHATSAPP
+        <button type='submit' className={`${btnPrimary} w-full`}>
+          Send to WhatsApp
         </button>
       </form>
     </div>

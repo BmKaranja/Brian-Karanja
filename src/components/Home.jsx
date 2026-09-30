@@ -1,8 +1,12 @@
 import React from 'react'
-import Footer from './Footer'
-import AboutMe from './AboutMe'
-import Top from './Top'
 import SEO from './SEO'
+import SiteHeader from './layout/SiteHeader'
+import Hero from './home/Hero'
+import ServicesStrip from './home/ServicesStrip'
+import FeaturedProjects from './home/FeaturedProjects'
+import AboutStack from './home/AboutStack'
+import ContactCta from './home/ContactCta'
+import SiteFooter from './layout/SiteFooter'
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -47,20 +51,22 @@ const homeSchema = {
 
 function Home() {
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div className='min-h-screen bg-bg font-sans text-fg'>
       <SEO
         title="Creative Full-Stack Development"
         description="Welcome to Byma Solutions, a creative development and design studio. Specializing in high-performance React web applications, Flutter mobile experiences, and custom UI/UX design."
         keywords="Byma Solutions, Full-Stack Development, React, TailwindCSS, Flutter, UI/UX Design, Web Development, Nairobi, Kenya"
         schemaJson={homeSchema}
       />
-      <Top />
-      <main id='aboutme'>
-        <AboutMe />
+      <SiteHeader />
+      <main id='main'>
+        <Hero />
+        <ServicesStrip />
+        <FeaturedProjects />
+        <AboutStack />
+        <ContactCta />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

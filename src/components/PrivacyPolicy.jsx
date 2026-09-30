@@ -1,7 +1,7 @@
 import React from 'react'
-import NavBar from './NavBar'
-import Footer from './Footer'
 import SEO from './SEO'
+import PageShell from './layout/PageShell'
+import PageHeading from './layout/PageHeading'
 
 const privacySchema = {
   "@context": "https://schema.org",
@@ -14,58 +14,35 @@ const privacySchema = {
   }
 }
 
+const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+
 function Section({ title, children }) {
+  const id = `policy-${slug(title)}`
   return (
-    <div style={{ marginBottom: '40px' }}>
-      <h2 style={{
-        fontFamily: "'Lexend', sans-serif",
-        fontSize: '22px',
-        fontWeight: 600,
-        color: '#fff',
-        marginBottom: '14px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '10px',
-      }}>
-        <span style={{ color: '#00ff00' }}>//</span> {title}
+    <section aria-labelledby={id} className='mb-10'>
+      <h2 id={id} className='mb-3.5 flex items-center gap-2.5 font-display text-xl font-semibold'>
+        <span className='text-accent' aria-hidden='true'>//</span> {title}
       </h2>
-      <div style={{ color: '#888', fontSize: '15px', lineHeight: '1.8' }}>
-        {children}
-      </div>
-    </div>
+      <div className='leading-relaxed text-muted'>{children}</div>
+    </section>
   )
 }
 
 function PrivacyPolicy() {
   return (
-    <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <PageShell>
       <SEO
         title="Privacy Policy"
         description="Privacy Policy for Byma Solutions — how Byma Solutions collects, uses, and protects your data."
         keywords="Privacy Policy, Byma Solutions, data protection"
         schemaJson={privacySchema}
       />
-      <NavBar />
 
-      <section style={{ padding: '0 5vw' }}>
-        <hr className='text-gray-600' />
-        <article style={{ marginTop: '40px', marginBottom: '20px' }}>
-          <p className='font mb-2' id='cap'>LEGAL</p>
-          <h1 style={{
-            fontFamily: "'Lexend', sans-serif",
-            fontSize: 'clamp(32px, 5vw, 56px)',
-            fontWeight: 700,
-            color: '#fff',
-          }}>
-            Privacy <span className='color'>Policy</span>
-          </h1>
-          <p style={{ color: '#666', fontSize: '13px', fontFamily: 'monospace', marginTop: '10px' }}>
-            Last updated: June 25, 2026
-          </p>
-        </article>
-      </section>
+      <PageHeading eyebrow='Legal' title={<>Privacy <span className='text-accent'>Policy</span></>}>
+        Last updated: June 25, 2026
+      </PageHeading>
 
-      <section style={{ padding: '0 5vw 60px 5vw', maxWidth: '800px' }}>
+      <div className='mx-auto max-w-3xl px-5 py-14'>
 
         <Section title="Who We Are">
           <p>
@@ -73,19 +50,19 @@ function PrivacyPolicy() {
             and design studio based in Nairobi, Kenya. For any privacy-related questions, you can
             reach out via:
           </p>
-          <ul style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            <li><span style={{ color: '#00ff00' }}>Email:</span> bymasolns@gmail.com</li>
-            <li><span style={{ color: '#00ff00' }}>Phone / WhatsApp:</span> +254 773 852 135</li>
+          <ul className='mt-3 flex flex-col gap-1.5'>
+            <li><span className='text-accent'>Email:</span> bymasolns@gmail.com</li>
+            <li><span className='text-accent'>Phone / WhatsApp:</span> +254 773 852 135</li>
           </ul>
         </Section>
 
         <Section title="What Information We Collect">
           <p>We collect information in the following ways:</p>
-          <ul style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li><span style={{ color: '#00ff00' }}>✓</span> Messages sent via WhatsApp click-to-chat links</li>
-            <li><span style={{ color: '#00ff00' }}>✓</span> Details submitted through our Proposal Request form (company/brand name, project type, estimated budget, timeline, and project description), which are formatted into a message and sent to us via WhatsApp click-to-chat — this data is not stored on our servers or any database, it is only transmitted directly to WhatsApp on submission</li>
-            <li><span style={{ color: '#00ff00' }}>✓</span> Usage data collected automatically via Google Analytics (pages visited, device type, approximate location, time on site)</li>
-            <li><span style={{ color: '#00ff00' }}>✓</span> For clients using custom systems we build (e.g. booking platforms), data is stored securely via Supabase under that specific project's own terms</li>
+          <ul className='mt-3 flex flex-col gap-2.5'>
+            <li><span className='text-accent'>✓</span> Messages sent via WhatsApp click-to-chat links</li>
+            <li><span className='text-accent'>✓</span> Details submitted through our Proposal Request form (company/brand name, project type, estimated budget, timeline, and project description), which are formatted into a message and sent to us via WhatsApp click-to-chat — this data is not stored on our servers or any database, it is only transmitted directly to WhatsApp on submission</li>
+            <li><span className='text-accent'>✓</span> Usage data collected automatically via Google Analytics (pages visited, device type, approximate location, time on site)</li>
+            <li><span className='text-accent'>✓</span> For clients using custom systems we build (e.g. booking platforms), data is stored securely via Supabase under that specific project's own terms</li>
           </ul>
         </Section>
 
@@ -103,10 +80,12 @@ function PrivacyPolicy() {
             uses cookies and collects anonymised/aggregated usage data. You can opt out of
             Google Analytics tracking using the{' '}
             
-              <a href="https://tools.google.com/dlpage/gaoptout"
+              <a
+              href="https://tools.google.com/dlpage/gaoptout"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#00ff00' }}>
+              className='text-accent underline underline-offset-2 hover:text-accent-strong focus-visible:outline-2 focus-visible:outline-accent'
+            >
               Google Analytics Opt-out Browser Add-on
             </a>.
           </p>
@@ -145,13 +124,8 @@ function PrivacyPolicy() {
             acceptance of the revised policy.
           </p>
         </Section>
-
-      </section>
-
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+      </div>
+    </PageShell>
   )
 }
 

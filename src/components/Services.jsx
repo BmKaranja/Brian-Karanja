@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import NavBar from './NavBar'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
-import { FaArrowRight, FaCode, FaLinkedin, FaMobileAlt, FaPalette } from 'react-icons/fa'
+import { FaArrowRight, FaCode, FaMobileAlt, FaPalette } from 'react-icons/fa'
 import SEO from './SEO'
 import ProposalRequestModal from './ProposalRequestModal'
+import PageShell from './layout/PageShell'
+import PageHeading from './layout/PageHeading'
+import Reveal from './home/Reveal'
+import { btnPrimary, btnSecondary } from './home/contact'
+
 const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -64,469 +67,373 @@ const servicesSchema = {
   ]
 };
 
-function FAQItem({ question, answer, isOpen, onClick }) {
+const SERVICES_WA = '254773852135'
+const chatLink = (message) => `https://wa.me/${SERVICES_WA}?text=${encodeURIComponent(message)}`
+
+const services = [
+  {
+    icon: FaCode,
+    title: 'Web Development',
+    text: 'Production-grade web applications built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.',
+    points: ['React & TailwindCSS Expert', 'Full-Stack Architecture', 'SEO & Performance Optimized'],
+    to: '/Projects/websites',
+  },
+  {
+    icon: FaMobileAlt,
+    title: 'Mobile Apps',
+    text: 'Cross-platform mobile experiences that feel native. iOS and Android apps built with Flutter for efficiency without compromising design quality.',
+    points: ['Flutter Expert', 'Smooth Animations', 'Offline Functionality'],
+  },
+  {
+    icon: FaPalette,
+    title: 'UI/UX Design',
+    text: 'User-centric design systems that balance beauty with function. Every pixel serves a purpose—creating interfaces that users love.',
+    points: ['Design Systems', 'Prototyping & Testing', 'Brand Identity'],
+    to: '/Projects/designs',
+  },
+]
+
+const packages = [
+  {
+    label: 'Package 1',
+    title: 'The "Digital Business Card"',
+    blurb: 'Perfect for small shops, bakeries, or service businesses looking to build instant trust online.',
+    price: 'KSh 10,000',
+    priceNote: 'One-Time Development Fee',
+    description: 'A sleek, modern, one-page website designed to give your business an official online home. Perfect for linking to your WhatsApp Business, Instagram, or TikTok bio so customers know you are the real deal.',
+    features: [
+      '1 Seamless Scrolling Page (Home, Services, Contact)',
+      'Fully optimized for mobile & desktop',
+      'Direct WhatsApp/Email click-to-chat',
+      'Basic Google Maps & contact details',
+      'Ready in 1 Week',
+    ],
+    note: 'Note: Client covers domain registration (approx. KSh 1,000)',
+    message: "Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.",
+  },
+  {
+    label: 'Package 2',
+    title: 'The "Essential Growth"',
+    popular: true,
+    blurb: 'Perfect for businesses that need space to showcase a portfolio of work, standard packages, or distinct services.',
+    price: 'KSh 20,000',
+    priceNote: 'One-Time Development Fee',
+    description: 'A complete multi-page website that allows you to deep-dive into what makes your business special, display high-quality galleries of your work, and structure your service options clearly.',
+    features: [
+      'Up to 4 Dedicated Pages (Home, About, Gallery, Contact)',
+      'Everything included in the KSh 10k tier',
+      'Interactive photo galleries or pricing tables',
+      'Advanced contact & quote request forms',
+      'Basic on-page SEO setup for Google visibility',
+      'Ready in 2-3 Weeks',
+    ],
+    message: "Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.",
+  },
+  {
+    label: 'Package 3',
+    title: 'The "Smart Business" System',
+    blurb: 'Perfect for businesses looking to automate bookings, securely collect client data, or run a custom portal.',
+    price: 'KSh 35,000',
+    priceNote: 'One-Time Development Fee',
+    description: 'A high-performance web application backed by a secure cloud database. Ideal if you want to store customer registrations, manage automated booking requests, or display dynamic business data.',
+    features: [
+      '5+ Pages with Secure Cloud Database Integration',
+      'Everything included in the KSh 20k tier',
+      'Custom booking request or client sign-up management',
+      'Secure database setup for client interactions',
+      'M-Pesa integration',
+      '14 Days of post-launch technical support',
+      'Ready in 3-5 Weeks',
+    ],
+    message: "Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.",
+  },
+]
+
+const enterpriseFeatures = [
+  'Custom industry architecture',
+  'Supabase database engineering',
+  'API integrations (M-Pesa, CRM)',
+  'Advanced semantic SEO',
+  'Formal SLA & priority support',
+]
+
+const steps = [
+  { title: '1. Choose Your Tier', text: 'Select the package that fits your current business scale.' },
+  { title: '2. Send Your Materials', text: 'Drop your logo, photos, and basic business details over WhatsApp or email.' },
+  { title: '3. Launch & Scale', text: 'I handle the entire build and deployment. Within days, your business is officially live and ready for customers.' },
+]
+
+const maintenance = [
+  {
+    label: 'Maintenance 1',
+    title: 'The Basic Care Plan',
+    blurb: 'Small local landing pages (The 5k sites)',
+    price: 'KSh 2,500',
+    features: [
+      'Monthly security checks & database backups',
+      'Small content updates (phone number, price, announcements)',
+      'Hosting monitoring (keeping your site live)',
+    ],
+  },
+  {
+    label: 'Maintenance 2',
+    title: 'The Growth Support Plan',
+    blurb: 'Active businesses with database systems (Supabase users)',
+    price: 'KSh 5,000',
+    features: [
+      'Everything in Basic Care',
+      'Up to 2 hours of dedicated dev time per month',
+      'Database optimization & account management checks',
+      'Priority support (24-hour response time)',
+    ],
+  },
+]
+
+const faqs = [
+  {
+    question: "What services does Byma Solutions offer?",
+    answer: "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
+  },
+  {
+    question: "What technical stack does Byma Solutions specialize in?",
+    answer: "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
+  },
+  {
+    question: "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
+    answer: "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
+  },
+  {
+    question: "Is Byma Solutions available for freelance or full-time opportunities?",
+    answer: "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
+  }
+]
+
+const badge =
+  'absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-widest text-accent-ink'
+
+function CheckList({ items }) {
   return (
-    <div style={{
-      borderBottom: '1px solid #1e2228',
-      padding: '20px 0',
-      transition: 'all 300ms'
-    }}>
-      <button
-        onClick={onClick}
-        aria-expanded={isOpen}
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: '100%',
-          background: 'none',
-          border: 'none',
-          textAlign: 'left',
-          color: '#fff',
-          fontFamily: 'monospace',
-          fontSize: '16px',
-          fontWeight: 600,
-          cursor: 'pointer',
-          padding: '8px 0',
-        }}
+    <ul className='flex flex-col gap-3 text-sm text-muted'>
+      {items.map((item) => (
+        <li key={item} className='flex gap-2'>
+          <span className='text-accent' aria-hidden='true'>✓</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function SectionIntro({ id, eyebrow, title, children }) {
+  return (
+    <div className='mx-auto mb-12 max-w-2xl text-center'>
+      <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent'>{eyebrow}</p>
+      <h2 id={id} className='font-display text-2xl font-semibold tracking-tight sm:text-4xl'>{title}</h2>
+      {children && <p className='mt-4 leading-relaxed text-muted'>{children}</p>}
+    </div>
+  )
+}
+
+function FAQItem({ id, question, answer, isOpen, onClick }) {
+  return (
+    <div className='border-b border-line'>
+      <h3>
+        <button
+          type='button'
+          onClick={onClick}
+          aria-expanded={isOpen}
+          aria-controls={`${id}-panel`}
+          id={`${id}-button`}
+          className='flex min-h-11 w-full items-center justify-between gap-4 py-5 text-left font-display text-base font-medium text-fg hover:text-accent focus-visible:outline-2 focus-visible:outline-accent'
+        >
+          <span>{question}</span>
+          <span
+            aria-hidden='true'
+            className={`text-xl text-accent transition-transform ${isOpen ? 'rotate-45' : ''}`}
+          >
+            ＋
+          </span>
+        </button>
+      </h3>
+      <div
+        id={`${id}-panel`}
+        role='region'
+        aria-labelledby={`${id}-button`}
+        className={`grid transition-[grid-template-rows] duration-300 motion-reduce:transition-none ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
-        <span>{question}</span>
-        <span style={{
-          color: '#00ff00',
-          transition: 'transform 300ms',
-          transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-          fontSize: '20px',
-          fontWeight: 300
-        }}>＋</span>
-      </button>
-      <div style={{
-        maxHeight: isOpen ? '160px' : '0',
-        overflow: 'hidden',
-        transition: 'max-height 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease',
-        opacity: isOpen ? 1 : 0
-      }}>
-        <p style={{
-          color: '#888',
-          fontSize: '14.5px',
-          lineHeight: '1.7',
-          padding: '8px 0 16px 0',
-          margin: 0
-        }}>
-          {answer}
-        </p>
+        <div className='overflow-hidden'>
+          <p className='pb-5 text-sm leading-relaxed text-muted'>{answer}</p>
+        </div>
       </div>
     </div>
   )
 }
 
 function Services() {
-  const [openFAQIndex, setOpenFAQIndex] = useState(null);
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
+  const [openFAQIndex, setOpenFAQIndex] = useState(null)
   const [showProposalModal, setShowProposalModal] = useState(false)
 
-  React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const faqs = [
-    {
-      question: "What services does Byma Solutions offer?",
-      answer: "Byma Solutions specializes in Web Development (React, TypeScript, TailwindCSS), Mobile Application Development (Flutter, Dart), and UI/UX Design (Figma, prototyping, custom design systems)."
-    },
-    {
-      question: "What technical stack does Byma Solutions specialize in?",
-      answer: "Byma Solutions specializes in HTML5, CSS3, JavaScript, TypeScript, React, TailwindCSS, Flutter, Dart, Firebase, SQL, Figma, and Git."
-    },
-    {
-      question: "How does Byma Solutions ensure high performance and SEO/GEO optimization?",
-      answer: "We focus on clean semantic HTML, dynamic JSON-LD structured schema data, optimized bundle sizes, and custom LLM crawler-friendly configurations (like llms.txt)."
-    },
-    {
-      question: "Is Byma Solutions available for freelance or full-time opportunities?",
-      answer: "Yes, Byma Solutions is open to freelance projects, consulting, and select full-time roles. Get in touch via LinkedIn or GitHub to discuss details."
-    }
-  ];
-
   return (
-    <div className='flex flex-col gap-10' style={{ background: 'var(--background-color)', minHeight: '100vh' }}>
+    <PageShell>
       <SEO
         title="Services & Capabilities"
         description="Explore the range of design and engineering services offered by Byma. From responsive web development (React/TypeScript) to mobile applications (Flutter) and UI/UX design."
         keywords="Web Development, React developer, Flutter app development, UI/UX Design, Figma, Freelance developer, Nairobi, Kenya"
         schemaJson={servicesSchema}
       />
-      <NavBar />
-      <div>
-        <hr className='text-gray-600'></hr>
-          <section className='sec-intro'>
-            <article>
-              <p className='font mb-2' id='cap'>WHAT WE BUILD</p>
-              <h1 className='text-4xl sm:text-5xl md:text-7xl'>
-                Digital products<span className='color'> crafted</span> with precision
-              </h1>
-              <p className='mt-5 pr-4 md:pr-20'>
-                Byma specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions.
-                From concept to launch—clean code, thoughtful design, measurable impact.
-              </p>
-            </article>
-          </section>        
-          <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 px-5 sm:px-10' >
-          <article className='mycards ' style={{ minWidth: 0 }}>
-            <div className='p-2 w-12'>
-              <FaCode size={30} color='#00ff00' />
-            </div>
-            <h2 className='font'>Web Development</h2>
-            <p>Production-grade web applicatio  ns built for performance, scalability, and user delight. Modern frameworks, best practices, and obsessive attention to detail.</p>
-            <div className='mt-5'>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>React & TailwindCSS Expert </p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Full-Stack Architecture</p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>SEO & Performance Optimized</p>
-            </div>
-            <Link
-              to='/Projects/websites'
-              className='color font link'
-              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
-            >
-              View Projects <span className='pl-1'>
-                <FaArrowRight />
-              </span>
-            </Link>
-          </article>
-          <article className='mycards ' style={{ minWidth: 0 }}>
-            <div className='p-2 w-12'>
-              <FaMobileAlt size={30} color='#00ff00' />
-            </div>
-            <h2 className='font'>Mobile Apps</h2>
-            <p>
-              Cross-platform mobile experiences that feel native. iOS and Android apps built with Flutter for efficiency without compromising design quality.
-            </p>
-            <div className='mt-5'>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Flutter Expert </p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Smooth Animations</p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Offline Functionality</p>
-            </div>
-            {/*<Link
-              to='/Projects/Mobile'
-              className='color font link'
-              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
-            >
-              View Projects <span className='pl-1'>
-                <FaArrowRight />
-              </span>
-            </Link>*/}
-          </article>
-          <article className='mycards ' style={{ minWidth: 0 }}>
-            <div className='p-2 w-12'>
-              <FaPalette size={30} color='#00ff00' />
-            </div>
-            <h2 className='font'>UI/UX Design</h2>
-            <p>User-centric design systems that balance beauty with function. Every pixel serves a purpose—creating interfaces that users love.</p>
-            <div className='mt-5'>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Design Systems </p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Prototyping & Testing </p>
-              <p><span style={{ color: '#00ff00' }}>✓ </span>Brand Identity</p>
-            </div>
-            <Link
-              to='/Projects/designs'
-              className='color font link'
-              style={{ display: 'flex', alignItems: 'center', minHeight: '44px', padding: '12px 0' }}
-            >
-              View Projects <span className='pl-1'>
-                <FaArrowRight />
-              </span>
-            </Link>
-          </article>
-        </section>
 
-        {/* Pricing/Packages Section */}
-        <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <p className='font mb-2' id='cap'>PRICING & PACKAGES</p>
-            <h2 style={{
-              fontFamily: "'Lexend', sans-serif",
-              fontSize: 'clamp(28px, 4vw, 48px)',
-              fontWeight: 700,
-              color: '#fff',
-              marginBottom: '16px'
-            }}>
-              Streamlined Digital Solutions for Your Business
-            </h2>
-            <p style={{ color: '#888', maxWidth: '600px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
-              No confusing tech talk. No hidden hourly fees. Just beautiful, functional websites built to help your local business grow and look professional online.
-            </p>
-          </div>
+      <PageHeading
+        eyebrow='What we build'
+        title={<>Digital products <span className='text-accent'>crafted</span> with precision</>}
+      >
+        Byma specializes in building pixel-perfect interfaces, scalable systems, and elegant solutions.
+        From concept to launch—clean code, thoughtful design, measurable impact.
+      </PageHeading>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8'>
-            {/* Package 1 */}
-            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 1</h3>
-              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The "Digital Business Card"</h2>
-              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '60px' }}>
-                Perfect for small shops, bakeries, or service businesses looking to build instant trust online.
-              </p>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 10,000</span>
-                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
-              </div>
-              <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
-                A sleek, modern, one-page website designed to give your business an official online home. Perfect for linking to your WhatsApp Business, Instagram, or TikTok bio so customers know you are the real deal.
-              </p>
-              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flexGrow: 1 }}>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 1 Seamless Scrolling Page (Home, Services, Contact)</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Fully optimized for mobile & desktop</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Direct WhatsApp/Email click-to-chat</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Basic Google Maps & contact details</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 1 Week</li>
-              </ul>
-              <p style={{ color: '#666', fontSize: '12px', fontStyle: 'italic', marginBottom: '24px' }}>Note: Client covers domain registration (approx. KSh 1,000)</p>
-              <a
-                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 10,000 Digital Business Card package for my business.")}`}
-                target="_blank" rel="noopener noreferrer"
-                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
-              >
-                START A CHAT
-              </a>
+      {/* Capabilities */}
+      <Reveal as='section' aria-label='Capabilities' className='border-b border-line'>
+        <div className='mx-auto max-w-6xl px-5 py-16 sm:py-20'>
+          <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+            {services.map((s) => {
+              const Icon = s.icon
+              return (
+                <li key={s.title}>
+                  <article className='flex h-full flex-col rounded-lg border border-line bg-surface p-6 transition-colors hover:border-accent'>
+                    <Icon className='mb-4 text-accent' size={26} aria-hidden='true' />
+                    <h2 className='mb-2 font-display text-xl font-medium'>{s.title}</h2>
+                    <p className='mb-5 text-sm leading-relaxed text-muted'>{s.text}</p>
+                    <div className='mb-5 flex-1'>
+                      <CheckList items={s.points} />
+                    </div>
+                    {s.to && (
+                      <Link
+                        to={s.to}
+                        className='inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-accent hover:text-accent-strong focus-visible:outline-2 focus-visible:outline-accent'
+                      >
+                        View projects <FaArrowRight size={12} aria-hidden='true' />
+                        <span className='sr-only'> — {s.title}</span>
+                      </Link>
+                    )}
+                  </article>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </Reveal>
 
-            </article>
+      {/* Pricing */}
+      <Reveal as='section' aria-labelledby='pricing-title' className='border-b border-line'>
+        <div className='mx-auto max-w-6xl px-5 py-16 sm:py-20'>
+          <SectionIntro id='pricing-title' eyebrow='Pricing & packages' title='Streamlined Digital Solutions for Your Business'>
+            No confusing tech talk. No hidden hourly fees. Just beautiful, functional websites built to help your local business grow and look professional online.
+          </SectionIntro>
 
-            {/* Package 2 (Most Popular) */}
-            <article style={{ background: '#111417', border: '2px solid #00ff00', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column', position: 'relative', transform: 'scale(1.02)' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#00ff00', color: '#000', padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 700, letterSpacing: '1px', fontFamily: 'monospace' }}>
-                MOST POPULAR
-              </div>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 2</h3>
-              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The "Essential Growth"</h2>
-              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '60px' }}>
-                Perfect for businesses that need space to showcase a portfolio of work, standard packages, or distinct services.
-              </p>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 20,000</span>
-                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
-              </div>
-              <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
-                A complete multi-page website that allows you to deep-dive into what makes your business special, display high-quality galleries of your work, and structure your service options clearly.
-              </p>
-              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flexGrow: 1 }}>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Up to 4 Dedicated Pages (Home, About, Gallery, Contact)</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 10k tier</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Interactive photo galleries or pricing tables</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Advanced contact & quote request forms</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Basic on-page SEO setup for Google visibility</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 2-3 Weeks</li>
-              </ul>
-              <a
-                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 20,000 Essential Growth package for my business.")}`}
-                target="_blank" rel="noopener noreferrer"
-                style={{ background: '#00ff00', border: '1px solid #00ff00', color: '#000', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
-              >
-                START A CHAT
-              </a>
+          <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+            {packages.map((p) => (
+              <li key={p.label}>
+                <article
+                  className={`relative flex h-full flex-col rounded-lg border bg-surface p-7 ${p.popular ? 'border-accent' : 'border-line'}`}
+                >
+                  {p.popular && <span className={badge}>Most popular</span>}
+                  <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent'>{p.label}</p>
+                  <h3 className='mb-2 font-display text-xl font-medium'>{p.title}</h3>
+                  <p className='mb-5 text-sm leading-relaxed text-muted'>{p.blurb}</p>
+                  <p className='mb-1 font-display text-3xl font-semibold'>{p.price}</p>
+                  <p className='mb-5 text-xs text-muted'>{p.priceNote}</p>
+                  <p className='mb-5 text-sm leading-relaxed text-muted'>{p.description}</p>
+                  <div className='mb-6 flex-1'>
+                    <CheckList items={p.features} />
+                  </div>
+                  {p.note && <p className='mb-5 text-xs italic text-muted'>{p.note}</p>}
+                  <a
+                    href={chatLink(p.message)}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={`${p.popular ? btnPrimary : btnSecondary} w-full`}
+                  >
+                    Start a chat
+                    <span className='sr-only'> about {p.title}</span>
+                  </a>
+                </article>
+              </li>
+            ))}
+          </ul>
 
-            </article>
-
-            {/* Package 3 */}
-            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 3</h3>
-              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The "Smart Business" System</h2>
-              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '60px' }}>
-                Perfect for businesses looking to automate bookings, securely collect client data, or run a custom portal.
-              </p>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 35,000</span>
-                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>One-Time Development Fee</span>
-              </div>
-              <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
-                A high-performance web application backed by a secure cloud database. Ideal if you want to store customer registrations, manage automated booking requests, or display dynamic business data.
-              </p>
-              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flexGrow: 1 }}>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 5+ Pages with Secure Cloud Database Integration</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything included in the KSh 20k tier</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom booking request or client sign-up management</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Secure database setup for client interactions</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> M-Pesa integration</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> 14 Days of post-launch technical support</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Ready in 3-5 Weeks</li>
-              </ul>
-              <a
-                href={`https://wa.me/254773852135?text=${encodeURIComponent("Hi! I'm interested in the KSh 35,000 Smart Business System package for my business.")}`}
-                target="_blank" rel="noopener noreferrer"
-                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#00ff00'; e.currentTarget.style.color = '#000'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#00ff00'; }}
-              >
-                START A CHAT
-              </a>
-            </article>
-          </div>
-          {/* Package 4 - Corporate & Custom Systems (Premium) - NOW RESPONSIVE */}
-          <article style={{
-            background: '#111417',
-            border: '2px solid #00ff00',
-            borderRadius: '8px',
-            padding: '32px',
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-            gap: '48px',
-            alignItems: 'start',
-            position: 'relative',
-            marginTop: '5rem'
-          }}>
-            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#00ff00', color: '#000', padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 700, letterSpacing: '1px', fontFamily: 'monospace', zIndex: 1 }}>
-              ENTERPRISE
-            </div>
-
-            {/* Left column */}
+          {/* Enterprise */}
+          <article className='relative mt-14 grid gap-10 rounded-lg border border-accent bg-surface p-7 sm:p-8 lg:grid-cols-2'>
+            <span className={badge}>Enterprise</span>
             <div>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>PACKAGE 4</h3>
-              <h2 style={{ fontSize: '28px', fontWeight: 600, color: '#fff', marginBottom: '16px' }}>Corporate & Custom Systems</h2>
-              <p style={{ color: '#aaa', fontSize: '15px', marginBottom: '32px', lineHeight: '1.6' }}>
+              <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent'>Package 4</p>
+              <h3 className='mb-4 font-display text-2xl font-medium'>Corporate &amp; Custom Systems</h3>
+              <p className='mb-6 leading-relaxed text-muted'>
                 Bespoke enterprise solution engineered for high-performance infrastructure, advanced security, and seamless integrations tailored to your industry prestige.
               </p>
-              <div>
-                <span style={{ fontSize: '28px', fontWeight: 700, color: '#fff' }}>Custom Quote</span>
-                <span style={{ color: '#666', fontSize: '13px', display: 'block', marginTop: '4px' }}>Via Detailed Proposal</span>
-              </div>
+              <p className='font-display text-2xl font-semibold'>Custom Quote</p>
+              <p className='mt-1 text-sm text-muted'>Via Detailed Proposal</p>
             </div>
-
-            {/* Right column */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div className='flex flex-col gap-6'>
               <div>
-                <p style={{ color: '#888', fontSize: '13px', marginBottom: '12px', letterSpacing: '1px', fontFamily: 'monospace' }}>INCLUDES:</p>
-                <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Custom industry architecture</li>
-                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Supabase database engineering</li>
-                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> API integrations (M-Pesa, CRM)</li>
-                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Advanced semantic SEO</li>
-                  <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Formal SLA & priority support</li>
-                </ul>
+                <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-muted'>Includes</p>
+                <CheckList items={enterpriseFeatures} />
               </div>
-              <button
-                onClick={() => setShowProposalModal(true)}
-                style={{ background: 'transparent', border: '1px solid #00ff00', color: '#00ff00', padding: '12px', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace', fontWeight: 600, transition: 'all 300ms', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                REQUEST PROPOSAL
+              <button type='button' onClick={() => setShowProposalModal(true)} className={btnSecondary}>
+                Request proposal
               </button>
               <ProposalRequestModal isOpen={showProposalModal} onClose={() => setShowProposalModal(false)} />
             </div>
           </article>
 
-          {/* Section Footer (The Trust Builder) */}
-          <div style={{ marginTop: '60px', background: '#090C11', border: '1px solid #1e2228', borderRadius: '8px', padding: '40px' }}>
-            <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '28px' }}>💡</span> How It Works
-            </h3>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-              <div>
-                <h4 style={{ color: '#00ff00', fontWeight: 600, marginBottom: '8px' }}>1. Choose Your Tier</h4>
-                <p style={{ color: '#888', fontSize: '14.5px', lineHeight: '1.6' }}>Select the package that fits your current business scale.</p>
-              </div>
-              <div>
-                <h4 style={{ color: '#00ff00', fontWeight: 600, marginBottom: '8px' }}>2. Send Your Materials</h4>
-                <p style={{ color: '#888', fontSize: '14.5px', lineHeight: '1.6' }}>Drop your logo, photos, and basic business details over WhatsApp or email.</p>
-              </div>
-              <div>
-                <h4 style={{ color: '#00ff00', fontWeight: 600, marginBottom: '8px' }}>3. Launch & Scale</h4>
-                <p style={{ color: '#888', fontSize: '14.5px', lineHeight: '1.6' }}>I handle the entire build and deployment. Within days, your business is officially live and ready for customers.</p>
-              </div>
-            </div>
+          {/* How it works */}
+          <div className='mt-14 rounded-lg border border-line bg-bg p-7 sm:p-10'>
+            <h3 className='mb-6 font-display text-2xl font-medium'>How it works</h3>
+            <ol className='grid gap-8 md:grid-cols-3'>
+              {steps.map((s) => (
+                <li key={s.title}>
+                  <h4 className='mb-2 font-medium text-accent'>{s.title}</h4>
+                  <p className='text-sm leading-relaxed text-muted'>{s.text}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-        </section>
+        </div>
+      </Reveal>
 
-        {/* Maintenance Section */}
-        <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <p className='font mb-2' id='cap'>ONGOING SUPPORT</p>
-            <h2 style={{
-              fontFamily: "'Lexend', sans-serif",
-              fontSize: 'clamp(28px, 4vw, 48px)',
-              fontWeight: 700,
-              color: '#fff',
-              marginBottom: '16px'
-            }}>
-              🛠️ Ongoing Website Care & Peace-of-Mind
-            </h2>
-            <p style={{ color: '#888', maxWidth: '700px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
-              Your website is an investment. We keep it fast, secure, and completely up to date so you can focus on running your business.
-            </p>
-          </div>
+      {/* Maintenance */}
+      <Reveal as='section' aria-labelledby='care-title' className='border-b border-line'>
+        <div className='mx-auto max-w-6xl px-5 py-16 sm:py-20'>
+          <SectionIntro id='care-title' eyebrow='Ongoing support' title='Ongoing Website Care & Peace-of-Mind'>
+            Your website is an investment. We keep it fast, secure, and completely up to date so you can focus on running your business.
+          </SectionIntro>
+          <ul className='grid gap-6 md:grid-cols-2'>
+            {maintenance.map((m) => (
+              <li key={m.label}>
+                <article className='flex h-full flex-col rounded-lg border border-line bg-surface p-7'>
+                  <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent'>{m.label}</p>
+                  <h3 className='mb-2 font-display text-xl font-medium'>{m.title}</h3>
+                  <p className='mb-5 text-sm text-muted'>{m.blurb}</p>
+                  <p className='mb-1 font-display text-3xl font-semibold'>{m.price}</p>
+                  <p className='mb-5 text-xs text-muted'>/ month</p>
+                  <CheckList items={m.features} />
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            {/* Basic Care Plan */}
-            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>MAINTENANCE 1</h3>
-              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The Basic Care Plan</h2>
-              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '45px' }}>
-                Small local landing pages (The 5k sites)
-              </p>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 2,500</span>
-                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>/ month</span>
-              </div>
-              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }}>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Monthly security checks & database backups</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Small content updates (phone number, price, announcements)</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Hosting monitoring (keeping your site live)</li>
-              </ul>
-            </article>
-
-            {/* Growth Support Plan */}
-            <article style={{ background: '#111417', border: '1px solid #1e2228', borderRadius: '8px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'monospace', color: '#00ff00', fontSize: '14px', letterSpacing: '1px', marginBottom: '16px' }}>MAINTENANCE 2</h3>
-              <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '8px' }}>The Growth Support Plan</h2>
-              <p style={{ color: '#888', fontSize: '14px', marginBottom: '24px', minHeight: '45px' }}>
-                Active businesses with database systems (Supabase users)
-              </p>
-              <div style={{ marginBottom: '24px' }}>
-                <span style={{ fontSize: '32px', fontWeight: 700, color: '#fff' }}>KSh 5,000</span>
-                <span style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>/ month</span>
-              </div>
-              <ul style={{ color: '#888', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }}>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Everything in Basic Care</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Up to 2 hours of dedicated dev time per month</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Database optimization & account management checks</li>
-                <li style={{ display: 'flex', gap: '8px' }}><span style={{ color: '#00ff00' }}>✓</span> Priority support (24-hour response time)</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        {/* FAQ Accordion Section for AEO / GEO optimizations */}
-        <section style={{ padding: '80px 5vw 40px 5vw', maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px', flexWrap: 'wrap' }}>
-            <span style={{
-              fontFamily: 'monospace',
-              fontSize: '11px',
-              letterSpacing: '3px',
-              color: '#00ff00',
-              border: '1px solid #00ff00',
-              borderRadius: '20px',
-              padding: '4px 14px',
-            }}>
-              FAQ / ANSWERS
-            </span>
-            <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, #1e2228, transparent)' }} />
-          </div>
-
-          <h2 style={{
-            fontFamily: "'Lexend', sans-serif",
-            fontSize: 'clamp(28px, 3vw, 40px)',
-            fontWeight: 700,
-            color: '#fff',
-            marginBottom: '32px'
-          }}>
-            Frequently Asked <span style={{ color: '#00ff00' }}>Questions</span>
+      {/* FAQ */}
+      <Reveal as='section' aria-labelledby='faq-title'>
+        <div className='mx-auto max-w-3xl px-5 py-16 sm:py-20'>
+          <p className='mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent'>FAQ / Answers</p>
+          <h2 id='faq-title' className='mb-8 font-display text-2xl font-semibold tracking-tight sm:text-3xl'>
+            Frequently Asked <span className='text-accent'>Questions</span>
           </h2>
-
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className='border-t border-line'>
             {faqs.map((faq, index) => (
               <FAQItem
-                key={index}
+                key={faq.question}
+                id={`faq-${index}`}
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openFAQIndex === index}
@@ -534,12 +441,9 @@ function Services() {
               />
             ))}
           </div>
-        </section>
-      </div>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+        </div>
+      </Reveal>
+    </PageShell>
   )
 }
 

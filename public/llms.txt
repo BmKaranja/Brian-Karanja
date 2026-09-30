@@ -41,8 +41,3 @@ Byma Solutions is a creative full-stack development and UI/UX design studio. Thi
 - **Restaurant** (Showcase Website)
   - *GitHub Repository:* https://github.com/BmKaranja/Restaurant.git
   - *Details:* Clean, responsive page showcasing a restaurant menu and booking info using vanilla HTML/JS.
-
-## DevLog & Timeline Entries
-- **Wincer's Cake House (May 2026):** Implemented delivery zone options, checkout handling, local storage persistence, Firebase dark-mode setup, and real-time database sync.
-- **Portfolio Redesign (May 2026):** Redesigned the "About Me" section with custom SVG prism graphics and a CSS timeline listing Git commits.
-- **HireNear Job Search Platform (Late 2025):** Local job search platform with maps, profile tracking, and third-party API listings.

@@ -2,7 +2,7 @@
   {
     "title": "Salio",
     "description": "Salio is a comprehensive Point of Sale (POS) system designed for small retail businesses that need to operate reliably in environments with unstable internet connectivity. The application provides a seamless experience whether online or offline, automatically syncing sales and inventory data when connectivity is restored.",
-    "link": "https://salio-app.vercel.app",
+    "link": "https://app.salio.co.ke",
     "category": "website",
     "image": "https://ik.imagekit.io/oaundupgio/Designs/Screenshot%202026-07-14%20175200.png"
   },
@@ -18,7 +18,7 @@
     "description": "This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
     "link": "https://www.byma.co.ke",
     "category": "website",
-    "image": "https://ik.imagekit.io/oaundupgio/Designs/byma.png"
+    "image": "/portfolio.jpg"
   },
   {
     "title": "Law Firm Design",

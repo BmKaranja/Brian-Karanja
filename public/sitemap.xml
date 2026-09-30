@@ -32,12 +32,6 @@
   </url>
 
   <url>
-    <loc>https://www.byma.co.ke/WorkLog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://www.byma.co.ke/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
