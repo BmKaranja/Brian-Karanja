@@ -15,7 +15,7 @@
   },
     {
     "title": "Current site",
-    "description": "This website is a high-fidelity Developer Portfolio designed with a \"Cyber-Editorial\" aesthetic. It targets a modern, tech-forward audience by blending high-performance engineering vibes with sleek, professional design.",
+    "description": "The site you're on right now. A React site built on a shared layout and design tokens, with every route prerendered to static HTML with its own meta tags and structured data for fast loads and strong SEO. It also pulls my latest GitHub commits live into a work log, so the site stays current as I build.",
     "link": "https://www.byma.co.ke",
     "category": "website",
     "image": "/portfolio.jpg"
