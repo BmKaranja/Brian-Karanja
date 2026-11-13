@@ -1,10 +1,17 @@
 [
   {
-    "title": "Salio",
+    "title": "Salio App",
     "description": "Salio is a comprehensive Point of Sale (POS) system designed for small retail businesses that need to operate reliably in environments with unstable internet connectivity. The application provides a seamless experience whether online or offline, automatically syncing sales and inventory data when connectivity is restored.",
     "link": "https://app.salio.co.ke",
     "category": "website",
     "image": "https://ik.imagekit.io/oaundupgio/Designs/Screenshot%202026-07-14%20175200.png"
+  },
+  {
+    "title": "Salio Website",
+    "description": "The Salio website is the public face of an offline-first point-of-sale and inventory app for small Kenyan retail shops. Its job is to explain the product quickly to shop owners, who often read on a phone with limited data, and to send them to sign up.",
+    "link": "https://salio.co.ke",
+    "category": "website",
+    "image": "https://ik.imagekit.io/cla3x4m4b/Screenshot%202026-11-13%20184155.png"
   },
   {
     "title": "Wincer Cake House",
