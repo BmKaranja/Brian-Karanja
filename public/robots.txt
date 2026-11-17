@@ -1,7 +1,23 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow AI/LLM web crawlers for AEO/GEO indexing
+# Answer engines and AI search (these send users to your site)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# AI training crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -9,9 +25,6 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://www.byma.co.ke/sitemap.xml
